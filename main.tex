@@ -68,7 +68,7 @@ $\sqrt{2}$不是有理数。
     非空有上界的数集必有上确界，非空有下界的数集必有下确界。
 \end{theorem}
 
-\chapter{数列极限}
+\section{数列极限}
 \begin{definition}[数列极限的定义]
     对于数列$\{ a_n \}$，存在一个实常数a，对$\forall \epsilon > 0$，$\exists N \in \mathbb{Z}^+$，使得当$n > N$时，$|a_n-a| < \epsilon$成立，则称$\{ a_n \}${\bf 收敛}(convengent)于a或者$\{ a_n \}$的{\bf 极限}(limit)为a，记作
     \[ \lim_{n \to \infty} a_n = a \text{\quad 或者 \quad}  a_n \to a(n \to +\infty)\]
@@ -238,7 +238,7 @@ $\sqrt{2}$不是有理数。
 \begin{proof}
     从分子上提出$n^k$，分母上提出$n^l$次
 \end{proof}
-\subsubsection{无穷大的运算}
+\subsection{无穷大的运算}
 若$\mylim{n}{x_n} = +\infty$，则记$\collect{x_n}$为``+$\infty$''。
 
 若$\mylim{n}{y_n} = +\infty$，则记$\collect{y_n}$为``+$\infty$''。
@@ -541,5 +541,16 @@ Cauchy收敛原理
 \end{proof}
 
 % 陈老视频22
-\section{函数极限}
+\chapter{函数极限与连续函数}
+函数极限
+
+\[ \lim_{x\rightarrow x_0}\frac{\sin x}{x} = 1 \]
+\begin{definition}
+    $y = f(x)$在$O(x_0, \rho) \backslash \collect{x_0}$上有定义, 
+    如果存在一个数A, 使得对任意给定的$\epsilon > 0$, 可以找到$\delta > 0$, 
+    当$0 < \left| x - x_0 \right| < \delta$时, 成立$\left| f(x) - A\right| < \epsilon$, 
+    则称A是$f(x)$在$x_0$点的极限，记为$\lim_{x\rightarrow x_0} f(x) = A$或者$f(x) \rightarrow A (x \rightarrow x_0)$。
+    如果不存在满足上述性质的A, 则称$f(x)$在$x_0$点极限不存在。
+\end{definition}
+$O(x_0, \rho) \backslash \collect{x_0}$称为去心邻域。
 \end{document}
