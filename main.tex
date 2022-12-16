@@ -47,9 +47,9 @@ $\mathbb{Z}^+ = \{ n | n \in \mathbb{Z}, n > 0 \}$
 \end{definition}
 在定义了以上的集合表示之后，我们就能以上的符号来表示有理数：
 \begin{definition}[有理数] \label{def:rational-number} 
-若一个数x可以表示成$\frac{q}{p}$的形式，其中$q \in \mathbb{Z}$，$p \in \mathbb{Z}^+$，则称x为{\bf 有理数}(rational number)。而由有理数组成的集合称为{\bf 有理数集}，有理数集常用$\mathbb{Q}$表示，其可以表示为：
+若一个数x可以表示成$\frac{q}{p}$的形式，其中$q \in \mathbb{Z}$，$p \in \mathbb{Z}^+$, 则称x为{\bf 有理数}(rational number)。而由有理数组成的集合称为{\bf 有理数集}，有理数集常用$\mathbb{Q}$表示，其可以表示为：
 \[ \mathbb{Q} = \{ x | x = \frac{q}{p}, q \in \mathbb{Z}, p \in \mathbb{Z}^+ \} \]
-在这里，我们可以看到p只需要属于$\mathbb{Z}^+$，这是因为若x为负的，我们总可以规定负号出现在分子上。
+在这里，我们可以看到p只需要属于$\mathbb{Z}^+$, 这是因为若x为负的, 我们总可以规定负号出现在分子上。
 \end{definition}
 有理数对加减乘除都封闭，并且我们在有理数上定义了大小关系，即有理数也是良序的。但是它并不能满足研究所需。例如，存在长度无法用有理数表示。并且有理数之间存在``空隙''，即有理数不连续。而在我们之后的研究中，我们往往需要研究连续性，因此我们需要对有理数进行扩充。在这之前，我们先来证明确实有一些数无法用有理数表示。
 
@@ -68,20 +68,27 @@ $\sqrt{2}$不是有理数。
     非空有上界的数集必有上确界，非空有下界的数集必有下确界。
 \end{theorem}
 
+% 陈老视频9
 \section{数列极限}
 \begin{definition}[数列极限的定义]
-    对于数列$\{ a_n \}$，存在一个实常数a，对$\forall \epsilon > 0$，$\exists N \in \mathbb{Z}^+$，使得当$n > N$时，$|a_n-a| < \epsilon$成立，则称$\{ a_n \}${\bf 收敛}(convengent)于a或者$\{ a_n \}$的{\bf 极限}(limit)为a，记作
+    对于数列$\{ a_n \}$, 存在一个实常数a, 对$\forall \epsilon > 0$, $\exists N \in \mathbb{Z}^+$，使得当$n > N$时，$|a_n-a| < \epsilon$成立，则称$\{ a_n \}${\bf 收敛}(convengent)于a或者$\{ a_n \}$的{\bf 极限}(limit)为a, 记作
     \[ \lim_{n \to \infty} a_n = a \text{\quad 或者 \quad}  a_n \to a(n \to +\infty)\]
-    若不存在实数a，满足上述性质，则称数列$\{ a_n \}${\bf 发散}(divergent)。
+    若不存在实数a, 满足上述性质, 则称数列$\{ a_n \}${\bf 发散}(divergent)。
 \end{definition}
 一个数列收敛与否，收敛的话，收敛于哪个数，这与数列的前有限项无关。
-\begin{proposition}
-\[ \lim_{n \to \infty } q^n= 1(q < 1) \]
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
 
+\begin{definition}[无穷小量的定义]
+    以零为极限的变量称为{\bf 无穷小量}。
+\end{definition}
+
+\begin{proposition}
+    \[ \mylim{n}{q^n}= 1(q < 1) \]
+\end{proposition}
+    \begin{proof}
+        
+    \end{proof}
+
+% 陈老视频10
 \begin{proposition}
 \[ \lim_{n \to \infty } \sqrt[n]{a}= 1 \]
 \end{proposition}
@@ -96,7 +103,7 @@ $\sqrt{2}$不是有理数。
     
 \end{proof}
 
-% 陈老视频10
+
 \begin{proposition}
     设$a_n > 0$,$\lim\limits_{n \to \infty} a_n = a$，证明
     \[ \lim_{n \to \infty}\frac{a_1+a_2+\cdots+a_n}{n} = a \]
@@ -105,15 +112,33 @@ $\sqrt{2}$不是有理数。
     
 \end{proof}
 
-\begin{definition}[无穷小量的定义]
-    以零为极限的变量称为{\bf 无穷小量}。
+\begin{theorem}[数列极限的唯一性]
+    若
+    \[ \mylim{n}{x_n} = a, \mylim{n}{x_n} = b \]
+    则
+    \[  a = b \]
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+
+\begin{definition}
+    \begin{enumerate}
+        \item 对于数列$\collect{x_n}$, 若$\exists M \in \mathbb{R}$, $\forall n \in \mathbb{N}^+$, 成立$x_n \le M$, 则称M是$\collect{x_n}$的一个上界, 或称$\collect{x_n}$有上界。
+        \item 对于数列$\collect{x_n}$, 若$\exists m \in \mathbb{R}$, $\forall n \in \mathbb{N}^+$, 成立$x_n \ge m$, 则称m是$\collect{x_n}$的一个下界, 或称$\collect{x_n}$有下界。
+    \end{enumerate}
+    $\collect{x_n}$既有上界又有下界, 则称$\collect{x_n}$有界。
+
+    $\collect{x_n}$有界的另一个定义：$\exists X \in \mathbb{R}^+$, $\forall x \in \mathbb{N}^+$, 成立$\left| x_n \right| \le X$
 \end{definition}
 
 \begin{theorem}[数列极限的有界性]
     若$\{ x_n \}$的极限存在，则$\{ x_n \}$有界。
 \end{theorem}
-
-
+\begin{proof}
+    
+\end{proof}
 % 陈老视频11
 \begin{theorem}[数列极限的保序性]
     存在两个数列$\{ x_n \}$和$\{ y_n \}$，并且
@@ -123,6 +148,60 @@ $\sqrt{2}$不是有理数。
     
 \end{proof}
 
+\begin{lemma}[数列极限的保序性逆命题]
+    对于$\mylim{n}{x_n} = a,\mylim{n}{x_n} = b$, 若$\exists N \in \mathbb{N}^+$, $\forall n > N$, $x_n \le y_n$, 则$a \le b$。 
+\end{lemma}
+\begin{proof}
+    
+\end{proof}
+
+\begin{lemma}
+    \begin{enumerate}
+        \item 若$\mylim{n}{y_n} = b > 0$, 则$\exists N \in \mathbb{N}^+$, $\forall n > N$, $y_n > \frac{b}{2} > 0 $。
+        \item 若$\mylim{n}{y_n} = b < 0$, 则$\exists N \in \mathbb{N}^+$, $\forall n > N$, $y_n < \frac{b}{2} < 0 $。
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    利用数列极限的保序性证明。当$b > 0$时，取$\collect{x_n = \frac{b}{2}}$, 则$\mylim{n}{x_n} = \frac{b}{2} < b$, 由数列极限的保序性可知，$\exists N \in \mathbb{N}^+$, $\forall n > N$, 有$y_n > x_n = \frac{b}{2}$, 证毕。
+
+    同理可证明$b < 0$的情况。
+\end{proof}
+以上推论可以合起来写为：
+\begin{lemma}
+    若$\mylim{n}{y_n} = b \neq 0$, 则$\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| y_n \right|> \frac{\left| b \right|}{2} > 0 $。
+\end{lemma}
+\begin{proof}
+    除了上一个推论那样分开来证明, 还可以如下证明:
+    $\mylim{n}{y_n} = b$, 即$\forall \epsilon > 0$, $\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| y_n - b\right| < \epsilon$。
+
+    由三角不等式得：
+    \[ \left| y_n - b\right| > \left| \left| y_n \right| - \left| b \right| \right| \]
+    即:
+    \[ \left| \left| y_n \right| - \left| b \right| \right| < \left| y_n - b\right| < \epsilon \]
+    因此$\mylim{n}{\left| y_n \right|} = \left| b \right|$。之后的证明同上。
+\end{proof}
+
+\begin{theorem}[数列极限的夹逼性定理]
+    对于数列$\collect{x_n}$, $\collect{y_n}$, $\collect{z_n}$, 若$\exists N \in \mathbb{N}^+$, $\forall n > N$, 成立$x_n \le y_n \le z_n$, 且$\mylim{n}{x_n} = \mylim{n}{z_n} = a$, 则$\mylim{n}{y_n} = a$
+\end{theorem}
+\begin{proof}
+    $\forall \epsilon$, $\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $\left| x_n - a\right| < \epsilon$, 即$x_n -a > -\epsilon$。
+
+    同理, $\forall \epsilon$, $\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $\left| y_n - a\right| < \epsilon$, 即$z_n -a < \epsilon$。
+
+    取$N = \max\left\{ N_1, N_2 \right\}$, 则：
+    \[ -\epsilon < x_n - a < y_n - a < z_n - a < \epsilon \]
+    即：
+    \[ -\epsilon < y_n - a <\epsilon \]
+    即：
+    \[ \left| y_n - a \right| < \epsilon \]
+    总结起来即为：
+    $\forall \epsilon$, $\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| y_n - a\right| < \epsilon$, 即$\mylim{n}{y_n} = a$, 证毕。
+\end{proof}
+\begin{proposition}
+    求：
+    \[ \mylim{n}{\sqrt{n+1} - \sqrt{n}}\]
+\end{proposition}
 % 陈老视频12
 \begin{theorem}[数列极限的四则运算]
     若$\lim\limits_{n \to \infty} x_n = a$, $\lim\limits_{n \to \infty} y_n = b$，则
@@ -283,7 +362,7 @@ $\sqrt{2}$不是有理数。
 \begin{proof}
 \end{proof}
 \begin{proposition}
-    用Stolz定理证明，若$\mylim{n}{a_n} = a$，则
+    用Stolz定理证明, 若$\mylim{n}{a_n} = a$，则
     \[ \mylim{n}{\mean{a}{n}} = a \]
 \end{proposition}
 \begin{proof}
@@ -418,7 +497,7 @@ $p = 1$时，$a_n = 1 + \frac{1}{2} +\frac{1}{3} + \cdots + \frac{1}{n}$为调�
     有一列闭区间$\collect{\left[a_n, b_n \right]}$，满足：
     \begin{enumerate}
         \item $\left[ a_{n+1}, b_{n+1}\right] \subset \left[ a_n, b_n\right], n = 1, 2, 3, \cdots $
-        \item $b_n - a_n \rightarrow 0(n \rightarrow \infty)$
+        \item $b_n - a_n \to 0(n \to \infty)$
     \end{enumerate}
     则称这样的一列闭区间是一个闭区间套。
 \end{definition}
@@ -438,11 +517,11 @@ $p = 1$时，$a_n = 1 + \frac{1}{2} +\frac{1}{3} + \cdots + \frac{1}{n}$为调�
 % 陈老视频19
 子列
 \begin{definition}
-    存在一个数列$\collect{x_n}$，取一列严格单调增加的正整数$n_1 < n_2 < n_3 < \cdots < n_k < \cdots$，则$x_{n_1}, x_{n_2}, \cdots, x_{n_k}, \cdot$称为$\collect{x_n}$的一个子列，记为$\collect{x_{n_k}}$，$k$代表子列中的第$k$项，又恰好是$\collect{x_n}$中的第$n_k$项。
+    存在一个数列$\collect{x_n}$，取一列严格单调增加的正整数$n_1 < n_2 < n_3 < \cdots < n_k < \cdots$，则$x_{n_1}, x_{n_2}, \cdots, x_{n_k}, \cdot$称为$\collect{x_n}$的一个子列，记为$\collect{x_{n_k}}$, $k$代表子列中的第$k$项，又恰好是$\collect{x_n}$中的第$n_k$项。
 \end{definition}
 其中$n_k \ge k, \forall k$, $n_j > n_k, \forall j > k$。
 \begin{theorem}
-    设$\collect{x_n}$收敛于a，则它的任何一个子列也收敛于a。即$\mylim{n}{x_n} = a$，证明$\mylim{k}{a_{n_k}} = a$
+    设$\collect{x_n}$收敛于a, 则它的任何一个子列也收敛于a。即$\mylim{n}{x_n} = a$，证明$\mylim{k}{a_{n_k}} = a$
 \end{theorem}
 \begin{proof}
 
@@ -526,11 +605,7 @@ Cauchy收敛原理
     \item Bolzano-Weierstrass定理
     \item Cauchy收敛原理(实数系完备性)
 \end{enumerate}
-以上都是在实数系中考虑, 实数系上的基本数列必然是收敛数列, 因此Cauchy收敛原理也被称为实数系的完备性定理。
-实数系有完备性, 有理数不具备完备性。
-例如$\collect{\left( 1 + \frac{1}{n}\right)^n}$是有理数列, 但是它的极限是无理数。
-以上五个定理等价。
-我们需要证明这五个定理等价。从Cauchy收敛原理推出闭区间套定理, 再从闭区间套定理推出确界存在定理。
+以上都是在实数系中考虑, 实数系上的基本数列必然是收敛数列, 因此Cauchy收敛原理也被称为实数系的完备性定理。实数系有完备性, 有理数不具备完备性。例如$\collect{\left( 1 + \frac{1}{n}\right)^n}$是有理数列, 但是它的极限是无理数。以上五个定理等价。我们需要证明这五个定理等价。从Cauchy收敛原理推出闭区间套定理, 再从闭区间套定理推出确界存在定理。
 \begin{theorem}
     实数系的完备性等价于实数系的连续性。
 \end{theorem}
@@ -544,13 +619,64 @@ Cauchy收敛原理
 \chapter{函数极限与连续函数}
 函数极限
 
-\[ \lim_{x\rightarrow x_0}\frac{\sin x}{x} = 1 \]
+\[ \funclim{x}{0}{\frac{\sin x}{x}} = 1 \]
 \begin{definition}
-    $y = f(x)$在$O(x_0, \rho) \backslash \collect{x_0}$上有定义, 
-    如果存在一个数A, 使得对任意给定的$\epsilon > 0$, 可以找到$\delta > 0$, 
-    当$0 < \left| x - x_0 \right| < \delta$时, 成立$\left| f(x) - A\right| < \epsilon$, 
-    则称A是$f(x)$在$x_0$点的极限，记为$\lim_{x\rightarrow x_0} f(x) = A$或者$f(x) \rightarrow A (x \rightarrow x_0)$。
-    如果不存在满足上述性质的A, 则称$f(x)$在$x_0$点极限不存在。
+    $y = f(x)$在$O(x_0, \rho) \backslash \collect{x_0}$上有定义, 如果存在一个数A, 使得对任意给定的$\epsilon > 0$, 可以找到$\delta > 0$, 当$0 < \left| x - x_0 \right| < \delta$时, 成立$\left| f(x) - A\right| < \epsilon$, 则称A是$f(x)$在$x_0$点的极限，记为$\lim_{x \to x_0} f(x) = A$或者$f(x) \to A (x \to x_0)$。如果不存在满足上述性质的A, 则称$f(x)$在$x_0$点极限不存在。
 \end{definition}
 $O(x_0, \rho) \backslash \collect{x_0}$称为去心邻域。
+
+% 陈老视频23
+\begin{proposition}
+    证明：
+    \[ \funclim{x}{0}{e^x} = 1\]
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+
+\begin{proposition}
+    证明：
+    \[ \funclim{x}{2}{x^2} = 4 \]
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+
+\begin{proposition}
+    证明：
+    \[ \funclim{x}{1}{\frac{x(x-1)}{x^2-1}} = \frac{1}{2} \]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+函数极限的性质
+\begin{theorem}[函数极限的唯一性]
+    设A, B都是$f(x)$在$x_0$的极限, 则$A=B$。 
+\end{theorem}
+\begin{proof}
+    证明类似证明数列极限的唯一性
+\end{proof}
+
+\begin{theorem}[函数极限的局部保序性]
+    若$\funclim{x}{x_0}{f(x)} = A, \funclim{x}{x_0}{g(x)} = B, A > B$, 则$\exists \delta > 0$, 当x有$0 < \left| x - x_0 \right| < \delta $时, $f(x) > g(x)$  
+\end{theorem}
+\begin{proof}
+    证明类似证明数列极限的保序性
+\end{proof}
+
+\begin{lemma}
+    $\funclim{x}{x_0}{f(x)} = A \neq 0$, 则$\exists \delta > 0$, $\forall x ( 0 < \left| x - x_0\right| < \delta)$, $\left| f(x) \right| > \frac{\left| A \right|}{2}$。
+\end{lemma}
+\begin{proof}
+    请使用局部保序性证明
+\end{proof}
+
+\begin{lemma}
+    假设$\funclim{x}{x_0}{f(x)} = A, \funclim{x}{x_0}{g(x)} = B$, 若$\exists \delta > 0, \forall x (x < \left| x - x_0\right| < \delta)$, 有$f(x) \ge g(x)$, 则$A \ge B$
+\end{lemma}
+\begin{proof}
+
+\end{proof}
+
 \end{document}
