@@ -1,6 +1,7 @@
 \documentclass[lang=cn]{elegantbook}
 % \usepackage[utf8]{inputenc}
-
+\usepackage{amsmath}
+\usepackage{amssymb}
 \input{newcommand}
 
 \title{数学分析}
@@ -262,11 +263,11 @@ $\sqrt{2}$不是有理数。
 \section{无穷大量}
 % 陈老视频13
 \begin{definition}[无穷大量]
-对于一个数列$\{ x_n \}$，若对于任意给定的$G > 0$，可以找到正整数N，使得当$n > N$时，$| x_n |> G$，则称数列$\{ x_n \}$是无穷大量，记为
+对于一个数列$\{ x_n \}$，若对于任意给定的$G > 0$, 可以找到正整数N, 使得当$n > N$时，$| x_n |> G$，则称数列$\{ x_n \}$是无穷大量，记为
 \[ \lim_{n \to \infty } x_n = \infty \]
 若对于该数列$\{ x_n \}$, $| x_n |> G$可以恒表示为$x_n > G$，则称数列$\{ x_n \}$是正无穷大量，记为$+\infty$。
 
-若对于该数列$\{ x_n \}$，$| x_n |> G$可以恒表示为$x_n < -G$，则称数列$\{ x_n \}$是负无穷大量，记为$-\infty$。
+若对于该数列$\{ x_n \}$, $| x_n |> G$可以恒表示为$x_n < -G$，则称数列$\{ x_n \}$是负无穷大量，记为$-\infty$。
 \end{definition}
 
 \begin{proposition}
@@ -360,6 +361,7 @@ $\sqrt{2}$不是有理数。
     
 \end{theorem}
 \begin{proof}
+
 \end{proof}
 \begin{proposition}
     用Stolz定理证明, 若$\mylim{n}{a_n} = a$，则
@@ -395,8 +397,14 @@ $\sqrt{2}$不是有理数。
 \begin{proof}
 不妨设$\collect{x_n}$单调增加，有上界。
 \end{proof}
-定理意义：从定义证明时，我们需要知道极限a，相当于验证极限为a，而当极限未知时，则无法证明。而定理则从数列本身的性质出发，不需要知道极限是多少。
+定理意义: 从定义证明时, 我们需要知道极限a, 相当于验证极限为a, 而当极限未知时, 则无法证明。而定理则从数列本身的性质出发, 不需要知道极限是多少。
 
+\begin{lemma}
+    若数列$\collect{x_n}$从第N项之后开始单调有界, 则数列$\collect{x_n}$依旧收敛。
+\end{lemma}
+\begin{proof}
+    考虑$n \ge N$后的数组成的数列, 设$n_1 = n - N + 1$, 则$\collect{x_{n_1}}$单调有界。由于$\collect{x_{n_1}}(n_1 \ge 1)$单调有界, 则$\collect{x_{n_1}}(n_1 \ge 1)$收敛。即$\exists a$, $\forall \epsilon > 0$, $\exists N_1$, $\forall n_1 > N_1$, 有$\left| x_{n_1} - a\right| < \epsilon$。那么我们可以取$N_2 = N_1 + N - 1$, 此时$\forall \epsilon$, $\exists N_2 = N_1 + N - 1$, $\forall n > N_2$, 有$\left| x_n - a\right| < \epsilon$, 即数列$\collect{x_n}$极限存在。
+\end{proof}
 \begin{proposition}
     设$x_1 > 0$, $x_{n+1} = 1 + \frac{x_n}{1+x_n}, n = 1,2, 3, \cdots$，证明$\collect{x_n}$收敛，并求极限。
 \end{proposition}
@@ -429,7 +437,7 @@ $\sqrt{2}$不是有理数。
 
 兔子
 \begin{proposition}[Fibonacci数列]
-    $\collect{a——n}$为Fibonacci数列，令$b_n = \frac{a_{n+1}}{a_n}$，讨论$\collect{b_n}$数列。
+    $\collect{a——n}$为Fibonacci数列, 令$b_n = \frac{a_{n+1}}{a_n}$，讨论$\collect{b_n}$数列。
     
 \end{proposition}
 \begin{proof}
@@ -444,6 +452,82 @@ $\sqrt{2}$不是有理数。
     证明$\collect{L_n = n\sin \left ( \frac{180^\circ}{n} \right )}$收敛。求圆的面积公式。
 \end{proposition}
 \begin{proof}
+取$t = \frac{180^\circ}{n(n+1)}$, 当$n \ge 3$时, $nt \le 45^\circ$。且由三角公式得: 
+\[ \tan (nt) = \frac{\tan[(n-1)t] + \tan(t)}{1 - \tan[(n-1)t]tan(t)} \]
+由于$nt \le 45^\circ$, 则$tan(kt) < 1(k < n)$, 因此: 
+\[ \tan (nt) = \frac{\tan[(n-1)t] + \tan(t)}{1 - \tan[(n-1)t]tan(t)} > \tan[(n-1)t] + \tan(t)\]
+则：
+\begin{gather*}
+    \tan(nt) > \tan[(n-1)t] + \tan(t) \\ 
+    \tan[(n-1)t] > \tan[(n-2)t] + \tan(t) \\
+    \cdots \cdots
+\end{gather*}
+则: 
+\[ \tan(nt) > n\tan(t)\]
+现在来考虑$\sin[(n+1)t]$: 
+\[
+\begin{split}
+    \sin[(n+1)t] &= \sin(nt)\cos(t) + \cos(nt)\sin(t) \\
+                &= \sin(nt)\cos(t)\left[ 1 + \frac{\tan(t)}{\tan(nt)}\right] \\
+                &< \sin(nt)\cos(t)\left[ 1 + \frac{1}{n} \right] \\
+                & < \sin(nt)\frac{n+1}{n}
+\end{split}
+\]
+即: 
+\[ n\sin[(n+1)t] < (n+1)\sin(nt) \]
+将$t = \frac{180^\circ}{n(n+1)}$代入得: 
+\[ n\sin\left( \frac{180^\circ}{n}\right) < (n + 1)\sin\left( \frac{180^\circ}{n+1} \right)\]
+即该数列单调增加。
+
+考虑到单位圆的面积: 
+\[ S' > n \sin\left( \frac{180^\circ}{n}\right) \cos\left( \frac{180^\circ}{n}\right) \]
+并且单位圆的面积小于外接正方形的面积, 即: 
+\[ n \sin\left( \frac{180^\circ}{n}\right) \cos\left( \frac{180^\circ}{n}\right) < S' < 4 \]
+即: 
+\[ n\sin\left( \frac{180^\circ}{n}\right) < \frac{4}{\cos\left( \frac{180^\circ}{n}\right)}\]
+因为$n \ge 3$, 所以: 
+\[ n\sin\left( \frac{180^\circ}{n}\right) < 8\]
+因此数列$\collect{L_n = n\sin \left ( \frac{180^\circ}{n} \right )}$单调有界, 则该数列极限存在。
+
+现在定义$\mylim{n}{n\sin \left ( \frac{180^\circ}{n} \right )} = \pi$。
+
+再来考虑单位圆的面积$S'$, 设内接正多边形的面积为$S_1$, 外接正多边形的面积为$S_2$, 则$S_1(n) < S' < S_2(n)$。内接正多边形的面积为:
+\[ S_1(n) = n \sin\left( \frac{180^\circ}{n}\right) \cos\left( \frac{180^\circ}{n}\right)\]
+外接正多边形的面积为: 
+\[ S_2(n) = n \tan\left( \frac{180^\circ}{n}\right)  = n \frac{\sin\left( \frac{180^\circ}{n}\right)}{\cos\left( \frac{180^\circ}{n}\right)} \]
+并且根据数列极限的四则运算有:
+\[ \mylim{n}{S_1(n)} = \mylim{n}{n \sin\left( \frac{180^\circ}{n}\right)} \mylim{n}{\cos\left( \frac{180^\circ}{n}\right)} = \pi\]
+\[ \mylim{n}{S_2(n)} = \frac{\mylim{n}{n\sin\left( \frac{180^\circ}{n}\right)}}{\mylim{n}{\cos\left( \frac{180^\circ}{n}\right)}} = \pi\]
+则根据夹逼性原理得:
+\[ S' = \pi \]
+
+其中, 对于外接正多边形的面积, 考虑:
+\[
+\begin{split}
+    (n+1)\tan(nt) - n \tan[(n+1)t] &= (n+1)\frac{\sin(nt)}{\cos(nt)} - n\frac{\sin[(n+1)t]}{\cos[(n+1)t]} \\
+                        &= \frac{(n+1)\sin(nt)\cos[(n+1)t]-n\sin[(n+1)t]\cos(nt)}{\cos(nt)\cos[(n+1)t]} \\
+                        &= \frac{\sin(nt)\cos[(n+1)t]-n\sin(t)}{\cos(nt)\cos[(n+1)t]} \\
+                        &=\frac{\sin[(2n+1)t] - \sin(t) -2n\sin(t)}{2\cos(nt)\cos[(n+1)t]} \\
+                        &= \frac{\sin[(2n+1)t] - (2n+1)\sin(t)}{2\cos(nt)\cos[(n+1)t]}
+\end{split}
+\]
+并且当$n \ge 3$时, 有: 
+\begin{gather*}
+    \sin[(2n+1)t] = \sin(2nt)\cos(t) + \cos(2nt)\sin(t) < \sin(2nt) + \sin(t) \\
+    \sin(2nt) = \sin[(2n-1)t]\cos(t) + \cos[(2n-1)t]\sin(t)  < \sin[(2n-1)t] + \sin(t)\\
+    \cdots \cdots
+\end{gather*}
+因此: 
+\[ sin[(2n+1)t] < (2n+1)\sin(t) \]
+因此: 
+\[ (n+1)\tan(nt) < n\tan[(n+1)t]\]
+即:
+\[ (n+1)\tan\left( \frac{180^\circ}{n+1}\right) < n\tan\left( \frac{180^\circ}{n}\right) \]
+因此数列$\collect{n\tan\left( \frac{180^\circ}{n}\right)}$单调递减。因为外接正多边形面积必然大于内接正方形, 因此: 
+\[ n\tan\left( \frac{180^\circ}{n}\right) > 2 \]
+因此数列$\collect{n\tan\left( \frac{180^\circ}{n}\right)}$单调有界, 则该数列极限存在。
+
+% 我们再用其他办法证明$\collect{L_n = n\sin \left ( \frac{180^\circ}{n} \right )}$有界: 
 
 \end{proof}
 
@@ -679,4 +763,60 @@ $O(x_0, \rho) \backslash \collect{x_0}$称为去心邻域。
 
 \end{proof}
 
+% 陈老视频24
+
+\begin{theorem}[函数极限的局部有界性]
+    若$\funclim{x}{x_0}{f(x)} = A$, 则$\exists \delta$, $\forall x(0 < \left| x - x_0 \right| < \delta)$, $m \le f(x) \le M$, m, M为固定实数。
+
+    若$f(x)$在$x_0$有定义, 则在$x$满足$\left| x - x_0 \right| < \delta$的条件下, $\min\{m, f(x)\} \le f(x) \le \max\{M, f(x)\}$。
+\end{theorem}
+\begin{proof}
+    请使用局部保序性证明
+\end{proof}
+
+\begin{theorem}[函数极限的夹逼性定理]
+    若$\exists r > 0$, $\forall x(x < \left| x - x_0 \right| < r)$, 有$g(x) \le f(x) \le h(x)$, 且$\funclim{x}{x_0}{g(x)} = \funclim{x}{x_0}{h(x)} = A$, 则$\funclim{x}{x_0}{f(x)} = A$
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    证明: 
+    \[ \funclim{x}{0}{\frac{\sin x}{x}} = 1 \]
+\end{proposition}
+\begin{proof}
+    使用夹逼性证明。
+
+    再用数列逼近证明。
+\end{proof}
+
+\begin{theorem}[函数极限四则运算]
+    假设$\funclim{x}{x_0}{f(x)} = A$, $\funclim{x}{x_0}{g(x)} = B$, 则: 
+    \begin{enumerate}
+        \item $\funclim{x}{x_0}{\alpha f(x) + \beta g(x)} = \alpha A + \beta B$
+        \item $\funclim{x}{x_0}{f(x)g(x)} = AB$
+        \item $\funclim{x}{x_0}{\frac{f(x)}{g(x)}} = \frac{A}{B}(B \neq 0)$
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    求:
+    \[ \funclim{x}{0}{\frac{\sin \alpha x}{x}} \]
+    的极限。
+\end{proposition}
+\begin{proof}
+\end{proof}
+
+\begin{proposition}
+    求:
+    \[ \funclim{x}{0}{\frac{\sin \alpha x}{\sin \beta x}} \]
+    的极限。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
 \end{document}

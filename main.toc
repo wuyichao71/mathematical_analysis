@@ -4,4 +4,4 @@
 \contentsline {section}{\numberline {2.2}无穷大量}{7}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}无穷大的运算}{8}{subsection.2.2.1}%
 \contentsline {section}{\numberline {2.3}收敛准则}{9}{section.2.3}%
-\contentsline {chapter}{\numberline {3}函数极限与连续函数}{14}{chapter.3}%
+\contentsline {chapter}{\numberline {3}函数极限与连续函数}{16}{chapter.3}%
