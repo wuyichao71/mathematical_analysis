@@ -622,7 +622,26 @@ $p = 1$时，$a_n = 1 + \frac{1}{2} +\frac{1}{3} + \cdots + \frac{1}{n}$为调�
     有界数列必有收敛子列。
 \end{theorem}
 \begin{proof}
+    设数列为$\collect{x_n}$, 因为数列有界, 所以$\forall n >0$, 存在$a \le x_n \le b$, 则取$[a_1, b_1] = [a, b]$。
+
+    将$[a_1, b_1]$分为两个闭区间, 分别为$[a_1, \frac{a_1+b_1}{2}]$和$[\frac{a_1+b_1}{2}, b_1]$, 其中至少有一个区间包含无穷多个数列的元素, 因为若两个区间都有有限个数列元素, 则数列$\collect{x_n}$的元素有限。那么我们可以取包含无穷多个数列元素的区间为$[a_2, b_2]$。
+
+    同理, 我们可以取出$[a_3, b_3]$, $[a_4, b_4], \cdots$。每一个区间中都包含无穷多个数列元素。
+
+    对于这些区间, $\forall n > 0, (1). [a_{n+1}, b_{n+1}] \subset [a_n, b_n]$, $(2). \mylim{n}{(b_n-a_n)} = \mylim{n}{\frac{b - a}{2^{n-1}}} = 0$, 则这些闭区间组成了一个闭区间套。根据闭区间套定理, 存在唯一的实数$\gamma$属于一切闭区间$[a_n, b_n]$。
+
+    则我们可以这样构造子列: 
     
+    从$[a_1, b_1]$中取$x_{n_1}$, 使得$n_1 > 0$, 这必然可以实现, 因为$[a_1, b_1]$中有无限多个数列元素。
+
+    从$[a_2, b_2]$中取$x_{n_2}$, 使得$n_2 > n_1$, 这必然可以实现, 因为$[a_2, b_2]$中有无限多个数列元素, 即$\forall n_1, \exists n_2 > n_1$。
+
+    从$[a_3, b_3]$中取$x_{n_3}$, 使得$n_3 > n_2$, 这必然可以实现, 因为$[a_3, b_3]$中有无限多个数列元素, 即$\forall n_2, \exists n_3 > n_2$。
+    \[ \cdots \cdots \]
+
+    对于子列$\collect{x_{n_k}}$, $x_{n_k} \in [a_k, b_k]$, 则$\forall \epsilon > 0 $, 取$K = \max\left\{\left[\log_2\left(\frac{b-a}{\epsilon}\right)\right] + 2, 1\right\}$, $\forall k > K, b_k - a_k < \epsilon $, 同时$x_{n_k} \in [a_k, b_k]$, $\gamma \in [a_k, b_k]$, 则$\forall k > K, \left| x_{n_k} - \gamma \right| < b_k - a_k < \epsilon$。
+
+    即$\forall \epsilon > 0$, $\exists K \in \mathbb{N}^+$, $\forall k > K$, $\left| a_{n_k} - \gamma \right| < \epsilon$, 则$\mylim{k}{x_{n_k}} = \gamma$, 该子列收敛于$\gamma$。
 \end{proof}
 
 \begin{theorem}
@@ -908,4 +927,89 @@ $O(x_0, \rho) \backslash \collect{x_0}$称为去心邻域。
         \right.
     \end{equation*}
 \end{proposition}
+
+% 陈老视频26
+\section{函数极限定义的扩充}
+可以将自变量$x$的趋向扩充成以下六种:
+\begin{enumerate}
+    \item $x \to x_0$
+    \item $x \to x_0^+$
+    \item $x \to x_0^-$
+    \item $x \to +\infty$
+    \item $x \to -\infty$
+    \item $x \to \infty$
+\end{enumerate}
+而应变量$f(x)$的趋向可以扩充成以下四种:
+\begin{enumerate}
+    \item $f(x) \to A$
+    \item $f(x) \to +\infty$
+    \item $f(x) \to -\infty$
+    \item $x \to \infty$
+\end{enumerate}
+现在加上对应的分析表述, 对于自变量$x$:
+\begin{enumerate}
+    \item $x \to x_0: \exists \delta > 0, \forall x(0 < \left| x - x_0 \right| < \delta)$
+    \item $x \to x_0^+: \exists \delta > 0, \forall x(0 < x - x_0 < \delta)$
+    \item $x \to x_0^-: \exists \delta > 0, \forall x(-\delta < x - x_0 < 0)$
+    \item $x \to +\infty: \exists X > 0, \forall x(x > X)$
+    \item $x \to -\infty: \exists X > 0, \forall x(x < -X)$
+    \item $x \to \infty: \exists X > 0, \forall x(\left| x \right| > X)$
+\end{enumerate}
+对于应变量$f(x)$: 
+\begin{enumerate}
+    \item $f(x) \to A: \forall \epsilon > 0, \cdots,\left| f(x) - A \right| < \epsilon$
+    \item $f(x) \to +\infty: \forall G > 0, \cdots, f(x) > G$
+    \item $f(x) \to -\infty: \forall G > 0, \cdots, f(x) < -G$
+    \item $x \to \infty: \forall G > 0, \cdots, \left| f(x) \right| > G$
+\end{enumerate}
+
+\begin{proposition}
+    写出:
+    \[ \funclim{x}{x_0^+}{f(x)} = \infty \]
+    的分析表述。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    写出:
+    \[ \funclim{x}{+\infty}{f(x)} = A \]
+    的分析表述。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    写出:
+    \[ \funclim{x}{-\infty}{f(x)} = +\infty \]
+    的分析表述。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    证明:
+    \[ \funclim{x}{-\infty}{e^x} = 0\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    证明
+    \[ \funclim{x}{1^-}{\frac{x^2}{x-1}} = -\infty \]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+我们讲了函数极限的性质和函数极限的四则运算。讲函数极限的性质的时候是对于收敛函数来讨论的。对于扩充后的函数极限则不一定成立, 特别对于$\infty$。性质要排除$\infty$, 四则运算要排除待定型。
+
+对于扩充后的heine定理应该如何书写:
+$\funclim{x}{+\infty}{f(x)} = A$充分必要条件: 对任意的满足$x_n\to +\infty(n \to \infty)$的数列$\collect{x_n}$,, 成立$\collect{f(x_n)}$收敛于A。
+
+$\funclim{x}{+\infty}{f(x)}$存在且有限的充分必要条件是: 对任意满足$x_n \to +\infty(n \to +\infty)$的数列$\collect{x_n}$, $\collect{f(x_n)}$收敛。
+
+% 陈老视频27
 \end{document}
