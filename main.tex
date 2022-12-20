@@ -30,11 +30,12 @@
 
 元素通常记为s, t, a, b, x, y
 
-x是集合S的元素，记为$x\in S$
+x是集合S的元素, 记为$x\in S$
 \chapter{实数的完备性}
 \begin{introduction}
   \item 有理数的定义~\ref{def:rational-number}
-
+  \item Bolzano-Weierstrass定理~\ref{theorem:Bolzano-Weierstrass}
+  \item 数列极限的保序性逆命题~\ref{lemma:list-order}
 \end{introduction}
 在本章中，我们将介绍实数的完备性。在介绍实数之前，我们需要将实数定义或者说引入。而对于实数的定义是有很多的，而我在此介绍无穷十进制小数表示和戴德金(Dedekind)分割。这部分我将结合陈纪修教授的教材和Ayumu的讲义。
 
@@ -48,9 +49,9 @@ $\mathbb{Z}^+ = \{ n | n \in \mathbb{Z}, n > 0 \}$
 \end{definition}
 在定义了以上的集合表示之后，我们就能以上的符号来表示有理数：
 \begin{definition}[有理数] \label{def:rational-number} 
-若一个数x可以表示成$\frac{q}{p}$的形式，其中$q \in \mathbb{Z}$，$p \in \mathbb{Z}^+$, 则称x为{\bf 有理数}(rational number)。而由有理数组成的集合称为{\bf 有理数集}，有理数集常用$\mathbb{Q}$表示，其可以表示为：
+若一个数x可以表示成$\frac{q}{p}$的形式，其中$q \in \mathbb{Z}$, $p \in \mathbb{Z}^+$, 则称x为{\bf 有理数}(rational number)。而由有理数组成的集合称为{\bf 有理数集}，有理数集常用$\mathbb{Q}$表示，其可以表示为：
 \[ \mathbb{Q} = \{ x | x = \frac{q}{p}, q \in \mathbb{Z}, p \in \mathbb{Z}^+ \} \]
-在这里，我们可以看到p只需要属于$\mathbb{Z}^+$, 这是因为若x为负的, 我们总可以规定负号出现在分子上。
+在这里, 我们可以看到p只需要属于$\mathbb{Z}^+$, 这是因为若x为负的, 我们总可以规定负号出现在分子上。
 \end{definition}
 有理数对加减乘除都封闭，并且我们在有理数上定义了大小关系，即有理数也是良序的。但是它并不能满足研究所需。例如，存在长度无法用有理数表示。并且有理数之间存在``空隙''，即有理数不连续。而在我们之后的研究中，我们往往需要研究连续性，因此我们需要对有理数进行扩充。在这之前，我们先来证明确实有一些数无法用有理数表示。
 
@@ -149,7 +150,7 @@ $\sqrt{2}$不是有理数。
     
 \end{proof}
 
-\begin{lemma}[数列极限的保序性逆命题]
+\begin{lemma}[数列极限的保序性逆命题]\label{lemma:list-order}
     对于$\mylim{n}{x_n} = a,\mylim{n}{x_n} = b$, 若$\exists N \in \mathbb{N}^+$, $\forall n > N$, $x_n \le y_n$, 则$a \le b$。 
 \end{lemma}
 \begin{proof}
@@ -618,7 +619,7 @@ $p = 1$时，$a_n = 1 + \frac{1}{2} +\frac{1}{3} + \cdots + \frac{1}{n}$为调�
 
 \end{proof}
 
-\begin{theorem}[Bolzano-Weierstrass定理]
+\begin{theorem}[Bolzano-Weierstrass定理]\label{theorem:Bolzano-Weierstrass}
     有界数列必有收敛子列。
 \end{theorem}
 \begin{proof}
@@ -689,9 +690,32 @@ Cauchy收敛原理
     $\collect{x_n}$收敛的充分必要条件是$\collect{x_n}$是基本数列。
 \end{theorem}
 \begin{proof}
-必要性：
+{\bf 必要性}: 即$\collect{x_n}$收敛 $\Rightarrow$ $\collect{x_n}$是基本数列。
 
-充分性：
+假设$\collect{x_n}$收敛于A, 则$\forall \epsilon > 0$, $\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| x_n - A \right| < \frac{\epsilon}{2}$。
+
+则对于$\forall n, m > N$, $\left| x_n - x_m \right| < \left| x_n - A \right| + \left| x_m - A \right| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon $, 则$\collect{x_n}$为基本数列。
+
+{\bf 充分性}: 即$\collect{x_n}$是基本数列$\Rightarrow$ $\collect{x_n}$收敛。
+
+因为$\collect{x_n}$为基本数列, 即对于$\forall \epsilon > 0$, $\exists N \in \mathbb{N}^+$, $\forall m, n > N$, $\left| x_m - x_n \right| < \epsilon$。取$m = N + 1$, 则$\forall n > N$, $\left| x_{N+1} - x_n \right| < \epsilon$, 即$x_{N+1} -\epsilon < x_n < x_{N+1} + \epsilon $。则我们可以取$a = \min\left\{ x_1, x_2, \cdots, x_N, x_{N+1} - \epsilon \right\}, b = \max\left\{ x_1, x_2, \cdots, x_N, x_{N+1} + \epsilon \right\}$, 此时$\forall n \in \mathbb{N}^+$:
+\[ a \le x_n \le b\]
+即, $\collect{x_n}$数列有界。
+
+根据Bolzano-Weierstrass定理(定理~\ref{theorem:Bolzano-Weierstrass}), 则存在收敛子列$\collect{x_{n_k}}$, 假设该收敛子列$\collect{x_{n_k}}$收敛于A, 则$\forall \epsilon > 0$, $\exists K \in \mathbb{N}^+$, $\forall k > K$, $\left| x_{n_k} - A \right| < \frac{\epsilon}{2}$, 又由于$\collect{x_n}$为基本数列, 则$\forall \epsilon > 0$, $\exists N' \in \mathbb{N}^+$, $\forall m', n' > N'$, $\left| x_{N+1} - x_{n'} \right| < \frac{\epsilon}{2}$。
+
+取$N'' = \max\left\{N', n_K\right\}$, 因为$\collect{x_{n_{k'}}}$由无穷多项, 则必然存在$n_{k'} > N'' \ge n_K$, 即$k' > K$,。此时，因为$n_{k'} > N'' \ge N'$, 则$\forall n' > N'$, $\left| x_{n'} - x_{n_{k'}}\right| < \frac{\epsilon}{2}$, 又因为$k' > K$, 则$\left| x_{n_{k'}} - A\right| < \frac{\epsilon}{2}$, 因此$\forall n' > N'$, $\left| x_{n'} - A \right| < \left| x_{n'} - x_{n_{k'}} \right| + \left| x_{n_{k'}} - A \right| < \epsilon $, 即数列$\collect{x_n}$收敛。
+
+而陈老是这样证明充分性的：
+
+取$\epsilon = 1$, 因为$\collect{x_n}$是基本数列, 则$\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| x_n - x_{N+1} \right| < 1$, 因此$\left| x_n \right| < \left| x_n - x_{N+1} \right| + \left| x_{N+1} \right| < \left| x_{N+1} \right| + 1$。取$M = \max\left\{\left| x_1 \right|,\left| x_1 \right|,\cdots,\left| x_{N} \right|, \left| x_{N+1} \right| + 1\right\}
+$, 则:
+\[ \forall n \in \mathbb{N}^+, \left| x_n \right| \le M \]
+即$\collect{x_n}$有界。
+
+根据根据Bolzano-Weierstrass定理(定理~\ref{theorem:Bolzano-Weierstrass}), 则存在收敛子列$\collect{x_{n_k}}$, 假设该收敛子列$\collect{x_{n_k}}$收敛于A。
+
+根据$\collect{x_n}$是基本数列, 则$\forall \epsilon > 0$, $\exists N_1 \in \mathbb{N}^+$, $\forall n, m > N_1$, $\left| x_n - x_m \right| < \frac{\epsilon}{2}$, 现在固定$x_m$, 取$x_n$为子列$\collect{x_{n_k}}$。现在考虑数列$\collect{\left| x_{n_k}  - x_m\right|}$和数列$\collect{\frac{\epsilon}{2}}$, 取$K = N_1$, 则$\forall k > K$, 有$n_k > n_K \ge K = N_1$, 即$\forall k > K$, $\left| x_{n_k}  - x_m\right| < \frac{\epsilon}{2}$, 根据数列极限的保序性逆命题(推论~\ref{lemma:list-order}), $\left| A - x_m\right| \le \frac{\epsilon}{2} < \epsilon$。这对于$\forall m > N_1$都成立, 即数列$\collect{x_n}$极限存在且为A。
 \end{proof}
 
 \begin{proposition}
@@ -1016,4 +1040,54 @@ $\funclim{x}{+\infty}{f(x)} = A$充分必要条件: 对任意的满足$x_n\to +\
 $\funclim{x}{+\infty}{f(x)}$存在且有限的充分必要条件是: 对任意满足$x_n \to +\infty(n \to +\infty)$的数列$\collect{x_n}$, $\collect{f(x_n)}$收敛。
 
 % 陈老视频27
+\begin{proposition}
+    设:
+    \[f(x) = \frac{a_n x^n+a_{n-1}x^{n-1}+\cdots+a_k x^k}{b_m x^m+b_{m-1} x^{m-1}+\cdots+b_j x^j} (a_n, a_k \neq 0, b_m, b_j \neq 0)\]
+    考虑$\funclim{x}{\infty}{f(x)}$和$\funclim{x}{0}{f(x)}$。
+\end{proposition}
+\begin{proof}
+    $x\to \infty$的情况:
+
+    分三种情况讨论:
+    \begin{enumerate}
+        \item $n = m$:
+        \item $n > m$:
+        \item $n < m$:
+    \end{enumerate}
+
+    $x \to 0$的情况:
+
+    分三种情况讨论:
+    \begin{enumerate}
+        \item $k = j$:
+        \item $k > j$:
+        \item $k < j$:
+    \end{enumerate}
+\end{proof}
+
+\begin{proposition}
+    证明:
+    \[ \funclim{x}{\infty}{\left(1+\frac{1}{x}\right)^x} = e\]
+\end{proposition}
+\begin{proof}
+    提示: 夹逼法。
+    同时$\funclim{x}{\infty}{\left(1-\frac{1}{x}\right)^x} = \frac{1}{e}$
+\end{proof}
+
+函数极限的Cauchy收敛原理
+
+回忆以下数列的情况:
+$\mylim{n}{x_n}$收敛$\Longleftrightarrow$ $\forall \epsilon > 0, \exists N, \forall n, m > N, \left| x_n - x_m \right| < \epsilon$。
+
+在函数中, 我们做了拓广, 并不是所有的拓广都有Cauchy收敛原理。
+
+对于函数发散时是没有Cauchy收敛原理的。
+\begin{theorem}[函数极限的Cauchy收敛原理]
+    $\funclim{x}{+\infty}{f(x)}$存在并且有限(收敛)$\Longleftrightarrow$ $\forall \epsilon > 0, \exists X > 0, \forall x', x'' > X, \left| f(x') - f(x'') \right| < \epsilon$ 
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频28
 \end{document}
