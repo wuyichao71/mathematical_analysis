@@ -285,7 +285,7 @@ $\sqrt{2}$不是有理数。
     
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{lemma:inverse}
     若$x_n \neq 0$，则$\{ x_n \}$是无穷大量的充要条件是$\{ \frac{1}{x_n} \}$是无穷小量。    
 \end{lemma}
 \begin{proof}
@@ -362,7 +362,88 @@ $\sqrt{2}$不是有理数。
     
 \end{theorem}
 \begin{proof}
+因为陈老的证明简介明了, 我们先写陈老的证明:
 
+当a = 0时: 
+因为$\mylim{n}{y_n} = +\infty$, 则$\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $y_n > 0$。
+
+又因为$\mylim{n}{\frac{x_n - x_{n-1}}{y_n - y_{n-1}}} = a$, 则$\forall \epsilon > 0$, $\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $\left| \frac{x_n - x_{n-1}}{y_n - y_{n-1}} \right| < \frac{\epsilon}{2}$。
+
+取$N_3 = \max\{N_1, N_2\}$, $\forall n > N_3$:
+\[  \left| x_n - x_{n-1}\right| < \frac{\epsilon}{2}\left| y_n - y_{n-1} \right| \]
+又因为$\collect{y_n}$严格单调增加, 则上式可以化为:
+\[  \left| x_n - x_{n-1}\right| < \frac{\epsilon}{2} \left( y_n - y_{n-1} \right) \]
+根据三角不等式:
+\[ \left| x_n - x_{N_3} \right| \le \left| x_n - x_{n-1}\right| + \left| x_{n-1} - x_{n-2} \right| + \cdots + \left| x_{N_3+1} - x_{N_3}\right|\]
+根据上两式, 我们可以得出:
+\[ \left| x_n - x_{N_3} \right| < \frac{\epsilon}{2} \left( y_n - y_{N_3} \right) \]
+两边同除以$y_n$得:
+\[ \left| \frac{x_n}{y_n} - \frac{x_{N_3}}{y_n} \right| < \frac{\epsilon}{2}(1 - \frac{y_{N_3}}{y_n}) < \frac{\epsilon}{2}\]
+则根据三角不等式:
+\[ \left| \frac{x_n}{y_n} \right| < \frac{\epsilon}{2} + \left|\frac{x_{N_3}}{y_n}\right|\]
+因为$\mylim{n}{y_n} = +\infty$, $\exists N_4 \in \mathbb{N}^+$, $\forall n > N_4$, $y_n > \frac{2\left| x_{N_3}\right|}{\epsilon}$
+
+则可以取$N = \max\{N_3, N_4\}$, $\forall n > N_4$:
+\[ \left| \frac{x_n}{y_n} \right| < \epsilon \]
+则对于$a = 0$时:
+\[ \mylim{n}{\frac{x_n}{y_n}} = 0\]
+
+当$a \neq 0 $时:
+
+取$z_n = x_n - ay_n$, 则
+\[ \frac{z_n-z_{n-1}}{y_n-y_{n-1}} = \frac{x_n-x_{n-1}}{y_n-y_{n-1}} - a \]
+因此:
+\[ \mylim{n}{\frac{z_n-z_{n-1}}{y_n-y_{n-1}}} = \mylim{n}{\left(\frac{x_n-x_{n-1}}{y_n-y_{n-1}} - a\right)} = 0\]
+根据以上证明的$a = 0$的情况可知:
+\[\mylim{n}{\frac{z_n}{y_n}} = 0\]
+又因为:
+\[ \frac{x_n}{y_n} = \frac{z_n}{y_n} + a\]
+所以当$a \neq 0$时:
+\[ \mylim{n}{\frac{x_n}{y_n}} = a\]
+
+当$a = +\infty$时:
+
+因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n-y_{n-1}}} = +\infty$, 则$\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $\frac{x_n-x_{n-1}}{y_n-y_{n-1}} > 1$, 即:
+\[ x_n - x_{n-1} > y_n - y_{n-1} \]
+因为$\collect{y_n}$严格单调增加, 则
+\[ x_n - x_{n-1} > y_n - y_{n-1}> 0 \]
+即$\collect{x_n}${\bf 严格单调增加}。
+
+同时, 同其他情况的证明, 我们有:
+\[ x_n - x_N > y_n - y_N\]
+
+又因为$\mylim{n}{y_n} = +\infty$, 则$\forall G > \max\{0, y_N - x_N\}$, $\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $y_n > 2G$。
+
+则
+\[ x_n > y_n - y_N + x_N > G \]
+即$\mylim{n}{x_n} = +\infty$, $\collect{x_n}$趋向于$+\infty$。
+
+此时考虑$\frac{y_n - y_{n-1}}{x_n - x_{n-1}}$, 因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n - y_{n-1}}} = +\infty$, 则$\mylim{n}{\frac{y_n - y_{n-1}}{x_n-x_{n-1}}} = 0$(引理~\ref{lemma:inverse})。根据$a = 0$的情况得：$\mylim{n}{\frac{y_n}{x_n}} = 0$, 因此$\mylim{n}{\frac{x_n}{y_n}} = \infty$, 即$\forall G > 0$, $\exists N_3 \in \mathbb{N}^+$, $\forall n > N_3$, $\left| \frac{x_n}{y_n} \right| > G$。
+
+又因为$\mylim{n}{y_n} = +\infty$, 则$\exists N_4 \in \mathbb{N}^+$, $\forall n > N_4$, $y_n > 0$, 同理$\exists N_5 \in \mathbb{N}^+$, $\forall n > N_5$, $x_n > 0$。
+
+则当$n > \max\{ N_4, N_5 \}$时, $\frac{x_n}{y_n} > 0$。
+
+即$\forall G > 0$, $\exists N = \max\{ N_3, N_4, N_5 \} \in \mathbb{N}^+$, $\forall n > N$, $\frac{x_n}{y_n} > G$, 即$\mylim{n}{\frac{x_n}{y_n}} = +\infty$。$a = +\infty$时也成立。
+同理, 也能证明$a = -\infty$的情况。
+
+
+现在用定义证明:
+
+当a为有限数时:
+
+因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n-y_{n-1}}} = a$, 则$\forall \epsilon > 0$, $\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $\left| \frac{x_n - x_{n-1}}{y_n - y_{n-1}} - a\right| < \frac{\epsilon}{2}$。
+
+又因为$\mylim{n}{y_n} = +\infty$, 则$\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $y_n > 0$。
+
+则$\forall n > N_3 = \max\{N_1, N_2\}$, 结合三角不等式, 我们有:
+\[ \frac{x_n}{y_n}-a < \frac{\epsilon}{2}\left(1 - \frac{y_{N_3}}{y_n}\right) + \frac{x_{N_3}-ay_{N_3}}{y_n} < \frac{\epsilon}{2} + \frac{x_{N_3}-ay_{N_3}}{y_n}\]
+
+因为$\mylim{n}{y_n} = +\infty$, 所以$\mylim{n}{\frac{x_{N_3}-ay_{N_3}}{y_n}} = 0$, 即$\exists N_4 \in \mathbb{N}^+$, $\forall n > N_4$, $\left| \frac{x_{N_3}-ay_{N_3}}{y_n} \right| < \frac{\epsilon}{2}$。
+
+即$\forall \epsilon > 0$, $\exists N_5 = \max\{N_3, N_4\}$, $\forall n > N_5$, $\frac{x_n}{y_n} - a < \epsilon$。
+
+同理可以证明:$\forall n > N_5$, $\frac{x_n}{y_n} - a > -\epsilon$。因此$\mylim{n}{\frac{x_n}{y_n}} = a$。
 \end{proof}
 \begin{proposition}
     用Stolz定理证明, 若$\mylim{n}{a_n} = a$，则
@@ -438,7 +519,7 @@ $\sqrt{2}$不是有理数。
 
 兔子
 \begin{proposition}[Fibonacci数列]
-    $\collect{a——n}$为Fibonacci数列, 令$b_n = \frac{a_{n+1}}{a_n}$，讨论$\collect{b_n}$数列。
+    $\collect{a_n}$为Fibonacci数列, 令$b_n = \frac{a_{n+1}}{a_n}$，讨论$\collect{b_n}$数列。
     
 \end{proposition}
 \begin{proof}
@@ -916,7 +997,7 @@ $O(x_0, \rho) \backslash \collect{x_0}$称为去心邻域。
 \end{proof}
 
 \begin{lemma}
-    $\funclim{x}{x_0}{f(x)}$存在并且有限(收敛)的充分必要条件是: 对任意满足$x_n \neq x_0$, $\mylim{n}{x_n}$的$\collect{x_n}$, $\collect{f(x_n)}$收敛。
+    $\funclim{x}{x_0}{f(x)}$存在并且有限(收敛)的充分必要条件是: 对任意满足$x_n \neq x_0$, $\mylim{n}{x_n} = x_0$的$\collect{x_n}$, $\collect{f(x_n)}$收敛。
 \end{lemma}
 \begin{proof}
     
@@ -933,7 +1014,7 @@ $O(x_0, \rho) \backslash \collect{x_0}$称为去心邻域。
 
 \begin{proposition}
     \begin{equation*}
-        \mathbf{sign} (x) = \left\{ 
+        \mathrm{sign} (x) = \left\{ 
             \begin{aligned}
                 -1 \quad x < 0 \\
                 0 \quad x = 0 \\
@@ -1090,4 +1171,219 @@ $\mylim{n}{x_n}$收敛$\Longleftrightarrow$ $\forall \epsilon > 0, \exists N, \f
 \end{proof}
 
 % 陈老视频28
+\section{连续函数}
+分析上讲, $f(x)$在$x_0$点连续: 当$x \to x_0$时, $f(x) \to f(x_0)$。
+\begin{definition}
+    设$f(x)$在$x_0$的某个邻域中有定义, 且成立
+    \[ \funclim{x}{x_0}{f(x)} = f(x_0) \]
+    则称$f(x)$在$x_0$点连续，$x_0$是$f(x)$的连续点。
+
+    符号表述:
+    $\forall \epsilon > 0$, $\exists \delta > 0$, $\forall x(\left| x - x_0 \right| < \delta)$, 成立$\left| f(x) - f(x_0) \right| < \epsilon$。
+\end{definition}
+
+开区间情况:
+\begin{definition}
+    若$f(x)$在$(a, b)$的每一点上都连续, 则称$f(x)$在开区间$(a, b)$上连续。
+\end{definition}
+\begin{proposition}
+    证明:
+    \[ f(x) = \frac{1}{x}\]
+    在$(0, 1)$连续。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+闭区间情况:
+\begin{definition}
+    若$\funclim{x}{x_0^-}{f(x)} = f(x_0)$, 则称$f(x)$在$x_0$点左连续。
+
+    若$\funclim{x}{x_0^+}{f(x)} = f(x_0)$, 则称$f(x)$在$x_0$点右连续。
+
+    符号表示:
+
+    {\bf 左连续}: $\forall \epsilon > 0$, $\exists \delta > 0$, $\forall x(-\delta < x-x_0 \le 0)$: $\left| f(x) - f(x_0)\right| < \epsilon$。
+
+    {\bf 右连续}: $\forall \epsilon > 0$, $\exists \delta > 0$, $\forall x(0 \le x-x_0 < \delta)$: $\left| f(x) - f(x_0)\right| < \epsilon$。   
+\end{definition}
+
+\begin{definition}
+    $f(x)$在$(a, b)$上连续, 且在a点右连续, 在b点左连续, 则称$f(x)$在闭区间$[a, b]$上连续。
+\end{definition}
+\begin{proposition}
+    证明:
+    \[ f(x) = \sqrt{x(1-x)}\]
+    在$(0, 1)$闭区间上连续。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+注:关于函数$f(x)$在一个区间里面连续, 整合以上的定义。
+\begin{definition}
+    设$f(x)$定义在某区间X上, 若$\forall x_0 \in X$, 及$\forall \epsilon > 0$, $\exists \delta > 0$, $\forall x \in X(\left|x - x_0 \right|<\delta)$, $\left| f(x) - f(x_0) \right| < \epsilon$。则称$f(x)$在区间X上连续。
+\end{definition}
+\begin{proposition}
+    证明:
+    \[ f(x) = \sin(x)\]
+    在$(-\infty, +\infty)$上连续。
+\end{proposition}
+\begin{proof}
+    同理$f(x) = \cos(x)$在$(-\infty, +\infty)$上连续。
+\end{proof}
+
+% 陈老视频29
+\begin{proposition}
+    证明:
+    \[ f(x) = a^x (a > 0, a \neq 1)\]
+    在$(-\infty, +\infty)$上连续。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\section{连续函数的四则运算}
+\begin{theorem}
+    有$\funclim{x}{x_0}{f(x)} = f(x_0)$, $\funclim{x}{x_0}{g(x)} = g(x_0)$, 则:
+    \begin{enumerate}
+        \item $\funclim{x}{x_0}{\alpha f(x) + \beta g(x)} = \alpha f(x_0) + \beta g(x_0)$
+        \item $\funclim{x}{x_0}{f(x)g(x)} = f(x_0)g(x_0)$
+        \item $\funclim{x}{x_0}{\frac{f(x)}{g(x)}} = \frac{f(x_0)}{g(x_0)}(g(x_0) \neq 0)$
+    \end{enumerate}
+\end{theorem}
+
+\begin{proposition}
+    求:
+    \[ \funclim{x}{2}{\frac{x^2+\sin x}{3^x+2x}}\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \[ P_n(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0\]
+    \[ Q(x) = \frac{a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0}{b_m x^m + b_{m-1} x^{m-1} + \cdots + b_0}\]
+\end{proposition}
+\begin{proof}
+    $f(x) = c, g(x) = x$
+\end{proof}
+
+\begin{proposition}
+    已知$\sin(x)$, $\cos(x)$在$(-\infty, +\infty)$上连续。
+
+    $\tan(x) = \frac{\sin(x)}{\cos(x)}$, 在$\left\{ x\left| x \neq k\pi + \frac{\pi}{2}, k \in \mathbb{Z}\right.\right\}$上连续。
+
+    $\cot(x) = \frac{\cos(x)}{\sin(x)}$, 在$\left\{ x\left| x \neq k\pi, k \in \mathbb{Z}\right.\right\}$上连续。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\section{不连续点的类型}
+连续的定义:$\funclim{x}{x_0}{f(x)} = f(x_0)$
+
+该定义包含了如下几层意思:
+\begin{enumerate}
+    \item $f(x)$在$x_0$点有定义。
+    \item $\funclim{x}{x_0^+}{f(x)} = f(x_0)$ 
+    \item $\funclim{x}{x_0^-}{f(x)} = f(x_0)$
+\end{enumerate}
+\subsection{第一类不连续点}
+$\funclim{x}{x_0^+}{f(x)} \neq \funclim{x}{x_0^-}{f(x)}$
+\begin{proposition}
+    \begin{equation*}
+        \mathrm{sign} (x) = \left\{ 
+            \begin{aligned}
+                -1 \quad x < 0 \\
+                0 \quad x = 0 \\
+                1 \quad x > 0 
+            \end{aligned}
+        \right.
+    \end{equation*}
+    在$x=0$不连续。
+\end{proposition}
+称第一类不连续点为跳跃点。
+\subsection{第二类不连续点}
+$\funclim{x}{x_0^+}{f(x)}$和$\funclim{x}{x_0^-}{f(x)}$至少有一个不存在。
+\begin{proposition}
+    $f(x) = \sin(\frac{1}{x})$,$x=0$是它的第二类不连续点。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    $f(x) = e^{\frac{1}{x}}$, $x = 0$是它的第二类不连续点。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\subsection{第三类不连续点}
+\begin{equation*}
+    \funclim{x}{x_0^+}{f(x)} = \funclim{x}{x_0^-}{f(x)}\left\{
+    \begin{aligned}
+        & \neq f(x_0) \\
+        & f(x)\text{在}x_0\text{点没定义。} 
+    \end{aligned}
+    \right.
+\end{equation*}
+
+\begin{proposition}
+    $f(x) = x\sin(\frac{1}{x})$, 在$x=0$极限存在, 但是没有定义。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+第三类不连续点称为可去不连续点。
+\begin{proposition}
+    \begin{equation*}
+        \mathrm{D}(x) = \left\{
+            \begin{aligned}
+                &1 \quad x\text{是有理数} \\
+                &0 \quad x\text{是无理数}
+            \end{aligned}
+        \right.
+    \end{equation*}
+    Dirichlet函数属于第二类不连续点。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频30
+\begin{proposition}
+    黎曼(Riemann)函数:
+    \begin{equation*}
+        \mathrm{R}(x) = \left\{
+            \begin{aligned}
+                &0 \quad x\text{是无理数} \\
+                &\frac{1}{p} \quad x=\frac{q}{p}, p \in \mathbb{N}^+, q \in \mathbb{Z}\backslash\{0\}, p,q\text{互质} \\
+                &1 \quad x = 0
+            \end{aligned}
+            \right.
+    \end{equation*}
+    $\forall x_0 \in (-\infty, +\infty)$, $\funclim{x}{x_0}{\mathrm{R}(x)} = 0$。即$\mathrm{R}(x)$在一切无理点连续, 在一切有理点不连续。
+\end{proposition}
+为什么定义0的时候是1? 因为1可以写成$\frac{0}{1}$, 并且Riemann函数有周期性, 为了保持周期性, 因此定义0的时候是1。
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    区间$(a, b)$上的单调函数的不连续点必为第一类。    
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\section{反函数}
+映射: $f: X \to Y$ 为单射, 则$\exists f^{-1}: R_f \to X$。
+
+存在性、连续性、可导性(可导性暂时不讲)
+
+严格单调增加:$\forall x_1 < x_2 \Rightarrow f(x_1) < f(x_2)(y_1 < y_2)$, 即$x_1 \neq x_2, y_1 \neq y_2$。
+\begin{theorem}[反函数存在定理]\label{theorem:inverse-func-exists}
+    若$f(x)$在$D_f$上严格单调增加(减少), 则存在f的反函数$xf^{-1}(y)$, $y \in R_f $,且$f^{-1}$也严格单调增加(减少)。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
 \end{document}
