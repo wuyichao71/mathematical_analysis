@@ -60,15 +60,30 @@ $\mathbb{Z}^+ = \{ n | n \in \mathbb{Z}, n > 0 \}$
 $\sqrt{2}$不是有理数。
 \end{proposition}
 \begin{proof}
-我们用反证法。假设$\sqrt{2}$为有理数，那么存在$q \in \mathbb{Z}, p \in \mathbb{Z}^+$，使得$\sqrt{2} = \frac{q}{p}$。
+我们用反证法。假设$\sqrt{2}$为有理数, 那么存在$q \in \mathbb{Z}, p \in \mathbb{Z}^+$, $p, q$互质, 使得$\sqrt{2} = \frac{q}{p}$, 即$q^2 = 2p^2$。因为$q^2$可以被2整除, 即$q^2$为偶数, 则$q$为偶数。那么$q$可以表示为$q = 2m, m \in \mathbb{Z}$。代入上式中, 得$p^2 = 2m^2$, 即$p$也为偶数。这与互质矛盾, 因此假设不成立, $\sqrt{2}$不是有理数。
 \end{proof}
-
-而且有的函数在实数域和有理数域上的表现完全不一样，比如狄利克雷(dirichlet)函数。
+\begin{proposition}
+    若n不是完全平方数, 则$\sqrt{n}$不是有理数。
+\end{proposition}
+\begin{proof}
+\end{proof}
+除了有些数无法用有理数表示外，有的函数在实数域和有理数域上的表现完全不一样,比如狄利克雷(dirichlet)函数:
+\begin{equation*}
+    D(x) = \left\{
+        \begin{aligned}
+            1 &\quad x\text{是有理数} \\
+            0 &\quad x\text{是无理数}
+        \end{aligned}
+    \right.
+\end{equation*}
 
 % 陈老视频8
 \begin{theorem}[确界存在定理---实数系连续性定理]
     非空有上界的数集必有上确界，非空有下界的数集必有下确界。
 \end{theorem}
+\begin{proof}
+    
+\end{proof}
 
 % 陈老视频9
 \section{数列极限}
@@ -77,18 +92,34 @@ $\sqrt{2}$不是有理数。
     \[ \lim_{n \to \infty} a_n = a \text{\quad 或者 \quad}  a_n \to a(n \to +\infty)\]
     若不存在实数a, 满足上述性质, 则称数列$\{ a_n \}${\bf 发散}(divergent)。
 \end{definition}
+在这里定义邻域的概念:$a$的$\epsilon$邻域$O(a, \epsilon)$为:$(a-\epsilon, a+\epsilon)$。
+
 一个数列收敛与否，收敛的话，收敛于哪个数，这与数列的前有限项无关。
+
+$\epsilon$可以先取一个固定值。
+
+$N$可以先取一个大值。
 
 \begin{definition}[无穷小量的定义]
     以零为极限的变量称为{\bf 无穷小量}。
 \end{definition}
 
 \begin{proposition}
-    \[ \mylim{n}{q^n}= 1(q < 1) \]
+    \[ \mylim{n}{\frac{n}{n+3}}= 1 \]
 \end{proposition}
-    \begin{proof}
-        
-    \end{proof}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \[ \mylim{n}{q^n}= 0(0 < \left|q\right| < 1) \]
+\end{proposition}
+\begin{proof}
+    因为$0< \left|q\right| < 1$, 则$\left|q^n\right| = \left|q\right|^n < \epsilon$, 则:
+    \[ n > \frac{\lg(\epsilon)}{\lg(\left|q\right|)} \]
+    因为$N \in \mathbb{N}^+$, 所以取$N = \max\left\{1, \left[ \frac{\lg(\epsilon)}{\lg(\left|q\right|)} \right]\right\}$, 当$n > N$时, $\left| q^n - 0 \right| < \epsilon$, 即:
+    \[ \mylim{n}{q^n} = 0(0 < \left|q\right| < 1) \]
+\end{proof}
 
 % 陈老视频10
 \begin{proposition}
@@ -1381,8 +1412,364 @@ $\funclim{x}{x_0^+}{f(x)}$和$\funclim{x}{x_0^-}{f(x)}$至少有一个不存在�
 
 严格单调增加:$\forall x_1 < x_2 \Rightarrow f(x_1) < f(x_2)(y_1 < y_2)$, 即$x_1 \neq x_2, y_1 \neq y_2$。
 \begin{theorem}[反函数存在定理]\label{theorem:inverse-func-exists}
-    若$f(x)$在$D_f$上严格单调增加(减少), 则存在f的反函数$xf^{-1}(y)$, $y \in R_f $,且$f^{-1}$也严格单调增加(减少)。
+    若$f(x)$在$D_f$上严格单调增加(减少), 则存在f的反函数$f^{-1}(y)$, $y \in R_f $,且$f^{-1}$也严格单调增加(减少)。
 \end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频31
+\begin{theorem}[反函数连续性定理]
+    假设$y = f(x)$在$[a, b]$上连续且严格单调增加, 设$f(a)=\alpha$, $f(b)=\beta$, 则反函数在$[\alpha, \beta]$上连续。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    $y = \sin(x)$, $y = \arcsin(x)$
+
+    $y = \cos(x)$, $y = \arccos(x)$
+
+    $y = \tan(x)$, $y = \arctan(x)$
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    $y = a^x(a > 0, a \neq 1)$, $y = \log_a(x)$
+
+    $y = x^n, n \in \mathbb{Z}$
+
+    $y = x^\alpha = e^{\ln x^\alpha} = e^{\alpha \ln x}$
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+讨论一个问题, $\funclim{u}{u_0}{f(x)} = A$, $\funclim{x}{x_0}{g(x)} = u_0$
+
+那么$\funclim{x}{x_0}{f\circ g(x)}$是否等于A?
+
+反例:
+\begin{equation*}
+    f(u) = \left\{
+        \begin{aligned}
+            0 & \quad u = 0 \\
+            1 & \quad u \neq 0 \\
+        \end{aligned}
+    \right.
+\end{equation*}
+\begin{equation*}
+    g(x) = x\sin\left(\frac{1}{x}\right)
+\end{equation*}
+则复合起来为:
+\begin{equation*}
+    f\circ g(x) \left\{
+        \begin{aligned}
+           0 & \quad x = \frac{1}{n\pi} \\
+           1 & \quad x \neq \frac{1}{n\pi} 
+        \end{aligned}
+    \right.
+\end{equation*}
+\begin{theorem}
+    $u = g(x)$在$x_0$连续, $g(x_0) = u_0$, $f(u)$在$u_0$连续。则$f\circ g$在$x_0$连续。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+
+\begin{proposition}
+    \[ \mathrm{sh}(x) = \frac{e^x-e^{-x}}{2}, \mathrm{ch}(x) = \frac{e^x+e^{-x}}{2} \]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频32
+\begin{proposition}
+    对任意实数$\alpha$, $f(x) = x^\alpha$在$(0, +\infty)$上连续。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}
+    一切初等函数在它的定义域上连续。
+\end{theorem}
+
+\begin{proposition}
+    \[ \funclim{x}{0}{\left(\cos x\right)^{\frac{1}{x^2}}} \]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    放射性物质的质量变化:
+
+    设$t = 0$时,物质的总量为$M = M(0)$, 放射的比例系数为k, 求时刻t的时候, $M(t)$为多少?
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频33
+\section{无穷小量与无穷大量的阶}
+无穷小量的阶:
+
+在数列极限的时候, 我们提及:$\mylim{n}{x_n} = 0$, $\collect{x_n}$---无穷小量。
+
+对于函数极限:
+$\funclim{x}{x_0}{f(x)} = 0$, 则称当$x \to x_0$时, $f(x)$是无穷小量。
+
+当$x \to x_0$, $u(x)$, $v(x)$都是无穷小量。
+
+\begin{definition}
+    $\funclim{x}{x_0}{\frac{u(x)}{v(x)}} = 0$, 则称当$x \to x_0$时, $u(x)$是$v(x)$的高阶无穷小量, 记为$u(x) = o(v(x)), (x \to x_0)$。    
+\end{definition}
+
+\begin{proposition}
+    \[ \funclim{x}{x_0}{\frac{1-\cos(x)}{x}}\] 
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \[ \funclim{x}{0}{\frac{\tan(x) - \sin(x)}{x^2}} \]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{definition}
+    若存在$A > 0$, 当$x$在$x_0$的某一去心邻域中$\collect{x|  0 < \left| x - x_0\right| < \rho}$,成立 $\left| \frac{u(x)}{v(x)} \right| \le A$, 则称当$x \to x_0$时, $\frac{u(x)}{v(x)}$是有界量, 记为$u(x) = O(v(x)), (x \to x_0)$。    
+\end{definition}
+
+\begin{proposition}
+    \[u(x) = x\sin\left(\frac{1}{x}\right), u(x) = O(v(x))\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{definition}
+    若$\exists 0 < a < A < +\infty$, 在$\collect{x|  0 < \left| x - x_0\right| < \rho}$中, $0 < a \le \left| \frac{u(x)}{v(x)} \right| \le A < +\infty$, 则称$u(x)$, $v(x)$在$x \to x_0$时是同阶无穷小量。
+\end{definition}
+
+\begin{proposition}
+    \[ u(x) = x(1+\sin\left( \frac{1}{x} \right)), v(x) = x, (x \to 0) \]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \[ u(x) = x(2+\sin\left( \frac{1}{x} \right)), v(x) = x, (x \to 0) \]
+\end{proposition}
+
+\begin{definition}
+    若$\funclim{x}{x_0}{\frac{u(x)}{v(x)}} = 1$, 则称当$x \to x_0$时, $u(x)$与$v(x)$是等价无穷小量, 记为$u(x)\sim v(x), (x \to x_0)$。
+\end{definition}
+\begin{proposition}
+    \[ \funclim{x}{0}{\frac{\sin(x)}{x}} = 1, \sin(x) \sim x(x \to x_0)\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    \[ \funclim{x}{0}{\frac{1- \cos(x)}{\frac{1}{2}x^2}} \]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    \[ \funclim{x}{0}{\frac{\tan(x) - \sin(x)}{\frac{1}{2}x^3}} \]    
+\end{proposition}
+
+注:(1) 取$v(x) = (x - x_0)^k$可知$u(x)$是几阶的无穷小量。
+
+(2)$x \to 0^+$, $\frac{-1}{\ln (x)}$是正无穷小量。对任意的$\alpha > 0$, $\frac{-1}{\ln (x)}$是$x^\alpha$的低阶无穷小量, 即:
+\[ \funclim{x}{0^+}{\frac{\frac{-1}{\ln (x)}}{x^\alpha}} = +\infty\]
+这时候, 记$\frac{-1}{\ln (x)} = o(1), (x \to 0^+)$
+
+又比如$u(x) = \sin\left( \frac{1}{x}\right)(x \to 0)$, 不是无穷小量但是是有界量, 则记为$u(x) = O(1), (x \to 0)$。
+
+无穷大量的阶: 
+
+$\funclim{x}{x_0}{f(x)} = \infty (+\infty, -\infty)$, 则称当$x \to x_0$时, $f(x)$是(正, 负)无穷大量。
+
+\begin{definition}
+    假设$u(x)$, $v(x)$当$x \to x_0$时都是无穷大量, 若$\funclim{x}{x_0}{\frac{u(x)}{v(x)}} = \infty$, 这说明当$x \to x_0$时, $u(x)$是$v(x)$的高阶无穷大量。
+\end{definition}
+
+% 陈老视频34
+$n^n >> n! >> a^n(a > 1) >> n^\alpha(\alpha > 0) >> \ln^\beta(n)(\beta > 0)$
+
+\begin{proposition}
+    设$a > 1$, k是正整数, 求: 
+    \[ \funclim{x}{+\infty}{\frac{a^x}{x^k}} \]
+    \[ \funclim{x}{+\infty}{\frac{\ln^k(x)}{x}}\]
+\end{proposition}
+\begin{definition}
+    若存在$A > 0$, 在$\collect{x | 0 < \left| x - x_0\right| < \rho}$, 成立:
+    \[ \left| \frac{u(x)}{v(x)} \right| \le A \]
+    则称当$x \to x_0$时, $\frac{u(x)}{v(x)}$是有界量, 记为$u(x) = O(v(x)), (x \to x_0)$
+\end{definition}
+
+\begin{definition}
+    若存在$0 < a < A < +\infty$, 在$\collect{x | 0 < \left| x - x_0\right| < \rho}$, 成立:
+    \[ 0 < a \le \left| \frac{u(x)}{v(x)} \right| \le A < +\infty \]
+    则称当$x \to x_0$时, $u(x)$, $v(x)$是同阶无穷大量。
+\end{definition}
+若$\funclim{x}{x_0}{\frac{u(x){v(x)}}} = c \neq 0$, 则$u(x)$, $v(x)$一定是同阶无穷大量。
+\begin{definition}
+    若$\funclim{x}{x_0}{\frac{u(x)}{v(x)}} = 1$, 则称$u(x)$与$v(x)$是等价无穷大量, 记为$u(x) \sim v(x), (x \to x_0)$。
+\end{definition}
+
+\begin{proposition}
+    \[ u(x) = x^3\sin \left( \frac{1}{x} \right), v(x) = x^2\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    \[ \funclim{x}{\frac{\pi}{2}^-}{\left( \frac{\pi}{2} - x \right)\tan(x)}\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+当$x \to 0^+$, $\frac{-1}{\ln(x)}$关于$x^\alpha$都是低阶无穷小量。
+\begin{proposition}
+    $x \to 0^+$, k为任意的正整数,$\left( \frac{-1}{\ln(x)}\right)^k$关于x是低阶无穷小量。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    当$x \to 0^+$, $e^{-\frac{1}{x}}$关于$x^k$是高阶无穷小量。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+等价量:
+
+$\sin(x) \sim x$
+\begin{proposition}
+    \[ \ln(1+x) \sim x, (x \to 0) \] 
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    \[ e^x - 1 \sim x, (x \to 0)\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    \[ \left( 1 + x\right)^\alpha \sim \alpha x, (x \to 0)\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    \[ u(x) = \sqrt{x + \sqrt{x}}\]
+    讨论$x \to +\infty$和$x \to 0^+$时的阶数。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{proposition}
+    \[ v(x) = 2x^3 + 3x^5\]
+    讨论$x \to \infty$和$x \to 0$时的阶数。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频35
+\begin{theorem}
+    $u(x)$, $v(x)$, $w(x)$在$x_0$的某个去心邻域上有定义, 且
+    \[ \funclim{x}{x_0}{\frac{v(x)}{w(x)}} = 1, v(x) \sim w(x), (x \to x_0)\]
+    则
+    \begin{enumerate}
+        \item $\funclim{x}{x_0}{u(x)w(x)} = A \Longleftrightarrow \funclim{x}{x_0}{u(x)v(x)} = A$
+        \item $\funclim{x}{x_0}{\frac{u(x)}{w(x)}} = A \Longleftrightarrow \funclim{x}{x_0}{\frac{u(x)}{v(x)}} = A$
+    \end{enumerate}
+\end{theorem}
+
+\begin{proposition}
+    计算:
+    \[ \funclim{x}{0}{\frac{\ln(1+x^2)}{\left(e^{2x}-1\right)\tan(x)}}\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    计算:
+    \[ \funclim{x}{0}{\frac{\sqrt{1+x}-e^{\frac{x}{3}}}{\ln(1+2x)}}\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    计算:
+    \[ \funclim{x}{\infty}{x\left(\sqrt[3]{x^3+x}+\sqrt[3]{x^3-x}\right)}\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    计算:
+    \[ \funclim{x}{0}{\frac{\sqrt{1+x}-1-\frac{x}{2}}{x^2}} \]
+\end{proposition}
+
+% 陈老视频36
+\section{闭区间上的连续函数}
+\begin{theorem}[有界性定理]
+    $f(x)$在闭区间$[a, b]$上连续, 则$f(x)$在闭区$[a, b]$上有界。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}[最值定理]
+    $f(x)$在$[a, b]$上连续, 则$f(x)$必能在$[a, b]$上取到最大值和最小值, 即$\exists \xi, \eta \in [a, b]$, 使得$f(\xi) \le f(x) \le f(\eta), \forall x \in [a, b]$。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}[零点存在定理]
+    $f(x)$在$[a, b]$上连续, 如果$f(a)f(b) < 0$, 则$\exists \xi \in [a, b]$, 使得$f(\xi) = 0$。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \[ p(x) = 2x^3-3x^2-3x+2 \]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    $f(x)$在$[a, b]$上连续, $f([a, b]) \subset [a, b]$, 则$\exists \xi \in [a, b]$, 使得$f(\xi) = \xi$($\xi$称为$f$的不动点)。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    $f(x)$在$(a, b)$上连续, $f((a, b)) \subset (a, b)$, 则是否$f$也有不动点?
+\end{proposition}
 \begin{proof}
     
 \end{proof}
