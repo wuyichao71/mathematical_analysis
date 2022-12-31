@@ -1773,4 +1773,57 @@ $\sin(x) \sim x$
 \begin{proof}
     
 \end{proof}
+
+% 陈老视频37
+\begin{theorem}[中间值定理]
+    $f(x)$在闭区间$[a, b]$上连续, 则它一定能取到最大值M与最小值m之间的任何一个值。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\subsection{一致连续概念}
+\begin{definition}
+    X是某一区间, $f(x)$在X上连续, 是指$f(x)$在X上的每一点连续(在端点指右或者左连续)。
+
+    分析表述: $\forall x_0 \in X$, $\forall \epsilon > 0$, $\exists \delta > 0$, $\forall x \in X(\left| x - x_0 \right| < \delta)$, $\left| f(x) - f(x_0) \right| < \epsilon$
+\end{definition}
+$\delta = \delta(\epsilon, x_0)$, 能否找到对一切$x_0$适用的$\delta > 0$?
+
+若能找到这样的$\delta > 0$, 则有:
+
+$\forall \epsilon > 0$, $\exists \delta = \delta(\epsilon) > 0$, $\forall x', x'' \in X(\left| x' - x'' \right| < \delta)$: $\left| f(x') - f(x'') \right| < \epsilon$。
+
+问题: 这样的$\delta(\epsilon) > 0$是否一定能找到?不一定!
+
+存在$\delta(\epsilon) > 0 \Longleftrightarrow \inf_{x_0 \in X}\delta^*(\epsilon, x_0) > 0$ (令所有适用的$\delta(\epsilon, x_0)$中的最大者(或上确界)为$\delta^*(\epsilon, x_0)$)
+
+\begin{definition}[一致连续]
+    $f(x)$在区间X上有定义, 假如$\forall \epsilon > 0$,$\exists \delta > 0$, $\forall x', x'' \in X(\left| x' - x'' \right| < \delta)$: $\left| f(x') - f(x'') \right| < \epsilon$, 则称$f(x)$在区间X上一致连续。
+\end{definition}
+$f(x)$在X上一致连续 $\Rightarrow$ $f(x)$在区间X上连续
+
+\begin{proposition}
+    证明:
+    \[ y = \sin(x) \]
+    在$(-\infty, +\infty)$上一致连续。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \[ f(x) = \frac{1}{x} \]
+    在区间$(0, 1)$上不是一致连续。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}
+    假设$f(x)$在区间X上有定义, 则$f(x)$在X上一致连续的充分必要条件是: 对任意点列$x'_n, x''_n \in X$, 只要$\mylim{n}{\left( x'_n - x''_n \right)} = 0$, 则有$\mylim{n}{\left(f(x'_n) - f(x''_n) \right)} = 0$
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
 \end{document}

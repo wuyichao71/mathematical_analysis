@@ -17,3 +17,4 @@
 \contentsline {section}{\numberline {3.7}反函数}{28}{section.3.7}%
 \contentsline {section}{\numberline {3.8}无穷小量与无穷大量的阶}{29}{section.3.8}%
 \contentsline {section}{\numberline {3.9}闭区间上的连续函数}{33}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}一致连续概念}{34}{subsection.3.9.1}%
