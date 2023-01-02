@@ -21,842 +21,8 @@
 
 \mainmatter
 记录本书的原因是因为我觉得自己的数学分析实在太烂了。因此我决定使用费曼学习法。这是一个链式反应，在我学习随机过程的时候，我发现自己的概率论太差了，而当我学习概率论的时候，我又发现我的测度论太差了，而我学习测度论的时候，我最终发现，我差的是数学分析。而这个最初始的问题是我并没有系统地学过数学分析。而在学习数学分析的过程中，我发现我对好多概念并不明晰，这使得学习的进度缓慢，并且经常容易在概念上卡壳，而卡壳结束后又很快忘记。因此，为了能够更好地记住，我决定使用费曼学习法。在此，我记录下我学习数学分析的过程。
-\chapter{集合与映射}
-% 陈老视频1
-\begin{definition}[集合]
-{\bf 集合(集)}是具有某种特定性质的具体的或抽象的对象汇集的总体，其中的对象称为集合的元素。
-\end{definition}
-集合通常记为A, B, C, X, Y
-
-元素通常记为s, t, a, b, x, y
-
-x是集合S的元素, 记为$x\in S$
-\chapter{实数的完备性}
-\begin{introduction}
-  \item 有理数的定义~\ref{def:rational-number}
-  \item Bolzano-Weierstrass定理~\ref{theorem:Bolzano-Weierstrass}
-  \item 数列极限的保序性逆命题~\ref{lemma:list-order}
-\end{introduction}
-在本章中，我们将介绍实数的完备性。在介绍实数之前，我们需要将实数定义或者说引入。而对于实数的定义是有很多的，而我在此介绍无穷十进制小数表示和戴德金(Dedekind)分割。这部分我将结合陈纪修教授的教材和Ayumu的讲义。
-
-在引入实数之前，我们需要先介绍有理数，而在介绍有理数之前，我们需要规定一些常用集合的记号。而介绍常用集合，则需要先介绍集合(set)，在此我们并不介绍集合，我们暂时默认我们已经知道了集合的概念，将来我们会对该部分内容进行扩充。现在让我们来列举一些常用的集合。
-\begin{definition}[常用集合表示]
-$\mathbb{N} = \{ 1, 2, 3, \cdots, n, \cdots\}$
-
-$\mathbb{Z} = \{ 0, \pm 1, \pm 2, \pm 3, \cdots, \pm n, \cdots \}$
-
-$\mathbb{Z}^+ = \{ n | n \in \mathbb{Z}, n > 0 \}$
-\end{definition}
-在定义了以上的集合表示之后，我们就能以上的符号来表示有理数：
-\begin{definition}[有理数] \label{def:rational-number} 
-若一个数x可以表示成$\frac{q}{p}$的形式，其中$q \in \mathbb{Z}$, $p \in \mathbb{Z}^+$, 则称x为{\bf 有理数}(rational number)。而由有理数组成的集合称为{\bf 有理数集}，有理数集常用$\mathbb{Q}$表示，其可以表示为：
-\[ \mathbb{Q} = \{ x | x = \frac{q}{p}, q \in \mathbb{Z}, p \in \mathbb{Z}^+ \} \]
-在这里, 我们可以看到p只需要属于$\mathbb{Z}^+$, 这是因为若x为负的, 我们总可以规定负号出现在分子上。
-\end{definition}
-有理数对加减乘除都封闭，并且我们在有理数上定义了大小关系，即有理数也是良序的。但是它并不能满足研究所需。例如，存在长度无法用有理数表示。并且有理数之间存在``空隙''，即有理数不连续。而在我们之后的研究中，我们往往需要研究连续性，因此我们需要对有理数进行扩充。在这之前，我们先来证明确实有一些数无法用有理数表示。
-
-
-\begin{proposition}
-$\sqrt{2}$不是有理数。
-\end{proposition}
-\begin{proof}
-我们用反证法。假设$\sqrt{2}$为有理数, 那么存在$q \in \mathbb{Z}, p \in \mathbb{Z}^+$, $p, q$互质, 使得$\sqrt{2} = \frac{q}{p}$, 即$q^2 = 2p^2$。因为$q^2$可以被2整除, 即$q^2$为偶数, 则$q$为偶数。那么$q$可以表示为$q = 2m, m \in \mathbb{Z}$。代入上式中, 得$p^2 = 2m^2$, 即$p$也为偶数。这与互质矛盾, 因此假设不成立, $\sqrt{2}$不是有理数。
-\end{proof}
-\begin{proposition}
-    若n不是完全平方数, 则$\sqrt{n}$不是有理数。
-\end{proposition}
-\begin{proof}
-\end{proof}
-除了有些数无法用有理数表示外，有的函数在实数域和有理数域上的表现完全不一样,比如狄利克雷(dirichlet)函数:
-\begin{equation*}
-    D(x) = \left\{
-        \begin{aligned}
-            1 &\quad x\text{是有理数} \\
-            0 &\quad x\text{是无理数}
-        \end{aligned}
-    \right.
-\end{equation*}
-
-% 陈老视频8
-\begin{theorem}[确界存在定理---实数系连续性定理]
-    非空有上界的数集必有上确界，非空有下界的数集必有下确界。
-\end{theorem}
-\begin{proof}
-    
-\end{proof}
-
-% 陈老视频9
-\section{数列极限}
-\begin{definition}[数列极限的定义]
-    对于数列$\{ a_n \}$, 存在一个实常数a, 对$\forall \epsilon > 0$, $\exists N \in \mathbb{Z}^+$，使得当$n > N$时，$|a_n-a| < \epsilon$成立，则称$\{ a_n \}${\bf 收敛}(convengent)于a或者$\{ a_n \}$的{\bf 极限}(limit)为a, 记作
-    \[ \lim_{n \to \infty} a_n = a \text{\quad 或者 \quad}  a_n \to a(n \to +\infty)\]
-    若不存在实数a, 满足上述性质, 则称数列$\{ a_n \}${\bf 发散}(divergent)。
-\end{definition}
-在这里定义邻域的概念:$a$的$\epsilon$邻域$O(a, \epsilon)$为:$(a-\epsilon, a+\epsilon)$。
-
-一个数列收敛与否，收敛的话，收敛于哪个数，这与数列的前有限项无关。
-
-$\epsilon$可以先取一个固定值。
-
-$N$可以先取一个大值。
-
-\begin{definition}[无穷小量的定义]
-    以零为极限的变量称为{\bf 无穷小量}。
-\end{definition}
-
-\begin{proposition}
-    \[ \mylim{n}{\frac{n}{n+3}}= 1 \]
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
-
-\begin{proposition}
-    \[ \mylim{n}{q^n}= 0(0 < \left|q\right| < 1) \]
-\end{proposition}
-\begin{proof}
-    因为$0< \left|q\right| < 1$, 则$\left|q^n\right| = \left|q\right|^n < \epsilon$, 则:
-    \[ n > \frac{\lg(\epsilon)}{\lg(\left|q\right|)} \]
-    因为$N \in \mathbb{N}^+$, 所以取$N = \max\left\{1, \left[ \frac{\lg(\epsilon)}{\lg(\left|q\right|)} \right]\right\}$, 当$n > N$时, $\left| q^n - 0 \right| < \epsilon$, 即:
-    \[ \mylim{n}{q^n} = 0(0 < \left|q\right| < 1) \]
-\end{proof}
-
-% 陈老视频10
-\begin{proposition}
-\[ \lim_{n \to \infty } \sqrt[n]{a}= 1 \]
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
-
-\begin{proposition}
-\[ \lim_{n \to \infty } \sqrt[n]{n}= 1 \]
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
-
-
-\begin{proposition}
-    设$a_n > 0$,$\lim\limits_{n \to \infty} a_n = a$，证明
-    \[ \lim_{n \to \infty}\frac{a_1+a_2+\cdots+a_n}{n} = a \]
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
-
-\begin{theorem}[数列极限的唯一性]
-    若
-    \[ \mylim{n}{x_n} = a, \mylim{n}{x_n} = b \]
-    则
-    \[  a = b \]
-\end{theorem}
-\begin{proof}
-    
-\end{proof}
-
-
-\begin{definition}
-    \begin{enumerate}
-        \item 对于数列$\collect{x_n}$, 若$\exists M \in \mathbb{R}$, $\forall n \in \mathbb{N}^+$, 成立$x_n \le M$, 则称M是$\collect{x_n}$的一个上界, 或称$\collect{x_n}$有上界。
-        \item 对于数列$\collect{x_n}$, 若$\exists m \in \mathbb{R}$, $\forall n \in \mathbb{N}^+$, 成立$x_n \ge m$, 则称m是$\collect{x_n}$的一个下界, 或称$\collect{x_n}$有下界。
-    \end{enumerate}
-    $\collect{x_n}$既有上界又有下界, 则称$\collect{x_n}$有界。
-
-    $\collect{x_n}$有界的另一个定义：$\exists X \in \mathbb{R}^+$, $\forall x \in \mathbb{N}^+$, 成立$\left| x_n \right| \le X$
-\end{definition}
-
-\begin{theorem}[数列极限的有界性]
-    若$\{ x_n \}$的极限存在，则$\{ x_n \}$有界。
-\end{theorem}
-\begin{proof}
-    
-\end{proof}
-% 陈老视频11
-\begin{theorem}[数列极限的保序性]
-    存在两个数列$\{ x_n \}$和$\{ y_n \}$，并且
-    \[ \mylim{n}{x_n} = a, \mylim{n}{y_n} = b, \text{\quad 且 \quad}a < b \]则$\exists N \in \mathbb{Z}^+$，当$n > N$时，$x_n < y_n$。
-\end{theorem}
-\begin{proof}
-    
-\end{proof}
-
-\begin{lemma}[数列极限的保序性逆命题]\label{lemma:list-order}
-    对于$\mylim{n}{x_n} = a,\mylim{n}{x_n} = b$, 若$\exists N \in \mathbb{N}^+$, $\forall n > N$, $x_n \le y_n$, 则$a \le b$。 
-\end{lemma}
-\begin{proof}
-    
-\end{proof}
-
-\begin{lemma}
-    \begin{enumerate}
-        \item 若$\mylim{n}{y_n} = b > 0$, 则$\exists N \in \mathbb{N}^+$, $\forall n > N$, $y_n > \frac{b}{2} > 0 $。
-        \item 若$\mylim{n}{y_n} = b < 0$, 则$\exists N \in \mathbb{N}^+$, $\forall n > N$, $y_n < \frac{b}{2} < 0 $。
-    \end{enumerate}
-\end{lemma}
-\begin{proof}
-    利用数列极限的保序性证明。当$b > 0$时，取$\collect{x_n = \frac{b}{2}}$, 则$\mylim{n}{x_n} = \frac{b}{2} < b$, 由数列极限的保序性可知，$\exists N \in \mathbb{N}^+$, $\forall n > N$, 有$y_n > x_n = \frac{b}{2}$, 证毕。
-
-    同理可证明$b < 0$的情况。
-\end{proof}
-以上推论可以合起来写为：
-\begin{lemma}
-    若$\mylim{n}{y_n} = b \neq 0$, 则$\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| y_n \right|> \frac{\left| b \right|}{2} > 0 $。
-\end{lemma}
-\begin{proof}
-    除了上一个推论那样分开来证明, 还可以如下证明:
-    $\mylim{n}{y_n} = b$, 即$\forall \epsilon > 0$, $\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| y_n - b\right| < \epsilon$。
-
-    由三角不等式得：
-    \[ \left| y_n - b\right| > \left| \left| y_n \right| - \left| b \right| \right| \]
-    即:
-    \[ \left| \left| y_n \right| - \left| b \right| \right| < \left| y_n - b\right| < \epsilon \]
-    因此$\mylim{n}{\left| y_n \right|} = \left| b \right|$。之后的证明同上。
-\end{proof}
-
-\begin{theorem}[数列极限的夹逼性定理]
-    对于数列$\collect{x_n}$, $\collect{y_n}$, $\collect{z_n}$, 若$\exists N \in \mathbb{N}^+$, $\forall n > N$, 成立$x_n \le y_n \le z_n$, 且$\mylim{n}{x_n} = \mylim{n}{z_n} = a$, 则$\mylim{n}{y_n} = a$
-\end{theorem}
-\begin{proof}
-    $\forall \epsilon$, $\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $\left| x_n - a\right| < \epsilon$, 即$x_n -a > -\epsilon$。
-
-    同理, $\forall \epsilon$, $\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $\left| y_n - a\right| < \epsilon$, 即$z_n -a < \epsilon$。
-
-    取$N = \max\left\{ N_1, N_2 \right\}$, 则：
-    \[ -\epsilon < x_n - a < y_n - a < z_n - a < \epsilon \]
-    即：
-    \[ -\epsilon < y_n - a <\epsilon \]
-    即：
-    \[ \left| y_n - a \right| < \epsilon \]
-    总结起来即为：
-    $\forall \epsilon$, $\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| y_n - a\right| < \epsilon$, 即$\mylim{n}{y_n} = a$, 证毕。
-\end{proof}
-\begin{proposition}
-    求：
-    \[ \mylim{n}{\sqrt{n+1} - \sqrt{n}}\]
-\end{proposition}
-% 陈老视频12
-\begin{theorem}[数列极限的四则运算]
-    若$\lim\limits_{n \to \infty} x_n = a$, $\lim\limits_{n \to \infty} y_n = b$，则
-    \begin{enumerate}
-        \item $\lim\limits_{n \to \infty}(\alpha x_n + \beta y_n) = \alpha a + \beta b$
-        \item $\lim\limits_{n \to \infty}(x_n y_n) = ab$
-        \item $\lim\limits_{n \to \infty}(\frac{x_n}{y_n}) = \frac{a}{b}(b \neq 0)$
-    \end{enumerate}
-\end{theorem}
-\begin{proof}
-    
-\end{proof}
-
-\begin{proposition}
-    \[\text{求} \lim\limits_{n \to \infty} \frac{5^{n+1}-(-2)^n}{3 \cdot 5^n + 2\cdot 3^n} \]
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
-
-\begin{proposition}
-    \[\text{当} a > 0 \text{时，} \lim\limits_{n \to \infty} \sqrt[n]{a} = 1 \]
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
-
-\begin{proposition}
-    \[\text{求}\lim\limits_{n \to \infty} n\left( \sqrt{n^2+1} - \sqrt{n^2 - 1}\right) \]
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
-
-\begin{proposition}
-    \[\text{求}\lim\limits_{n \to \infty} \left( \frac{1}{\sqrt{n^2+1}} + \frac{1}{\sqrt{n^2 + 2}} + \cdots \frac{1}{\sqrt{n^2+n}} \right) \]
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
-有限个
-
-\begin{proposition}
-    设$a_n > 0$,$\lim\limits_{n \to \infty} a_n = a$，证明
-    \[ \lim_{n \to \infty}\sqrt[n]{a_1a_2\cdots a_n} = a \]
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
-
-\begin{proposition}
-    若$\{ x_n \}$是无穷小量，$\{ y_n \}$有界($| y_n | < 0$)，则$\{ x_n y_n \}$也是无穷小量。
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-\section{无穷大量}
-% 陈老视频13
-\begin{definition}[无穷大量]
-对于一个数列$\{ x_n \}$，若对于任意给定的$G > 0$, 可以找到正整数N, 使得当$n > N$时，$| x_n |> G$，则称数列$\{ x_n \}$是无穷大量，记为
-\[ \lim_{n \to \infty } x_n = \infty \]
-若对于该数列$\{ x_n \}$, $| x_n |> G$可以恒表示为$x_n > G$，则称数列$\{ x_n \}$是正无穷大量，记为$+\infty$。
-
-若对于该数列$\{ x_n \}$, $| x_n |> G$可以恒表示为$x_n < -G$，则称数列$\{ x_n \}$是负无穷大量，记为$-\infty$。
-\end{definition}
-
-\begin{proposition}
-    设$| q | > 1$，证明$\{ q^n \}$是无穷大量。 
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
-
-\begin{proposition}
-    证明$\{ \frac{n^2-1}{n+5} \}$是无穷大量。 
-\end{proposition}
-\begin{proof}
-    
-\end{proof}
-
-\begin{lemma}\label{lemma:inverse}
-    若$x_n \neq 0$，则$\{ x_n \}$是无穷大量的充要条件是$\{ \frac{1}{x_n} \}$是无穷小量。    
-\end{lemma}
-\begin{proof}
-
-\end{proof}
-
-% 陈老视频14
-\begin{lemma}
-    设$\{ x_n \}$是无穷大量，$\{ y_n \}$满足$\exists N_0 \in \mathbb{Z}^+$, $\forall n > N_0$，有$| y_n | \ge \delta > 0$，则$\{ x_n y_n\}$也是无穷大量。
-\end{lemma}
-\begin{proof}
-\end{proof}
-
-\begin{lemma}
-    设$\{ x_n \}$是无穷大量，$\{ y_n \}$极限存在，且$\lim\limits_{n \to \infty}y_n = b \ne 0$，则$\{ x_n y_n\}$与$\left\{ \frac{x_n}{y_n} \right\}$都是无穷大量。
-\end{lemma}
-\begin{proof}
-\end{proof}
-
-\begin{proposition}
-    $\{ \frac{n}{\sin(n)}\}$和$\{ n \cdot \arctan(n)\}$是无穷大量。
-\end{proposition}
-\begin{proof}
-\end{proof}
-
-\begin{proposition}
-    讨论极限
-    \[ \lim_{n \to \infty} \frac{\listsum{a}{n}{k}}{\listsum{b}{n}{l}}\]
-    其中$a_0, b_0 \ne 0$, $k, l \in \mathbb{Z}^+$
-\end{proposition}
-\begin{proof}
-    从分子上提出$n^k$，分母上提出$n^l$次
-\end{proof}
-\subsection{无穷大的运算}
-若$\mylim{n}{x_n} = +\infty$，则记$\collect{x_n}$为``+$\infty$''。
-
-若$\mylim{n}{y_n} = +\infty$，则记$\collect{y_n}$为``+$\infty$''。
-
-若$\mylim{n}{z_n} = \infty$，则记$\collect{z_n}$为``+$\infty$''。
-
-若$\mylim{n}{w_n} = 0$，则记$\collect{z_n}$为``0''。
-\begin{theorem}
-    \begin{enumerate}
-        \item $(+\infty) + (+\infty) = +\infty$
-        \item $(+\infty) - (-\infty) = +\infty$
-        \item $(+\infty) \pm (\text{有界量}) = +\infty$
-        \item $(+\infty) \cdot (+\infty) = +\infty$
-        \item $(+\infty) \cdot (-\infty) = -\infty$
-    \end{enumerate}
-\end{theorem}
-
-\begin{definition}
-    \begin{enumerate}
-        \item $(+\infty) - (+\infty) = ?$
-        \item $(+\infty) + (-\infty) = ?$
-        \item $0 \cdot \infty = ?$
-        \item $\frac{0}{0} = ?$
-        \item $\frac{\infty}{\infty} = ?$
-        \item $\cdots$
-    \end{enumerate}
-    上述情况称为``待定型''
-\end{definition}
-\begin{definition}
-    若数列$\collect{x_n}$，有$x_n \le x_{n + 1}, \forall n \in \mathbb{N}^+$，则称数列$\collect{x_n}$单调增加，记为$\collect{x_n} \uparrow$。若有$x_n < x_{n + 1}$，则称数列$\collect{x_n}$严格单调增加，记为$\collect{x_n} \text{严格} \uparrow$。
-    
-    若数列$\collect{x_n}$，有$x_n \ge x_{n + 1}, \forall n \in \mathbb{N}^+$，则称数列$\collect{x_n}$单调减少，记为$\collect{x_n} \downarrow$。若有$x_n > x_{n + 1}$，则称数列$\collect{x_n}$严格单调减少，记为$\collect{x_n} \text{严格} \downarrow$。
-\end{definition}
-
-\begin{theorem}[Stolz定理]
-    假设$\collect{y_n}$严格单调增加数列，且$\mylinelim{n}{y_n} = + \infty$。若
-    \[ \mylim{n}{ \frac{x_n - x_{n-1}}{y_n - y_{n-1}} } = a(a\text{为有限数}, +\infty, -\infty) \]
-    则
-    \[ \mylim{n}{\frac{x_n}{y_n}} = a\]
-    
-\end{theorem}
-\begin{proof}
-因为陈老的证明简介明了, 我们先写陈老的证明:
-
-当a = 0时: 
-因为$\mylim{n}{y_n} = +\infty$, 则$\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $y_n > 0$。
-
-又因为$\mylim{n}{\frac{x_n - x_{n-1}}{y_n - y_{n-1}}} = a$, 则$\forall \epsilon > 0$, $\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $\left| \frac{x_n - x_{n-1}}{y_n - y_{n-1}} \right| < \frac{\epsilon}{2}$。
-
-取$N_3 = \max\{N_1, N_2\}$, $\forall n > N_3$:
-\[  \left| x_n - x_{n-1}\right| < \frac{\epsilon}{2}\left| y_n - y_{n-1} \right| \]
-又因为$\collect{y_n}$严格单调增加, 则上式可以化为:
-\[  \left| x_n - x_{n-1}\right| < \frac{\epsilon}{2} \left( y_n - y_{n-1} \right) \]
-根据三角不等式:
-\[ \left| x_n - x_{N_3} \right| \le \left| x_n - x_{n-1}\right| + \left| x_{n-1} - x_{n-2} \right| + \cdots + \left| x_{N_3+1} - x_{N_3}\right|\]
-根据上两式, 我们可以得出:
-\[ \left| x_n - x_{N_3} \right| < \frac{\epsilon}{2} \left( y_n - y_{N_3} \right) \]
-两边同除以$y_n$得:
-\[ \left| \frac{x_n}{y_n} - \frac{x_{N_3}}{y_n} \right| < \frac{\epsilon}{2}(1 - \frac{y_{N_3}}{y_n}) < \frac{\epsilon}{2}\]
-则根据三角不等式:
-\[ \left| \frac{x_n}{y_n} \right| < \frac{\epsilon}{2} + \left|\frac{x_{N_3}}{y_n}\right|\]
-因为$\mylim{n}{y_n} = +\infty$, $\exists N_4 \in \mathbb{N}^+$, $\forall n > N_4$, $y_n > \frac{2\left| x_{N_3}\right|}{\epsilon}$
-
-则可以取$N = \max\{N_3, N_4\}$, $\forall n > N_4$:
-\[ \left| \frac{x_n}{y_n} \right| < \epsilon \]
-则对于$a = 0$时:
-\[ \mylim{n}{\frac{x_n}{y_n}} = 0\]
-
-当$a \neq 0 $时:
-
-取$z_n = x_n - ay_n$, 则
-\[ \frac{z_n-z_{n-1}}{y_n-y_{n-1}} = \frac{x_n-x_{n-1}}{y_n-y_{n-1}} - a \]
-因此:
-\[ \mylim{n}{\frac{z_n-z_{n-1}}{y_n-y_{n-1}}} = \mylim{n}{\left(\frac{x_n-x_{n-1}}{y_n-y_{n-1}} - a\right)} = 0\]
-根据以上证明的$a = 0$的情况可知:
-\[\mylim{n}{\frac{z_n}{y_n}} = 0\]
-又因为:
-\[ \frac{x_n}{y_n} = \frac{z_n}{y_n} + a\]
-所以当$a \neq 0$时:
-\[ \mylim{n}{\frac{x_n}{y_n}} = a\]
-
-当$a = +\infty$时:
-
-因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n-y_{n-1}}} = +\infty$, 则$\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $\frac{x_n-x_{n-1}}{y_n-y_{n-1}} > 1$, 即:
-\[ x_n - x_{n-1} > y_n - y_{n-1} \]
-因为$\collect{y_n}$严格单调增加, 则
-\[ x_n - x_{n-1} > y_n - y_{n-1}> 0 \]
-即$\collect{x_n}${\bf 严格单调增加}。
-
-同时, 同其他情况的证明, 我们有:
-\[ x_n - x_N > y_n - y_N\]
-
-又因为$\mylim{n}{y_n} = +\infty$, 则$\forall G > \max\{0, y_N - x_N\}$, $\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $y_n > 2G$。
-
-则
-\[ x_n > y_n - y_N + x_N > G \]
-即$\mylim{n}{x_n} = +\infty$, $\collect{x_n}$趋向于$+\infty$。
-
-此时考虑$\frac{y_n - y_{n-1}}{x_n - x_{n-1}}$, 因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n - y_{n-1}}} = +\infty$, 则$\mylim{n}{\frac{y_n - y_{n-1}}{x_n-x_{n-1}}} = 0$(引理~\ref{lemma:inverse})。根据$a = 0$的情况得：$\mylim{n}{\frac{y_n}{x_n}} = 0$, 因此$\mylim{n}{\frac{x_n}{y_n}} = \infty$, 即$\forall G > 0$, $\exists N_3 \in \mathbb{N}^+$, $\forall n > N_3$, $\left| \frac{x_n}{y_n} \right| > G$。
-
-又因为$\mylim{n}{y_n} = +\infty$, 则$\exists N_4 \in \mathbb{N}^+$, $\forall n > N_4$, $y_n > 0$, 同理$\exists N_5 \in \mathbb{N}^+$, $\forall n > N_5$, $x_n > 0$。
-
-则当$n > \max\{ N_4, N_5 \}$时, $\frac{x_n}{y_n} > 0$。
-
-即$\forall G > 0$, $\exists N = \max\{ N_3, N_4, N_5 \} \in \mathbb{N}^+$, $\forall n > N$, $\frac{x_n}{y_n} > G$, 即$\mylim{n}{\frac{x_n}{y_n}} = +\infty$。$a = +\infty$时也成立。
-同理, 也能证明$a = -\infty$的情况。
-
-
-现在用定义证明:
-
-当a为有限数时:
-
-因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n-y_{n-1}}} = a$, 则$\forall \epsilon > 0$, $\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $\left| \frac{x_n - x_{n-1}}{y_n - y_{n-1}} - a\right| < \frac{\epsilon}{2}$。
-
-又因为$\mylim{n}{y_n} = +\infty$, 则$\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $y_n > 0$。
-
-则$\forall n > N_3 = \max\{N_1, N_2\}$, 结合三角不等式, 我们有:
-\[ \frac{x_n}{y_n}-a < \frac{\epsilon}{2}\left(1 - \frac{y_{N_3}}{y_n}\right) + \frac{x_{N_3}-ay_{N_3}}{y_n} < \frac{\epsilon}{2} + \frac{x_{N_3}-ay_{N_3}}{y_n}\]
-
-因为$\mylim{n}{y_n} = +\infty$, 所以$\mylim{n}{\frac{x_{N_3}-ay_{N_3}}{y_n}} = 0$, 即$\exists N_4 \in \mathbb{N}^+$, $\forall n > N_4$, $\left| \frac{x_{N_3}-ay_{N_3}}{y_n} \right| < \frac{\epsilon}{2}$。
-
-即$\forall \epsilon > 0$, $\exists N_5 = \max\{N_3, N_4\}$, $\forall n > N_5$, $\frac{x_n}{y_n} - a < \epsilon$。
-
-同理可以证明:$\forall n > N_5$, $\frac{x_n}{y_n} - a > -\epsilon$。因此$\mylim{n}{\frac{x_n}{y_n}} = a$。
-\end{proof}
-\begin{proposition}
-    用Stolz定理证明, 若$\mylim{n}{a_n} = a$，则
-    \[ \mylim{n}{\mean{a}{n}} = a \]
-\end{proposition}
-\begin{proof}
-\end{proof}
-
-\begin{proposition}
-    \[ \text{求} \mylim{n}{\frac{1^k+2^k+\cdots+n^k}{n^{k+1}}} \]
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-\begin{proposition}
-    \[ \text{设}\mylim{n}{a_n} = a\text{，求}\mylim{n}{\frac{a_1+2a_2+3a_3+\cdots+na_n}{n^2}} \]    
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-% 陈老视频15
-\section{收敛准则}
-收敛数列一定有界，但是收敛数列不一定有界。
-\begin{enumerate}
-    \item 那么有界数列加什么条件收敛？
-    \item 有界数列不加条件的情况下，可以得到什么弱一些的结论？
-\end{enumerate}
-\begin{theorem}
-    单调有界数列必定收敛。
-\end{theorem}
-\begin{proof}
-不妨设$\collect{x_n}$单调增加，有上界。
-\end{proof}
-定理意义: 从定义证明时, 我们需要知道极限a, 相当于验证极限为a, 而当极限未知时, 则无法证明。而定理则从数列本身的性质出发, 不需要知道极限是多少。
-
-\begin{lemma}
-    若数列$\collect{x_n}$从第N项之后开始单调有界, 则数列$\collect{x_n}$依旧收敛。
-\end{lemma}
-\begin{proof}
-    考虑$n \ge N$后的数组成的数列, 设$n_1 = n - N + 1$, 则$\collect{x_{n_1}}$单调有界。由于$\collect{x_{n_1}}(n_1 \ge 1)$单调有界, 则$\collect{x_{n_1}}(n_1 \ge 1)$收敛。即$\exists a$, $\forall \epsilon > 0$, $\exists N_1$, $\forall n_1 > N_1$, 有$\left| x_{n_1} - a\right| < \epsilon$。那么我们可以取$N_2 = N_1 + N - 1$, 此时$\forall \epsilon$, $\exists N_2 = N_1 + N - 1$, $\forall n > N_2$, 有$\left| x_n - a\right| < \epsilon$, 即数列$\collect{x_n}$极限存在。
-\end{proof}
-\begin{proposition}
-    设$x_1 > 0$, $x_{n+1} = 1 + \frac{x_n}{1+x_n}, n = 1,2, 3, \cdots$，证明$\collect{x_n}$收敛，并求极限。
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-\begin{proposition}
-    设$ 0 < x_1 < 1$, $x_{n+1} = x_n(1 - x_n), n = 1,2, 3, \cdots$，证明$\collect{x_n}$收敛，并求极限。
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-无穷小量的趋近速度。
-\begin{proposition}
-    \[ \text{对于上题的}\collect{x_n},\text{求极限,}\mylim{n}{nx_n}\]
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-% 陈老视频16
-\begin{proposition}
-    $ x_1 = \sqrt{2}, x_{n+1} = \sqrt{3+2x_n}, n = 1, 2, 3, \cdots $，证明$\collect{x_n}$收敛，并求极限。
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-兔子
-\begin{proposition}[Fibonacci数列]
-    $\collect{a_n}$为Fibonacci数列, 令$b_n = \frac{a_{n+1}}{a_n}$，讨论$\collect{b_n}$数列。
-    
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-% 陈老视频17
-接下来我们来研究$\pi$和$e$
-
-关于$\pi$:
-\begin{proposition}
-    证明$\collect{L_n = n\sin \left ( \frac{180^\circ}{n} \right )}$收敛。求圆的面积公式。
-\end{proposition}
-\begin{proof}
-取$t = \frac{180^\circ}{n(n+1)}$, 当$n \ge 3$时, $nt \le 45^\circ$。且由三角公式得: 
-\[ \tan (nt) = \frac{\tan[(n-1)t] + \tan(t)}{1 - \tan[(n-1)t]tan(t)} \]
-由于$nt \le 45^\circ$, 则$tan(kt) < 1(k < n)$, 因此: 
-\[ \tan (nt) = \frac{\tan[(n-1)t] + \tan(t)}{1 - \tan[(n-1)t]tan(t)} > \tan[(n-1)t] + \tan(t)\]
-则：
-\begin{gather*}
-    \tan(nt) > \tan[(n-1)t] + \tan(t) \\ 
-    \tan[(n-1)t] > \tan[(n-2)t] + \tan(t) \\
-    \cdots \cdots
-\end{gather*}
-则: 
-\[ \tan(nt) > n\tan(t)\]
-现在来考虑$\sin[(n+1)t]$: 
-\[
-\begin{split}
-    \sin[(n+1)t] &= \sin(nt)\cos(t) + \cos(nt)\sin(t) \\
-                &= \sin(nt)\cos(t)\left[ 1 + \frac{\tan(t)}{\tan(nt)}\right] \\
-                &< \sin(nt)\cos(t)\left[ 1 + \frac{1}{n} \right] \\
-                & < \sin(nt)\frac{n+1}{n}
-\end{split}
-\]
-即: 
-\[ n\sin[(n+1)t] < (n+1)\sin(nt) \]
-将$t = \frac{180^\circ}{n(n+1)}$代入得: 
-\[ n\sin\left( \frac{180^\circ}{n}\right) < (n + 1)\sin\left( \frac{180^\circ}{n+1} \right)\]
-即该数列单调增加。
-
-考虑到单位圆的面积: 
-\[ S' > n \sin\left( \frac{180^\circ}{n}\right) \cos\left( \frac{180^\circ}{n}\right) \]
-并且单位圆的面积小于外接正方形的面积, 即: 
-\[ n \sin\left( \frac{180^\circ}{n}\right) \cos\left( \frac{180^\circ}{n}\right) < S' < 4 \]
-即: 
-\[ n\sin\left( \frac{180^\circ}{n}\right) < \frac{4}{\cos\left( \frac{180^\circ}{n}\right)}\]
-因为$n \ge 3$, 所以: 
-\[ n\sin\left( \frac{180^\circ}{n}\right) < 8\]
-因此数列$\collect{L_n = n\sin \left ( \frac{180^\circ}{n} \right )}$单调有界, 则该数列极限存在。
-
-现在定义$\mylim{n}{n\sin \left ( \frac{180^\circ}{n} \right )} = \pi$。
-
-再来考虑单位圆的面积$S'$, 设内接正多边形的面积为$S_1$, 外接正多边形的面积为$S_2$, 则$S_1(n) < S' < S_2(n)$。内接正多边形的面积为:
-\[ S_1(n) = n \sin\left( \frac{180^\circ}{n}\right) \cos\left( \frac{180^\circ}{n}\right)\]
-外接正多边形的面积为: 
-\[ S_2(n) = n \tan\left( \frac{180^\circ}{n}\right)  = n \frac{\sin\left( \frac{180^\circ}{n}\right)}{\cos\left( \frac{180^\circ}{n}\right)} \]
-并且根据数列极限的四则运算有:
-\[ \mylim{n}{S_1(n)} = \mylim{n}{n \sin\left( \frac{180^\circ}{n}\right)} \mylim{n}{\cos\left( \frac{180^\circ}{n}\right)} = \pi\]
-\[ \mylim{n}{S_2(n)} = \frac{\mylim{n}{n\sin\left( \frac{180^\circ}{n}\right)}}{\mylim{n}{\cos\left( \frac{180^\circ}{n}\right)}} = \pi\]
-则根据夹逼性原理得:
-\[ S' = \pi \]
-
-其中, 对于外接正多边形的面积, 考虑:
-\[
-\begin{split}
-    (n+1)\tan(nt) - n \tan[(n+1)t] &= (n+1)\frac{\sin(nt)}{\cos(nt)} - n\frac{\sin[(n+1)t]}{\cos[(n+1)t]} \\
-                        &= \frac{(n+1)\sin(nt)\cos[(n+1)t]-n\sin[(n+1)t]\cos(nt)}{\cos(nt)\cos[(n+1)t]} \\
-                        &= \frac{\sin(nt)\cos[(n+1)t]-n\sin(t)}{\cos(nt)\cos[(n+1)t]} \\
-                        &=\frac{\sin[(2n+1)t] - \sin(t) -2n\sin(t)}{2\cos(nt)\cos[(n+1)t]} \\
-                        &= \frac{\sin[(2n+1)t] - (2n+1)\sin(t)}{2\cos(nt)\cos[(n+1)t]}
-\end{split}
-\]
-并且当$n \ge 3$时, 有: 
-\begin{gather*}
-    \sin[(2n+1)t] = \sin(2nt)\cos(t) + \cos(2nt)\sin(t) < \sin(2nt) + \sin(t) \\
-    \sin(2nt) = \sin[(2n-1)t]\cos(t) + \cos[(2n-1)t]\sin(t)  < \sin[(2n-1)t] + \sin(t)\\
-    \cdots \cdots
-\end{gather*}
-因此: 
-\[ sin[(2n+1)t] < (2n+1)\sin(t) \]
-因此: 
-\[ (n+1)\tan(nt) < n\tan[(n+1)t]\]
-即:
-\[ (n+1)\tan\left( \frac{180^\circ}{n+1}\right) < n\tan\left( \frac{180^\circ}{n}\right) \]
-因此数列$\collect{n\tan\left( \frac{180^\circ}{n}\right)}$单调递减。因为外接正多边形面积必然大于内接正方形, 因此: 
-\[ n\tan\left( \frac{180^\circ}{n}\right) > 2 \]
-因此数列$\collect{n\tan\left( \frac{180^\circ}{n}\right)}$单调有界, 则该数列极限存在。
-
-% 我们再用其他办法证明$\collect{L_n = n\sin \left ( \frac{180^\circ}{n} \right )}$有界: 
-
-\end{proof}
-
-关于$e$:
-\begin{proposition}
-    考虑两个数列:
-    \[ \collect{x_n = \left(1 + \frac{1}{n}\right)^n} \quad \text{和} \quad \collect{y_n = \left(1 + \frac{1}{n}\right)^{n+1}} \]
-    证明这两个数列极限存在且相等。
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-定义$\ln = \log_e$为自然对数，$e$自然对数的底数。
-
-\begin{proposition}
-    令$a_n = 1 + \frac{1}{2^p} + \frac{1}{3^p} + \cdots + \frac{1}{n^p}, (p > 0)$，证明$\collect{a_n}$当$p>1$时收敛，当$p \le 1$时发散。    
-\end{proposition}
-\begin{proof}
-
-$p = 1$时，$a_n = 1 + \frac{1}{2} +\frac{1}{3} + \cdots + \frac{1}{n}$为调和级数，它是正无穷大量，我们想知道它趋近无限的速度。
-\end{proof}
-
-% 陈老视频18
-\begin{proposition}
-证明
-    \[ b_n = \left( 1 +\frac{1}{2} + \frac{1}{3} + \cdot + \frac{1}{n} \right) - \ln n \]
-    收敛。
-\end{proposition}
-\begin{proof}
-    极限记为$\gamma$，称为欧拉常熟。$\gamma >= 0.577215$
-\end{proof}
-
-\begin{proposition}
-证明
-\[ \mylim{n}{\frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n}} = \ln 2\]
-\end{proposition}
-\begin{proof}
-除了夹逼准则，还能用上一个数列相减计算。
-\end{proof}
-
-\begin{proposition}
-\[ d_n = 1- \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots +(-1)^{n+}\frac{1}{n} \]
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-以上是与$e$相关的数列
-
-\begin{definition}[闭区间套]
-    有一列闭区间$\collect{\left[a_n, b_n \right]}$，满足：
-    \begin{enumerate}
-        \item $\left[ a_{n+1}, b_{n+1}\right] \subset \left[ a_n, b_n\right], n = 1, 2, 3, \cdots $
-        \item $b_n - a_n \to 0(n \to \infty)$
-    \end{enumerate}
-    则称这样的一列闭区间是一个闭区间套。
-\end{definition}
-\begin{theorem}[闭区间套定理]
-    假如$\left[ a_n, b_n\right]$是一个闭区间套，则存在唯一的实数$\xi$，它属于一切闭区间$\left[ a_n, b_n\right]$。且$\mylim{n}{a_n} = \mylim{n}{b_n} = \xi$。
-\end{theorem}
-\begin{proof}
-\end{proof}
-
-\begin{theorem}
-    实数集不可列。
-\end{theorem}
-\begin{proof}
-    反证法
-\end{proof}
-
-% 陈老视频19
-子列
-\begin{definition}
-    存在一个数列$\collect{x_n}$，取一列严格单调增加的正整数$n_1 < n_2 < n_3 < \cdots < n_k < \cdots$，则$x_{n_1}, x_{n_2}, \cdots, x_{n_k}, \cdot$称为$\collect{x_n}$的一个子列，记为$\collect{x_{n_k}}$, $k$代表子列中的第$k$项，又恰好是$\collect{x_n}$中的第$n_k$项。
-\end{definition}
-其中$n_k \ge k, \forall k$, $n_j > n_k, \forall j > k$。
-\begin{theorem}
-    设$\collect{x_n}$收敛于a, 则它的任何一个子列也收敛于a。即$\mylim{n}{x_n} = a$，证明$\mylim{k}{a_{n_k}} = a$
-\end{theorem}
-\begin{proof}
-
-\end{proof}
-可以用于证明数列不收敛。
-\begin{proposition}
-    若$\collect{x_n}$存在两个子列收敛于不同的极限，则$\collect{x_n}$发散。
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-\begin{theorem}[Bolzano-Weierstrass定理]\label{theorem:Bolzano-Weierstrass}
-    有界数列必有收敛子列。
-\end{theorem}
-\begin{proof}
-    设数列为$\collect{x_n}$, 因为数列有界, 所以$\forall n >0$, 存在$a \le x_n \le b$, 则取$[a_1, b_1] = [a, b]$。
-
-    将$[a_1, b_1]$分为两个闭区间, 分别为$[a_1, \frac{a_1+b_1}{2}]$和$[\frac{a_1+b_1}{2}, b_1]$, 其中至少有一个区间包含无穷多个数列的元素, 因为若两个区间都有有限个数列元素, 则数列$\collect{x_n}$的元素有限。那么我们可以取包含无穷多个数列元素的区间为$[a_2, b_2]$。
-
-    同理, 我们可以取出$[a_3, b_3]$, $[a_4, b_4], \cdots$。每一个区间中都包含无穷多个数列元素。
-
-    对于这些区间, $\forall n > 0, (1). [a_{n+1}, b_{n+1}] \subset [a_n, b_n]$, $(2). \mylim{n}{(b_n-a_n)} = \mylim{n}{\frac{b - a}{2^{n-1}}} = 0$, 则这些闭区间组成了一个闭区间套。根据闭区间套定理, 存在唯一的实数$\gamma$属于一切闭区间$[a_n, b_n]$。
-
-    则我们可以这样构造子列: 
-    
-    从$[a_1, b_1]$中取$x_{n_1}$, 使得$n_1 > 0$, 这必然可以实现, 因为$[a_1, b_1]$中有无限多个数列元素。
-
-    从$[a_2, b_2]$中取$x_{n_2}$, 使得$n_2 > n_1$, 这必然可以实现, 因为$[a_2, b_2]$中有无限多个数列元素, 即$\forall n_1, \exists n_2 > n_1$。
-
-    从$[a_3, b_3]$中取$x_{n_3}$, 使得$n_3 > n_2$, 这必然可以实现, 因为$[a_3, b_3]$中有无限多个数列元素, 即$\forall n_2, \exists n_3 > n_2$。
-    \[ \cdots \cdots \]
-
-    对于子列$\collect{x_{n_k}}$, $x_{n_k} \in [a_k, b_k]$, 则$\forall \epsilon > 0 $, 取$K = \max\left\{\left[\log_2\left(\frac{b-a}{\epsilon}\right)\right] + 2, 1\right\}$, $\forall k > K, b_k - a_k < \epsilon $, 同时$x_{n_k} \in [a_k, b_k]$, $\gamma \in [a_k, b_k]$, 则$\forall k > K, \left| x_{n_k} - \gamma \right| < b_k - a_k < \epsilon$。
-
-    即$\forall \epsilon > 0$, $\exists K \in \mathbb{N}^+$, $\forall k > K$, $\left| a_{n_k} - \gamma \right| < \epsilon$, 则$\mylim{k}{x_{n_k}} = \gamma$, 该子列收敛于$\gamma$。
-
-    在陈老的视频是，陈老是用夹逼性证明$\collect{x_{n_k}}$收敛于$\gamma$, 证明如下: 
-    
-    $\forall k$, $a_k \le x_{n_k} \le b_k$, 且$\mylim{k}{a_k} = \mylim{k}{b_k} = \gamma$, 则根据夹逼性, $\mylim{k}{x_{n_k}} = \gamma$。{\bf 非常巧妙!}
-\end{proof}
-
-\begin{theorem}
-    假设$\collect{x_n}$是无界数列，则存在子列$\collect{x_{n_k}}$，它是无穷大量。
-\end{theorem}
-\begin{proof}
-    
-\end{proof}
-
-% 陈老视频20
-Cauchy收敛原理
-
-\begin{definition}
-    $\collect{x_n}$满足：
-    \[\forall \xi > 0, \exists N, \forall n, m > N, \left|x_n - x_m\right| < \xi \]
-    则称$\collect{x_n}$为基本数列。
-\end{definition}
-也可以是$\forall m > n > N$
-\begin{proof}
-\end{proof}
-
-\begin{proposition}
-    判断
-    \[ x_n = 1 + \frac{1}{2^2} + \frac{1}{3^2} + \cdots + \frac{1}{n^2} \]
-    是否为基本数列。
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-\begin{proposition}
-    判断
-    \[ x_n = 1 + \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{n} \]
-    是否为基本数列。
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-\begin{theorem}[Cauchy收敛原理]
-    $\collect{x_n}$收敛的充分必要条件是$\collect{x_n}$是基本数列。
-\end{theorem}
-\begin{proof}
-{\bf 必要性}: 即$\collect{x_n}$收敛 $\Rightarrow$ $\collect{x_n}$是基本数列。
-
-假设$\collect{x_n}$收敛于A, 则$\forall \epsilon > 0$, $\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| x_n - A \right| < \frac{\epsilon}{2}$。
-
-则对于$\forall n, m > N$, $\left| x_n - x_m \right| < \left| x_n - A \right| + \left| x_m - A \right| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon $, 则$\collect{x_n}$为基本数列。
-
-{\bf 充分性}: 即$\collect{x_n}$是基本数列$\Rightarrow$ $\collect{x_n}$收敛。
-
-因为$\collect{x_n}$为基本数列, 即对于$\forall \epsilon > 0$, $\exists N \in \mathbb{N}^+$, $\forall m, n > N$, $\left| x_m - x_n \right| < \epsilon$。取$m = N + 1$, 则$\forall n > N$, $\left| x_{N+1} - x_n \right| < \epsilon$, 即$x_{N+1} -\epsilon < x_n < x_{N+1} + \epsilon $。则我们可以取$a = \min\left\{ x_1, x_2, \cdots, x_N, x_{N+1} - \epsilon \right\}, b = \max\left\{ x_1, x_2, \cdots, x_N, x_{N+1} + \epsilon \right\}$, 此时$\forall n \in \mathbb{N}^+$:
-\[ a \le x_n \le b\]
-即, $\collect{x_n}$数列有界。
-
-根据Bolzano-Weierstrass定理(定理~\ref{theorem:Bolzano-Weierstrass}), 则存在收敛子列$\collect{x_{n_k}}$, 假设该收敛子列$\collect{x_{n_k}}$收敛于A, 则$\forall \epsilon > 0$, $\exists K \in \mathbb{N}^+$, $\forall k > K$, $\left| x_{n_k} - A \right| < \frac{\epsilon}{2}$, 又由于$\collect{x_n}$为基本数列, 则$\forall \epsilon > 0$, $\exists N' \in \mathbb{N}^+$, $\forall m', n' > N'$, $\left| x_{N+1} - x_{n'} \right| < \frac{\epsilon}{2}$。
-
-取$N'' = \max\left\{N', n_K\right\}$, 因为$\collect{x_{n_{k'}}}$由无穷多项, 则必然存在$n_{k'} > N'' \ge n_K$, 即$k' > K$,。此时，因为$n_{k'} > N'' \ge N'$, 则$\forall n' > N'$, $\left| x_{n'} - x_{n_{k'}}\right| < \frac{\epsilon}{2}$, 又因为$k' > K$, 则$\left| x_{n_{k'}} - A\right| < \frac{\epsilon}{2}$, 因此$\forall n' > N'$, $\left| x_{n'} - A \right| < \left| x_{n'} - x_{n_{k'}} \right| + \left| x_{n_{k'}} - A \right| < \epsilon $, 即数列$\collect{x_n}$收敛。
-
-而陈老是这样证明充分性的：
-
-取$\epsilon = 1$, 因为$\collect{x_n}$是基本数列, 则$\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| x_n - x_{N+1} \right| < 1$, 因此$\left| x_n \right| < \left| x_n - x_{N+1} \right| + \left| x_{N+1} \right| < \left| x_{N+1} \right| + 1$。取$M = \max\left\{\left| x_1 \right|,\left| x_1 \right|,\cdots,\left| x_{N} \right|, \left| x_{N+1} \right| + 1\right\}
-$, 则:
-\[ \forall n \in \mathbb{N}^+, \left| x_n \right| \le M \]
-即$\collect{x_n}$有界。
-
-根据根据Bolzano-Weierstrass定理(定理~\ref{theorem:Bolzano-Weierstrass}), 则存在收敛子列$\collect{x_{n_k}}$, 假设该收敛子列$\collect{x_{n_k}}$收敛于A。
-
-根据$\collect{x_n}$是基本数列, 则$\forall \epsilon > 0$, $\exists N_1 \in \mathbb{N}^+$, $\forall n, m > N_1$, $\left| x_n - x_m \right| < \frac{\epsilon}{2}$, 现在固定$x_m$, 取$x_n$为子列$\collect{x_{n_k}}$。现在考虑数列$\collect{\left| x_{n_k}  - x_m\right|}$和数列$\collect{\frac{\epsilon}{2}}$, 取$K = N_1$, 则$\forall k > K$, 有$n_k > n_K \ge K = N_1$, 即$\forall k > K$, $\left| x_{n_k}  - x_m\right| < \frac{\epsilon}{2}$, 根据数列极限的保序性逆命题(推论~\ref{lemma:list-order}), $\left| A - x_m\right| \le \frac{\epsilon}{2} < \epsilon$。这对于$\forall m > N_1$都成立, 即数列$\collect{x_n}$极限存在且为A。
-\end{proof}
-
-\begin{proposition}
-    $\collect{x_n}$满足压缩性条件，即
-    \[ \left| x_{n+1} -x_n \right| \le k\left| x_n - x_{n-1}\right|, 0 < k < 1, \forall n = 2, 3, \cdots \] 
-    则$\collect{x_n}$是收敛的。
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-
-% 陈老视频21
-实数系的基本定理
-\begin{enumerate}
-    \item 确界存在定理(实数系的连续性定理)
-    \item 单调有界数列收敛定理
-    \item 闭区间套定理
-    \item Bolzano-Weierstrass定理
-    \item Cauchy收敛原理(实数系完备性)
-\end{enumerate}
-以上都是在实数系中考虑, 实数系上的基本数列必然是收敛数列, 因此Cauchy收敛原理也被称为实数系的完备性定理。实数系有完备性, 有理数不具备完备性。例如$\collect{\left( 1 + \frac{1}{n}\right)^n}$是有理数列, 但是它的极限是无理数。以上五个定理等价。我们需要证明这五个定理等价。从Cauchy收敛原理推出闭区间套定理, 再从闭区间套定理推出确界存在定理。
-\begin{theorem}
-    实数系的完备性等价于实数系的连续性。
-\end{theorem}
-\begin{proof}
-    (1)Cauchy收敛原理$\Rightarrow$闭区间套定理。
-
-    (2)闭区间套定理$\Rightarrow$确界存在定理。
-\end{proof}
+\input{chapter1}
+\input{chapter2}
 
 % 陈老视频22
 \chapter{函数极限与连续函数}
@@ -1821,9 +987,114 @@ $f(x)$在X上一致连续 $\Rightarrow$ $f(x)$在区间X上连续
 \end{proof}
 
 \begin{theorem}
-    假设$f(x)$在区间X上有定义, 则$f(x)$在X上一致连续的充分必要条件是: 对任意点列$x'_n, x''_n \in X$, 只要$\mylim{n}{\left( x'_n - x''_n \right)} = 0$, 则有$\mylim{n}{\left(f(x'_n) - f(x''_n) \right)} = 0$
+    假设$f(x)$在区间X上有定义, 则$f(x)$在X上一致连续的充分必要条件是: 对任意点列$x'_n, x''_n \in X$, 只要$\mylim{n}{\left( x'_n - x''_n \right)} = 0$, 则有$\mylim{n}{\left(f(x'_n) - f(x''_n) \right)} = 0$。
 \end{theorem}
 \begin{proof}
     
 \end{proof}
+
+% 陈老视频38
+\begin{proposition}
+    用以上的定理证明:
+    \[ f(x) = \frac{1}{x} \]
+    在区间$(0, 1)$上不是一致连续。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    证明:
+    \[  f(x) = \frac{1}{x} \]
+    在$(\eta, 1), 0 < \eta < 1$上一致连续。
+\end{proposition}
+
+\begin{proposition}
+    \[ f(x) = x^2 \]
+    在$(0, +\infty)$上非一致连续。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \[ f(x) = x^2 \]
+    在$(0, A)$上一致连续。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}[Cantor定理]
+    若$f(x)$在闭区间$[a, b]$连续, 则$f(x)$在$[a, b]$上一致连续。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}
+    $f(x)$在有限开区间$(a, b)$连续, 则$f(x)$在开区间$(a,b)$上一致连续的充分必要条件是: $f(a^+)$, $f(b^-)$存在。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频39
+\chapter{微分}
+\section{微分和导数}
+\subsection{微分}
+考虑$y = f(x)$, 当$x \to x + \Delta x$时, $f(x) \to f(x+\Delta x)$, 令$\Delta y = f(x+\Delta x) - f(x)$。应该怎么简单地表示$\Delta y$?
+\begin{definition}[微分的定义]
+    $x_0 \in D_f$, 若存在只与$x_0$有关, 与$\Delta x$无关的$g(x_0)$,使得当$\Delta x \to 0$时:
+    \[ \Delta y = g(x_0)\Delta x + o(\Delta x) \]
+    则称$f(x)$在$x_0$可微。
+
+    若$f(x)$在区间X的每一点可微, 则称$f(x)$在区间X可微。
+
+    $g(x_0)\Delta x$称为$\Delta y$的线性主要部分。
+
+    $\Delta x \to 0$, 记$\Delta x$为$dx$, 若$f(x)$在$x$点可微, 则有$\Delta y = g(x)\Delta x + o(\Delta x), (\Delta x \to 0)$。则记$\Delta y$为$dy$, 并将上式写为$dy = g(x)dx $。
+\end{definition}
+
+\begin{proposition}
+    \[ y = f(x) = x^2 \]
+    对$\forall x \in (-\infty, +\infty)$, 求微分表示。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \[ y = f(x) = \sqrt[3]{x^2} \]
+    考虑$f$在$x_0 = 0$是否可微。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+可微$\Rightarrow$连续
+\subsection{导数}
+$y = f(x)$在$x_0$可微, 则$\Delta y = g(x_0)\Delta x + o(\Delta x), (\Delta x \to 0)$, 那么:
+\[ \frac{\Delta y}{\Delta x} = g(x_0) + \frac{o(\Delta x)}{\Delta x} \]
+令$\Delta x \to 0$, 则
+\[ \funclim{\Delta x}{0}{\frac{\Delta y}{\Delta x}} = g(x_0)\]
+\begin{definition}
+    设$x_0 \in D_f$, 若极限
+    \[ \funclim{\Delta x}{0}{\frac{\Delta y}{\Delta x}} = \funclim{\Delta x}{0}{\frac{f(x+\Delta x) - f(x)}{\Delta x}} \]
+    存在, 则称$f(x)$在$x_0$可导, 记这个极限值为$f'(x_0)$(或$y'(x_0)$, $\left.\frac{dy}{dx}\right|_{x = x_0}$, $\left.\frac{df}{dx}\right|_{x = x_0}$)。
+\end{definition}
+$f(x)$可导的范围是$D_f$的子集, 于是我们可以得到在这子集上的$f(x)$的导函数, 记为$f'(x)$(或$y'(x)$, $\frac{dy}{dx}$, $\frac{df}{dx}$)。
+
+可微$\Rightarrow$可导, 且$f'(x_0) = g(x_0)$。
+
+可导是否一定可微?
+
+可导, 则:
+\[ \funclim{\Delta x}{0}{\frac{\Delta y}{\Delta x}} = f'(x_0)\]
+则:
+\[  \funclim{\Delta x}{0}{\left(\frac{\Delta y}{\Delta x} - f'(x_0) \right)} = 0 \]
+\[ \frac{\Delta y}{\Delta x} - f'(x_0) = o(1), (\Delta x \to 0) \]
+\[ \Delta y = f'(x_0)\Delta x + o(1)\Delta x \]
+\[ \Delta y = f'(x_0)\Delta x + o(\Delta x) \]
+即, 可导$\Rightarrow$可微(一元函数下)。
 \end{document}

@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber main"] 1672396960 "main.bcf" "main.bbl" "main" 1672462169
-  "main.bcf" 1672462166 106832 261fdead144de8b624e9212a33cadcfe "pdflatex"
+["biber main"] 1672655731 "main.bcf" "main.bbl" "main" 1672658465
+  "main.bcf" 1672658462 106832 261fdead144de8b624e9212a33cadcfe "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1672462154 "c:/Users/hapo/mathematical_analysis/main.tex" "main.pdf" "main" 1672462169
-  "c:/Users/hapo/mathematical_analysis/main.tex" 1672462152 69681 544a75dabd4fa1458691081fa4cd7fba ""
+["pdflatex"] 1672658448 "c:/Users/hapo/mathematical_analysis/main.tex" "main.pdf" "main" 1672658465
+  "c:/Users/hapo/mathematical_analysis/main.tex" 1672654629 35560 26da456a6802d08fc9539f7d53785fc9 ""
   "c:/Windows/Fonts/msyh.ttc" 1552970651 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "c:/Windows/Fonts/simfang.ttf" 1551461700 10578152 37e609660535d9b42db7ba1cc80eff88 ""
   "c:/Windows/Fonts/simhei.ttf" 1551461700 9753388 6abc0fcfbaa40600f9cecca3afeb3aa7 ""
@@ -119,6 +119,7 @@
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei67.tfm" 1671020635 1172 127372bbba8b4f4a65a26e565c0c6a2e ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei68.tfm" 1671020635 1172 a6e39128d14a2d8e22ed8239e864feff ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei69.tfm" 1671020634 1172 5ff5aedb967b76341e9dd27872cc92b0 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei6c.tfm" 1671020635 1172 7dd7a6f05321dd25f399ebba47f53887 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei70.tfm" 1671020635 1172 37cb57ab58b65f2767baaede9a4fe5d2 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei74.tfm" 1671020635 1172 a9c6136b4c7ff7b154a76d1701531b59 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei75.tfm" 1671020635 1172 a25bf5894dd20c7f5582ee012df9c39f ""
@@ -253,6 +254,8 @@
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong80.tfm" 1671020636 1172 bc023ebc9b121bce07974f18a4be28bc ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong81.tfm" 1671020636 1172 88aa66087396e79a2d9046555fe05ea9 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong82.tfm" 1671020636 1172 97758becb7742daa4b4c772be88e9009 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong83.tfm" 1671020636 1172 7dfd9db201c758b6a39baf9f8fe63ca3 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong84.tfm" 1671020636 1172 28184c57fe14bd0a42eeec4fe056b9b7 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong86.tfm" 1671020636 1172 1c2dc910b8ad781a19e026043f33b0fe ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong88.tfm" 1671020636 1172 e80b61bcc19bffe1009dc0e70ca042e8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong89.tfm" 1671020636 1172 8b185a44b25b68fee81f017ffd4f4c82 ""
@@ -268,6 +271,7 @@
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong96.tfm" 1671020636 1172 97abce3faa5097f1401cb707f6f69600 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong97.tfm" 1671020636 1172 3322410a0eee91e13e02457b09378209 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong98.tfm" 1671020636 1172 0d85b1f7b78508ff1f0a5ef94e0aaca9 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong99.tfm" 1671020636 1172 445e3c81b2f1f84601e454216cbde866 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong9a.tfm" 1671020636 1172 37a3cd36cf03e67f393bee80b1370d05 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong9e.tfm" 1671020636 1172 e797949130fb017e573d6826989dff50 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisongff.tfm" 1671020636 1172 156175f4eaa9daea4e21b890ac9fafb8 ""
@@ -537,14 +541,16 @@
   "c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1671020688 4448422 53302d27d6d34c8e3e97ce3a8b4bdfa7 ""
   "c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1671020842 2826447 5d1e73f7acac60152cfdaf8f35914514 ""
   "c:/texlive/2022/texmf.cnf" 1671020653 713 e69b156964470283e0530f5060668171 ""
+  "chapter1.tex" 1672654530 332 7561ea0e508973355b0aa1836c65af27 ""
+  "chapter2.tex" 1672658446 39955 5422d496b52fa646b44e3dea863d808e ""
   "figure//cover.jpg" 1670996900 426434 430bf60f65350d914a9d0df352351854 ""
   "figure//nju-emblem.pdf" 1670996900 29342 a76ebf914c73fd083cdf362da28f68c4 ""
-  "main.aux" 1672462166 3945 cf2efc8de964fd16f8ec6b586ac5d87b "pdflatex"
-  "main.bbl" 1672396963 486 ee04f40f768daeed26442158e95aba61 "biber main"
-  "main.out" 1672462166 2617 b629d78cfd89a6fe902c54b6a0abe033 "pdflatex"
-  "main.run.xml" 1672462166 2309 6d727e8fbe6c95686ac708ff30822a74 "pdflatex"
-  "main.tex" 1672462152 69681 544a75dabd4fa1458691081fa4cd7fba ""
-  "main.toc" 1672462166 1652 7dbe9de74101863ced1b4ca2b1609a5f "pdflatex"
+  "main.aux" 1672658462 4478 bfbc77525c3bce72dbd3649c22b0a267 "pdflatex"
+  "main.bbl" 1672655734 486 ee04f40f768daeed26442158e95aba61 "biber main"
+  "main.out" 1672658462 3026 0f94900df7fa80155ac2a24a987471a2 "pdflatex"
+  "main.run.xml" 1672658462 2309 6d727e8fbe6c95686ac708ff30822a74 "pdflatex"
+  "main.tex" 1672654629 35560 26da456a6802d08fc9539f7d53785fc9 ""
+  "main.toc" 1672658462 1945 e3fe1627cb305e0722f3791ec3a46587 "pdflatex"
   "newcommand.tex" 1671345523 352 1ed808131276232922ad0089fe6afccd ""
   (generated)
   "main.aux"
