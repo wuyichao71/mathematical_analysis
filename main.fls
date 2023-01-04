@@ -2076,6 +2076,9 @@ INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai91.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai67.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai75.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai91.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/vf/public/newtx/ntx-Bold-tlf-ot1.vf
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/newtx/txbmiaX.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-ot1r.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai58.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai68.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai68.tfm
@@ -2083,9 +2086,6 @@ INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai68.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai50.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai96.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai96.tfm
-INPUT c:/texlive/2022/texmf-dist/fonts/vf/public/newtx/ntx-Bold-tlf-ot1.vf
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/newtx/txbmiaX.tfm
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-ot1r.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs8c.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs58.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei68.tfm

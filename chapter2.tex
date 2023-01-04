@@ -90,7 +90,8 @@ $\sqrt{2}$不是有理数。
 
 % 陈老视频10
 \begin{proposition}
-\[ \lim_{n \to \infty } \sqrt[n]{a}= 1 (a > 1)\]
+    证明:
+    \[ \lim_{n \to \infty } \sqrt[n]{a}= 1 (a > 1)\]
 \end{proposition}
 \begin{proof}
     因为$a > 1$, 所以$\left| \sqrt[n]{a} - 1 \right| =\sqrt[n]{a} - 1$:
@@ -103,18 +104,39 @@ $\sqrt{2}$不是有理数。
     \[ a = (1 + y_n)^n = 1 + C_n^1 y_n + C_n^2 y_n^2 + \cdots \]
     则:
     \[ 1 + ny_n < a \]
-    即
+    即:
     \[ y_n < \frac{a - 1}{n} < \epsilon \]
     则取$N = \left[ \frac{a - 1}{\epsilon} \right] + 1$, , $\forall n > N$, $\left| \sqrt[n]{a} - 1\right| < \epsilon$, 即$\mylim{n}{\sqrt[n]{a}} = 1$
 \end{proof}
 {\bf 注}: 对于$\sqrt[n]{1+x}$利用均值不等式可以得到一个有意思的不等式：
 \[ \sqrt[n]{1+x} < 1 + \frac{x}{n} \]
 \begin{proposition}
-\[ \lim_{n \to \infty } \sqrt[n]{n}= 1 \]
+    证明
+    \[ \lim_{n \to \infty } \sqrt[n]{n}= 1 \]
 \end{proposition}
 \begin{proof}
-    
+    因为$n \ge 1$, 所以$\left| \sqrt[n]{n} - 1 \right| = \sqrt[n]{n} - 1$:
+    \[ \sqrt[n]{n} -1 = \sqrt[n]{1\cdot 1\cdot 1\cdots \sqrt{n} \cdot \sqrt{n} } -1 < \frac{n-2+2\sqrt{n}}{n} - 1 < \frac{2}{\sqrt{n}} < \epsilon \]
+    所以取$N = \left[ \frac{4}{\epsilon^2}\right] + 1$时, $\forall n > N$, $\left| \sqrt[n]{n} - 1\right| < \epsilon$, 即$\mylim{n}{\sqrt[n]{n}} = 1$
+
+    陈老是这样证明的:
+
+    令$y_n = \sqrt[n]{n} - 1$, 则:
+    \[ n = (1 + y_n)^n = 1 + C_n^1 y_n + C_n^2 y_n^2 + \cdots \]
+
+    则:
+    \[ 1 + C_n^2 y_n^2 < n \]
+    即
+    \[ y_n < \sqrt{\frac{2}{n}} < \epsilon \]
+    则取$N = \left[ \frac{2}{\epsilon^2} \right] + 1$, , $\forall n > N$, $\left| \sqrt[n]{n} - 1\right| < \epsilon$, 即$\mylim{n}{\sqrt[n]{n}} = 1$
 \end{proof}
+
+实际上, 用以上两种方法, 我们可以证明$\mylim{n}{\sqrt[n]{n^k}} = 1, (k \in \mathbb{N}^+)$
+
+\begin{proposition}
+    证明:
+    \[ \lim_{n \to \infty } \sqrt[n]{n^k}= 1, (k \in \mathbb{N}^+) \]
+\end{proposition}
 
 
 \begin{proposition}
