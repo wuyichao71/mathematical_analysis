@@ -1,0 +1,135 @@
+% 陈老视频39
+\chapter{微分}
+\section{微分和导数}
+\subsection{微分}
+考虑$y = f(x)$, 当$x \to x + \Delta x$时, $f(x) \to f(x+\Delta x)$, 令$\Delta y = f(x+\Delta x) - f(x)$。应该怎么简单地表示$\Delta y$?
+\begin{definition}[微分的定义]
+    $x_0 \in D_f$, 若存在只与$x_0$有关, 与$\Delta x$无关的$g(x_0)$,使得当$\Delta x \to 0$时:
+    \[ \Delta y = g(x_0)\Delta x + o(\Delta x) \]
+    则称$f(x)$在$x_0$可微。
+
+    若$f(x)$在区间X的每一点可微, 则称$f(x)$在区间X可微。
+
+    $g(x_0)\Delta x$称为$\Delta y$的线性主要部分。
+
+    $\Delta x \to 0$, 记$\Delta x$为$dx$, 若$f(x)$在$x$点可微, 则有$\Delta y = g(x)\Delta x + o(\Delta x), (\Delta x \to 0)$。则记$\Delta y$为$dy$, 并将上式写为$dy = g(x)dx $。
+\end{definition}
+
+\begin{proposition}
+    \[ y = f(x) = x^2 \]
+    对$\forall x \in (-\infty, +\infty)$, 求微分表示。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \[ y = f(x) = \sqrt[3]{x^2} \]
+    考虑$f$在$x_0 = 0$是否可微。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+可微$\Rightarrow$连续
+\subsection{导数}
+$y = f(x)$在$x_0$可微, 则$\Delta y = g(x_0)\Delta x + o(\Delta x), (\Delta x \to 0)$, 那么:
+\[ \frac{\Delta y}{\Delta x} = g(x_0) + \frac{o(\Delta x)}{\Delta x} \]
+令$\Delta x \to 0$, 则
+\[ \funclim{\Delta x}{0}{\frac{\Delta y}{\Delta x}} = g(x_0)\]
+\begin{definition}
+    设$x_0 \in D_f$, 若极限
+    \[ \funclim{\Delta x}{0}{\frac{\Delta y}{\Delta x}} = \funclim{\Delta x}{0}{\frac{f(x+\Delta x) - f(x)}{\Delta x}} \]
+    存在, 则称$f(x)$在$x_0$可导, 记这个极限值为$f'(x_0)$(或$y'(x_0)$, $\left.\frac{dy}{dx}\right|_{x = x_0}$, $\left.\frac{df}{dx}\right|_{x = x_0}$)。
+\end{definition}
+$f(x)$可导的范围是$D_f$的子集, 于是我们可以得到在这子集上的$f(x)$的导函数, 记为$f'(x)$(或$y'(x)$, $\frac{dy}{dx}$, $\frac{df}{dx}$)。
+
+可微$\Rightarrow$可导, 且$f'(x_0) = g(x_0)$。
+
+可导是否一定可微?
+
+可导, 则:
+\[ \funclim{\Delta x}{0}{\frac{\Delta y}{\Delta x}} = f'(x_0)\]
+则:
+\[  \funclim{\Delta x}{0}{\left(\frac{\Delta y}{\Delta x} - f'(x_0) \right)} = 0 \]
+\[ \frac{\Delta y}{\Delta x} - f'(x_0) = o(1), (\Delta x \to 0) \]
+\[ \Delta y = f'(x_0)\Delta x + o(1)\Delta x \]
+\[ \Delta y = f'(x_0)\Delta x + o(\Delta x) \]
+即, 可导$\Rightarrow$可微(一元函数下)。
+
+% 陈老视频40
+\section{导数的意义与性质}
+\begin{proposition}
+    抛物线:
+    \[ y^2 = 2px \]
+    $(x_0, y_0)$是抛物线上一点, 求过$(x_0, y_0)$的切线方程。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    椭圆:
+    \[ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \]
+    求椭圆上过$(x_0, y_0)$点的切线。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频41
+$f(x)$在$x_0$处的导数为以下极限:
+\[ f'(x_0) = \funclim{\Delta x}{0}{\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x}}\]
+称:
+\[ f'_+(x_0) = \funclim{\Delta x}{0^+}{\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x}}\]
+为$f(x)$在$x_0$的右导数。
+称:
+\[ f'_-(x_0) = \funclim{\Delta x}{0^-}{\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x}}\]
+为$f(x)$在$x_0$的左导数。
+
+因此, $f(x)$在$x_0$可导$\Longleftrightarrow$ $f(x)$在$x_0$的左右导数存在且相等。
+
+以下两个记号不好弄混:$f'_+(x_0)$是$f(x)$在$x_0$的右导数, $f'(x_0^+)$是$f(x)$导数在$x_0$的右极限。
+
+同理, $f'_-(x_0)$是$f(x)$在$x_0$的左导数, $f'(x_0^-)$是$f(x)$导数在$x_0$的左极限。
+
+\begin{proposition}
+    $f(x) = \left| x \right|$在$x_0$的左右导数。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \begin{equation*}
+        f(x) = \left\{ 
+            \begin{aligned}
+                &x\sin(1/x) &\quad x>0 \\
+                &0          &\quad x \le 0
+            \end{aligned}
+        \right.
+    \end{equation*}
+    求$f(x)$在$x = 0$的左右导数。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \begin{equation*}
+        f(x) = \left\{ 
+            \begin{aligned}
+                & x^2 + b &\quad x > 2 \\
+                & ax + 1 &\quad x \le 2
+            \end{aligned}
+        \right.
+    \end{equation*}
+    要求确定$a, b$使得$f(x)$在$x_0 = 2$可导。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+$f(x)$在$(a, b)$上每一点可导, 则称$f(x)$在$(a, b)$区间上可导。
+
+$f(x)$在$(a, b)$上每一点可导, 在$x = a$上有右导数, $x = b$又左导数, 则称$f$在闭区间$[a, b]$上可导。
