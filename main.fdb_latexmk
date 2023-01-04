@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber main"] 1672725029 "main.bcf" "main.bbl" "main" 1672726963
-  "main.bcf" 1672726960 106832 261fdead144de8b624e9212a33cadcfe "pdflatex"
+["biber main"] 1672816130 "main.bcf" "main.bbl" "main" 1672816444
+  "main.bcf" 1672816441 106832 261fdead144de8b624e9212a33cadcfe "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1672726948 "c:/Users/hapo/mathematical_analysis/main.tex" "main.pdf" "main" 1672726963
+["pdflatex"] 1672816428 "c:/Users/hapo/mathematical_analysis/main.tex" "main.pdf" "main" 1672816444
   "c:/Users/hapo/mathematical_analysis/main.tex" 1672713154 1163 b676e7c4b3db3c6ec94a231a8ef5978f ""
   "c:/Windows/Fonts/msyh.ttc" 1552970651 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "c:/Windows/Fonts/simfang.ttf" 1551461700 10578152 37e609660535d9b42db7ba1cc80eff88 ""
@@ -547,16 +547,16 @@
   "chapter1.tex" 1672654530 332 7561ea0e508973355b0aa1836c65af27 ""
   "chapter2.tex" 1672658446 39955 5422d496b52fa646b44e3dea863d808e ""
   "chapter3.tex" 1672713096 33041 09929b780aa3b1b14d852b7fa5e32276 ""
-  "chapter4.tex" 1672726946 4665 072dee4607366d99b1dfebd6651abdf6 ""
+  "chapter4.tex" 1672816426 8120 f4afeab6ac8424452e2f128a96660783 ""
   "figure//cover.jpg" 1670996900 426434 430bf60f65350d914a9d0df352351854 ""
   "figure//nju-emblem.pdf" 1670996900 29342 a76ebf914c73fd083cdf362da28f68c4 ""
-  "main.aux" 1672726960 4604 162c576d69baf4eb5b593b5cef00ee17 "pdflatex"
-  "main.bbl" 1672725035 486 ee04f40f768daeed26442158e95aba61 "biber main"
-  "main.out" 1672726960 3167 06de28d45d528b53a7e859c56f474c0b "pdflatex"
-  "main.run.xml" 1672726960 2309 6d727e8fbe6c95686ac708ff30822a74 "pdflatex"
+  "main.aux" 1672816441 4748 4dbdd2224f614d866bdcefe2652a8990 "pdflatex"
+  "main.bbl" 1672816133 486 ee04f40f768daeed26442158e95aba61 "biber main"
+  "main.out" 1672816441 3356 8ca226ae58cf579a550864f98a1b30f5 "pdflatex"
+  "main.run.xml" 1672816441 2309 6d727e8fbe6c95686ac708ff30822a74 "pdflatex"
   "main.tex" 1672713154 1163 b676e7c4b3db3c6ec94a231a8ef5978f ""
-  "main.toc" 1672726960 2030 00bcd1e2348e8d46f571dba049ded50f "pdflatex"
-  "newcommand.tex" 1671345523 352 1ed808131276232922ad0089fe6afccd ""
+  "main.toc" 1672816441 2133 9445a155e97b1b98d317da42c1c1d283 "pdflatex"
+  "newcommand.tex" 1672816358 390 e5a995937d6915f045e91b593e40322c ""
   (generated)
   "main.aux"
   "main.bcf"
