@@ -308,3 +308,238 @@ $f(x)$在$(a, b)$上每一点可导, 在$x = a$上有右导数, $x = b$又左导
 \begin{proof}
     
 \end{proof}
+
+% 陈老视频43
+\begin{proposition}
+    考虑:
+    \[ \sh(x) = \frac{\e^x - \e^{-x}}{2} \quad \text{和} \quad \ch(x) = \frac{\e^x + \e^{-x}}{2} \]
+    的导数。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    考虑:
+    \[ \thx(x) = \frac{\sh(x)}{\ch(x)} \quad \text{和} \quad \cth(x) = \frac{\ch(x)}{\sh(x)} \]
+    的导数。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    考虑:
+    \[ \sh^{-1}(x) \quad \text{和} \quad \ch^{-1}(x) \]
+    的导数。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{remark}
+    \begin{enumerate}
+        \item $\left( \sum_{i = 1}^n c_i f_i(x) \right)' = \sum_{i = 1}^n c_i f'_i(x) $
+        \item $\prod_{i = 1}^n f_i(x) = \sum_{j=1}^n\left(f_j'(x)\prod_{i = 1, i \neq j}^n f_i(x) \right)$
+    \end{enumerate}
+\end{remark}
+
+\begin{proposition}
+    求
+    \[ y = a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0 \]
+    的导数。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    求:
+    \[ y = \e^x\left(x^2+3x-1\right)\arcsin(x)\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频44
+\section{复合函数求导法则及其应用}
+\begin{proposition}
+    $u = g(x)$在$x_0$可导, $g(x_0) = u_0$, $u = f(u)$在$u = u_0$可导, 则$y = f\left(g(x)\right)$在$x = x_0$可导, 且:
+    \[ \left[ f\left(g(x)\right)\right]'_{x=x_0} = f'(u_0)g'(x_0) \]
+\end{proposition}
+\begin{proof}
+    有缺陷证明:
+
+    证明:
+
+\end{proof}
+复合函数求导法则又叫链式法则。
+
+\begin{example}
+    用复合函数求导法则求:
+    \[ y = x^\alpha \]
+    的导数。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    用复合函数求导法则求:
+    \[ y = \e^{\cos(x)} \]
+    的导数。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    用复合函数求导法则求:
+    \[ y = \sqrt{1+x^2} \]
+    的导数。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频45
+\begin{proposition}
+    求:
+    \[ y = \e^{\sqrt{1+\cos(x)}} \]
+    的导数。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+幂指函数:
+\begin{example}
+    求:
+    \[ y = f(x) = u(x)^{v(x)} \]
+    的导数。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    \[ y = \left(\sin(x)\right)^{\cos(x)}\]
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}[一阶微分的形式不变性]
+    设$y = f(u)$, 则$y'(u) = f'(u)$, $\D y = f'(u) \D u$, 其中$u$是自变量。
+
+    设$y = f(u), u = g(x)$, 则$y(x) = f(g(x))$, $y'(x) = f'(u)g'(x)$, $y'(x) = f'(g(x))g'(x)$, $\D y = f'(g(x))g'(x) \D x$, 则
+    $\D y = f'(g(x)) \D g(x) = f'(u)\D u$, 其中$u$是中间变量。
+
+    无论$u$是自变量还是中间变量,$\D y = f'(u)\D u$
+\end{theorem}
+
+\subsection{隐函数的求导与微分}
+隐函数:$f(x, y) = 0$。
+\begin{example}
+    \begin{equation*}
+        \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
+    \end{equation*}
+    求y关于x的微分。
+\end{example}
+
+\begin{example}
+    \[ \e^{xy} + x^2y - 1 = 0 \]
+    求y关于x的微分。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    \[ \sin(y^2) = \cos(\sqrt{x}) \] 
+    求y关于x的微分。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    \[ \e^{x+y} - xy - e = 0\]
+    (0, 1)在曲线上, 求过(0, 1)点的切线方程。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{remark}
+    \begin{enumerate}
+        \item $y \ \frac{1}{g(x)}$也可以看作:
+        \begin{equation*}
+            \left\{ 
+                \begin{aligned}
+                    &y = \frac{1}{u} \\
+                    &u = g(x)
+                \end{aligned}
+            \right.
+        \end{equation*}
+        则$y'(x) = -\frac{1}{g^2(x)}\cdot g'(x)$, 定义证明和复合函数结果一致。
+        \item $y = f(x), x = f^{-1}(y)$, 则$f^{-1}((f(x))) = x$, 使用复合函数求导, 则$1 = (f^{-1}(y))'f'(x)$, 即$(f^{-1}(y)) = \frac{1}{f'(x)}$, 用复合函数求导法则可以推导反函数求导。
+    \end{enumerate}
+\end{remark}
+
+\subsection{函数的参数表示}
+函数的参数表示:
+\begin{equation*}
+    \left\{ 
+        \begin{aligned}
+            &x = \phi(t) \\
+            &y = \psi(t)
+        \end{aligned}
+    \right.
+\end{equation*}
+其中$\alpha \le t \le \beta$, $\phi, \psi$可微, $\phi$严格单调, $\phi '(t) \neq 0$。由反函数可导定理t可以表示为$t = \phi^{-1}(x)$,则:
+\begin{equation*}
+    y = \psi(\phi^{-1}(x))
+\end{equation*}
+则:
+\begin{equation*}
+    \frac{\D y}{\D x} = \psi'(t)(\phi'(x))' = \psi'(t)\cdot \frac{1}{\phi(t)} = \frac{\psi'(t)}{\phi'(t)}
+\end{equation*}
+
+\begin{example}
+    求旋轮线:
+    \begin{equation*}
+        \left\{ 
+            \begin{aligned}
+                &x = t - \sin(t) \\
+                &y = 1 - \cos(t)
+            \end{aligned}
+        \right.
+    \end{equation*}
+    的导数。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频46
+\begin{example}
+    $t = 0$时, 水平速度与垂直向上的速度分别为$v_1$, $v_2$, 问在什么时刻, 速度的方向是水平的?
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    \begin{equation*}
+        \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
+    \end{equation*}
+    分别用三种表示方法的求导方式求导。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频47
+\section{高阶导数和高阶微分}
+

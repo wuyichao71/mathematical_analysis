@@ -1,8 +1,8 @@
 \contentsline {chapter}{\numberline {1}集合与映射}{2}{chapter.1}%
 \contentsline {chapter}{\numberline {2}实数的完备性}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}数列极限}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}无穷大量}{8}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}无穷大的运算}{9}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.2}无穷大量}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}无穷大的运算}{10}{subsection.2.2.1}%
 \contentsline {section}{\numberline {2.3}收敛准则}{12}{section.2.3}%
 \contentsline {chapter}{\numberline {3}函数极限与连续函数}{20}{chapter.3}%
 \contentsline {section}{\numberline {3.1}函数极限和数列极限的关系}{22}{section.3.1}%
@@ -24,3 +24,7 @@
 \contentsline {subsection}{\numberline {4.1.2}导数}{37}{subsection.4.1.2}%
 \contentsline {section}{\numberline {4.2}导数的意义与性质}{38}{section.4.2}%
 \contentsline {section}{\numberline {4.3}导数四则运算与反函数求导法则}{39}{section.4.3}%
+\contentsline {section}{\numberline {4.4}复合函数求导法则及其应用}{43}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}隐函数的求导与微分}{44}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}函数的参数表示}{45}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}高阶导数和高阶微分}{45}{section.4.5}%

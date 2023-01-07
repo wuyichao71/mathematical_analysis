@@ -2,7 +2,9 @@
 \begin{introduction}
   \item 有理数的定义~\ref{def:rational-number}
   \item Bolzano-Weierstrass定理~\ref{theorem:Bolzano-Weierstrass}
-  \item 数列极限的保序性逆命题~\ref{lemma:list-order}
+  \item 数列极限的唯一性~\ref{theorem:limit-uniqueness}
+  \item 数列极限的保序性逆命题~\ref{lemma:progression-order}
+
 \end{introduction}
 在本章中，我们将介绍实数的完备性。在介绍实数之前，我们需要将实数定义或者说引入。而对于实数的定义是有很多的，而我在此介绍无穷十进制小数表示和戴德金(Dedekind)分割。这部分我将结合陈纪修教授的教材和Ayumu的讲义。
 
@@ -23,18 +25,18 @@ $\mathbb{Z}^+ = \{ n | n \in \mathbb{Z}, n > 0 \}$
 有理数对加减乘除都封闭，并且我们在有理数上定义了大小关系，即有理数也是良序的。但是它并不能满足研究所需。例如，存在长度无法用有理数表示。并且有理数之间存在``空隙''，即有理数不连续。而在我们之后的研究中，我们往往需要研究连续性，因此我们需要对有理数进行扩充。在这之前，我们先来证明确实有一些数无法用有理数表示。
 
 
-\begin{proposition}
+\begin{example}
 $\sqrt{2}$不是有理数。
-\end{proposition}
+\end{example}
 \begin{proof}
 我们用反证法。假设$\sqrt{2}$为有理数, 那么存在$q \in \mathbb{Z}, p \in \mathbb{Z}^+$, $p, q$互质, 使得$\sqrt{2} = \frac{q}{p}$, 即$q^2 = 2p^2$。因为$q^2$可以被2整除, 即$q^2$为偶数, 则$q$为偶数。那么$q$可以表示为$q = 2m, m \in \mathbb{Z}$。代入上式中, 得$p^2 = 2m^2$, 即$p$也为偶数。这与互质矛盾, 因此假设不成立, $\sqrt{2}$不是有理数。
 \end{proof}
-\begin{proposition}
+\begin{example}
     若n不是完全平方数, 则$\sqrt{n}$不是有理数。
-\end{proposition}
+\end{example}
 \begin{proof}
 \end{proof}
-除了有些数无法用有理数表示外，有的函数在实数域和有理数域上的表现完全不一样,比如狄利克雷(dirichlet)函数:
+除了以上举例的有些数无法用有理数表示以外, 有的函数在实数域和有理数域上的表现完全不一样,比如狄利克雷(dirichlet)函数:
 \begin{equation*}
     D(x) = \left\{
         \begin{aligned}
@@ -69,18 +71,20 @@ $\sqrt{2}$不是有理数。
     以零为极限的变量称为{\bf 无穷小量}。
 \end{definition}
 
-\begin{proposition}
+\begin{example}
+    证明:
     \[ \mylim{n}{\frac{n}{n+3}}= 1 \]
-\end{proposition}
+\end{example}
 \begin{proof}
     令:
     \[ \left| \frac{n}{n+3} - 1 \right| = \frac{3}{n + 3} < \frac{3}{n} < \epsilon \]
     因此, 当$N = \left[ \frac{3}{\epsilon} \right] + 1$时, $\left| \frac{n}{n+3} - 1 \right| < \epsilon$
 \end{proof}
 
-\begin{proposition}
+\begin{example}
+    证明:
     \[ \mylim{n}{q^n}= 0(0 < \left|q\right| < 1) \]
-\end{proposition}
+\end{example}
 \begin{proof}
     因为$0< \left|q\right| < 1$, 则$\left|q^n\right| = \left|q\right|^n < \epsilon$, 则:
     \[ n > \frac{\lg(\epsilon)}{\lg(\left|q\right|)} \]
@@ -89,41 +93,51 @@ $\sqrt{2}$不是有理数。
 \end{proof}
 
 % 陈老视频10
-\begin{proposition}
+\begin{example}
     证明:
     \[ \lim_{n \to \infty } \sqrt[n]{a}= 1 (a > 1)\]
-\end{proposition}
+\end{example}
 \begin{proof}
     因为$a > 1$, 所以$\left| \sqrt[n]{a} - 1 \right| =\sqrt[n]{a} - 1$:
-    \[ \sqrt[n]{a} - 1 = \sqrt[n]{1\cdot 1\cdot 1\cdots a} - 1 < \frac{(n - 1) + a}{n} - 1 < \frac{a - 1}{n} < \frac{a}{n} < \epsilon \]
-    所以取$N = \left[ \frac{a}{\epsilon} \right] + 1$时, $\forall n > N$, $\left| \sqrt[n]{a} - 1\right| < \epsilon$, 即$\mylim{n}{\sqrt[n]{a}} = 1$
+    \begin{equation*}
+        \sqrt[n]{a} - 1 = \sqrt[n]{1\cdot 1\cdot 1\cdots a} - 1 < \frac{(n - 1) + a}{n} - 1 < \frac{a - 1}{n} < \frac{a}{n} < \epsilon 
+    \end{equation*}
+    所以取$N = \left[ \frac{a}{\epsilon} \right] + 1$时, $\forall n > N$, $\left| \sqrt[n]{a} - 1\right| < \epsilon$, 即$\mylim{n}{\sqrt[n]{a}} = 1$。
 
-    陈老是这样证明的:
+    \framebox{陈老是这样证明的}:
 
     令$y_n = \sqrt[n]{a} - 1$, 则:
-    \[ a = (1 + y_n)^n = 1 + C_n^1 y_n + C_n^2 y_n^2 + \cdots \]
+    \begin{equation*}
+        a = (1 + y_n)^n = 1 + C_n^1 y_n + C_n^2 y_n^2 + \cdots + C_n^n y_n^n         
+    \end{equation*}
+
     则:
     \[ 1 + ny_n < a \]
     即:
     \[ y_n < \frac{a - 1}{n} < \epsilon \]
     则取$N = \left[ \frac{a - 1}{\epsilon} \right] + 1$, , $\forall n > N$, $\left| \sqrt[n]{a} - 1\right| < \epsilon$, 即$\mylim{n}{\sqrt[n]{a}} = 1$
 \end{proof}
-{\bf 注}: 对于$\sqrt[n]{1+x}$利用均值不等式可以得到一个有意思的不等式：
-\[ \sqrt[n]{1+x} < 1 + \frac{x}{n} \]
-\begin{proposition}
+\begin{remark}
+    对于$\sqrt[n]{1+x}$利用均值不等式可以得到一个有意思的不等式：
+    \begin{equation*}
+        \sqrt[n]{1+x} < 1 + \frac{x}{n}
+    \end{equation*}
+\end{remark}
+\begin{example}
     证明
     \[ \lim_{n \to \infty } \sqrt[n]{n}= 1 \]
-\end{proposition}
+\end{example}
 \begin{proof}
     因为$n \ge 1$, 所以$\left| \sqrt[n]{n} - 1 \right| = \sqrt[n]{n} - 1$:
     \[ \sqrt[n]{n} -1 = \sqrt[n]{1\cdot 1\cdot 1\cdots \sqrt{n} \cdot \sqrt{n} } -1 < \frac{n-2+2\sqrt{n}}{n} - 1 < \frac{2}{\sqrt{n}} < \epsilon \]
-    所以取$N = \left[ \frac{4}{\epsilon^2}\right] + 1$时, $\forall n > N$, $\left| \sqrt[n]{n} - 1\right| < \epsilon$, 即$\mylim{n}{\sqrt[n]{n}} = 1$
+    所以取$N = \left[ \frac{4}{\epsilon^2}\right] + 1$时, $\forall n > N$, $\left| \sqrt[n]{n} - 1\right| < \epsilon$, 即$\mylim{n}{\sqrt[n]{n}} = 1$。
 
-    陈老是这样证明的:
+    \framebox{陈老是这样证明的}:
 
     令$y_n = \sqrt[n]{n} - 1$, 则:
-    \[ n = (1 + y_n)^n = 1 + C_n^1 y_n + C_n^2 y_n^2 + \cdots \]
-
+    \begin{equation*}
+        n = (1 + y_n)^n = 1 + C_n^1 y_n + C_n^2 y_n^2 + \cdots + C_n^n y_n^n
+    \end{equation*}
     则:
     \[ 1 + C_n^2 y_n^2 < n \]
     即
@@ -131,27 +145,93 @@ $\sqrt{2}$不是有理数。
     则取$N = \left[ \frac{2}{\epsilon^2} \right] + 1$, , $\forall n > N$, $\left| \sqrt[n]{n} - 1\right| < \epsilon$, 即$\mylim{n}{\sqrt[n]{n}} = 1$
 \end{proof}
 
-实际上, 用以上两种方法, 我们可以证明$\mylim{n}{\sqrt[n]{n^k}} = 1, (k \in \mathbb{N}^+)$
+\begin{remark}
+    实际上, 用以上两种方法, 我们可以证明$\mylim{n}{\sqrt[n]{n^k}} = 1, (k \in \mathbb{N}^+)$。
+\end{remark}
 
-\begin{proposition}
+\begin{example}
     证明:
     \[ \lim_{n \to \infty } \sqrt[n]{n^k}= 1, (k \in \mathbb{N}^+) \]
-\end{proposition}
-
-
-\begin{proposition}
-    设$a_n > 0$,$\lim\limits_{n \to \infty} a_n = a$，证明
-    \[ \lim_{n \to \infty}\frac{a_1+a_2+\cdots+a_n}{n} = a \]
-\end{proposition}
+\end{example}
 \begin{proof}
-    
+    因为$n \ge 1$, 所以$\left| \sqrt[n]{n^k} - 1 \right| = \sqrt[n]{n^k} - 1$:
+    \[ \sqrt[n]{n} -1 = \sqrt[n]{1\cdot 1\cdot 1\cdots \sqrt{n} \cdot \sqrt{n} \cdot \sqrt{n} } -1 < \frac{n-2k+2k\sqrt{n}}{n} - 1 < \frac{2k}{\sqrt{n}} < \epsilon \]
+    所以取$N = \left[ \frac{4k^2}{\epsilon^2}\right] + 1$时, $\forall n > N$, $\left| \sqrt[n]{n^k} - 1\right| < \epsilon$, 即$\mylim{n}{\sqrt[n]{n^k}} = 1$。
+
+    \framebox{陈老证明方法}:
+    取$n > 2k$, 令$y_n = \sqrt[n]{n^k} - 1$, 则:
+    \begin{equation*}
+        n^k = (1 + y_n)^n = 1 + C_n^1 y_n + \cdot + C_n^{k+1}y_n^{k+1} + \cdots + C_n^n y_n^n
+    \end{equation*}
+    则:
+    \begin{equation*}
+        \frac{(n-k)^{k+1}}{{(k+1)}^{k+1}}y_n^{k+1} < C_n^{k+1}y_n^{k+1} < n^k
+    \end{equation*}
+    则:
+    \begin{equation*}
+        y_n < (k+1)\sqrt[k+1]{\frac{n^k}{(n-k)^n(n-k)}}
+    \end{equation*}
+    因为$n > 2k$, 则$n-k = \frac{n}{2} + \frac{n}{2} - k > \frac{n}{2}$, 所以:
+    \begin{equation*}
+        yn < (k+1)\sqrt[k+1]{\frac{n^k}{(n-k)^n(n-k)}} < (k+1)\sqrt[k+1]{\frac{2^k}{(n-k)}} < \epsilon
+    \end{equation*}
+    则取:
+    \begin{equation*}
+        N = \max\left\{ 2k, \left[ \frac{2^k}{\left( \frac{\epsilon}{k+1} \right)^{k+1}}\right] + k + 1\right\}
+    \end{equation*}
+    当$n > N$时,$yn < \epsilon$, 即$\mylim{n}{\sqrt[n]{n^k}} = 1$
+\end{proof}
+\begin{remark}
+    在知道极限的四则运算法则后, $\sqrt[n]{n^k} = \left(\sqrt[n]{n}\right)^k$可以很快得出极限为1。
+\end{remark}
+
+
+\begin{example}
+    设$a_n > 0$,$\lim_{n \to \infty} a_n = a$，证明
+    \[ \lim_{n \to \infty}\frac{a_1+a_2+\cdots+a_n}{n} = a \]
+\end{example}
+\begin{proof}
+    \def\tmp#1{\left| a_{#1} - a \right|}
+    \edef\tmpmax#1{\max\left\{#1\right\}}
+    因为$\mylim{n}{a_n} = a$, 所以$\exists N \in \mathbb{N}^+$, $\forall n > N$, $\tmp{n} < \frac{\epsilon}{2}$。
+    \begin{equation*}
+        \begin{aligned}
+            \left| \mean{a}{n} -a \right| &\le  \frac{\tmp{1} + \tmp{2} + \cdots + \tmp{n}}{n} \\
+            & = \frac{\tmp{1} + \cdots + \tmp{N}}{n} + \frac{\tmp{N+1} + \cdots + \tmp{n}}{n} 
+        \end{aligned}    
+    \end{equation*}
+    对于后一项, 当$n > N$时, 有:
+    \begin{equation*}
+        \frac{\tmp{N+1} + \cdots + \tmp{n}}{n} < \frac{n\epsilon/2}{n} < \frac{\epsilon}{2}
+    \end{equation*}
+    对于前一项, 因为N为一个有限数, 则取$M = \tmpmax{\tmp{1}, \tmp{2}, \cdots, \tmp{N}}$, 因此:
+    \begin{equation*}
+        \frac{\tmp{1} + \cdots + \tmp{N}}{n} < \frac{NM}{n}
+    \end{equation*}
+    因此取$N_1 = \left[ \frac{2NM}{\epsilon} + 1 \right]$, 当$n > N_1$时:
+    \begin{equation*}
+        \frac{\tmp{1} + \cdots + \tmp{N}}{n} < \frac{\epsilon}{2}
+    \end{equation*}
+    因此, 取$N_2 = \tmpmax{N, N_1}$, 当$n > N_2$时:
+    \begin{equation*}
+        \mean{a}{n} < \epsilon
+    \end{equation*}
+    即:
+    \begin{equation*}
+        \mylim{n}{\mean{a}{n}} = a
+    \end{equation*}
 \end{proof}
 
-\begin{theorem}[数列极限的唯一性]
+在给出数列极限的定义之后, 我们来考察下数列极限的性质。
+\begin{theorem}[数列极限的唯一性]\label{theorem:limit-uniqueness}
     若
-    \[ \mylim{n}{x_n} = a, \mylim{n}{x_n} = b \]
+    \begin{equation*}
+        \mylim{n}{x_n} = a, \mylim{n}{x_n} = b
+    \end{equation*}
     则
-    \[  a = b \]
+    \begin{equation*}
+        a = b
+    \end{equation*}
 \end{theorem}
 \begin{proof}
     
@@ -183,7 +263,7 @@ $\sqrt{2}$不是有理数。
     
 \end{proof}
 
-\begin{lemma}[数列极限的保序性逆命题]\label{lemma:list-order}
+\begin{lemma}[数列极限的保序性逆命题]\label{lemma:progression-order}
     对于$\mylim{n}{x_n} = a,\mylim{n}{x_n} = b$, 若$\exists N \in \mathbb{N}^+$, $\forall n > N$, $x_n \le y_n$, 则$a \le b$。 
 \end{lemma}
 \begin{proof}
@@ -829,7 +909,7 @@ $, 则:
 
 根据根据Bolzano-Weierstrass定理(定理~\ref{theorem:Bolzano-Weierstrass}), 则存在收敛子列$\collect{x_{n_k}}$, 假设该收敛子列$\collect{x_{n_k}}$收敛于A。
 
-根据$\collect{x_n}$是基本数列, 则$\forall \epsilon > 0$, $\exists N_1 \in \mathbb{N}^+$, $\forall n, m > N_1$, $\left| x_n - x_m \right| < \frac{\epsilon}{2}$, 现在固定$x_m$, 取$x_n$为子列$\collect{x_{n_k}}$。现在考虑数列$\collect{\left| x_{n_k}  - x_m\right|}$和数列$\collect{\frac{\epsilon}{2}}$, 取$K = N_1$, 则$\forall k > K$, 有$n_k > n_K \ge K = N_1$, 即$\forall k > K$, $\left| x_{n_k}  - x_m\right| < \frac{\epsilon}{2}$, 根据数列极限的保序性逆命题(推论~\ref{lemma:list-order}), $\left| A - x_m\right| \le \frac{\epsilon}{2} < \epsilon$。这对于$\forall m > N_1$都成立, 即数列$\collect{x_n}$极限存在且为A。
+根据$\collect{x_n}$是基本数列, 则$\forall \epsilon > 0$, $\exists N_1 \in \mathbb{N}^+$, $\forall n, m > N_1$, $\left| x_n - x_m \right| < \frac{\epsilon}{2}$, 现在固定$x_m$, 取$x_n$为子列$\collect{x_{n_k}}$。现在考虑数列$\collect{\left| x_{n_k}  - x_m\right|}$和数列$\collect{\frac{\epsilon}{2}}$, 取$K = N_1$, 则$\forall k > K$, 有$n_k > n_K \ge K = N_1$, 即$\forall k > K$, $\left| x_{n_k}  - x_m\right| < \frac{\epsilon}{2}$, 根据数列极限的保序性逆命题(推论~\ref{lemma:progression-order}), $\left| A - x_m\right| \le \frac{\epsilon}{2} < \epsilon$。这对于$\forall m > N_1$都成立, 即数列$\collect{x_n}$极限存在且为A。
 \end{proof}
 
 \begin{proposition}
