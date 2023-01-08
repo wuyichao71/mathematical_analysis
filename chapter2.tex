@@ -67,6 +67,7 @@ $\sqrt{2}$不是有理数。
 
 此外, $\epsilon$还可以限定为小于一定值, 在该限定下证明不等式成立。这是因为当$\epsilon \le c$时候, 存在了N, 使得$n > N$时成立, 那么当$\epsilon > c$时, 该N也能使得$n >N$时成立。
 
+接下来我们定义一个特殊的数列极限: {\bf 无穷小量}。我们会在之后特殊讨论它, 例如无穷小量的阶。 
 \begin{definition}[无穷小量的定义]
     以零为极限的变量称为{\bf 无穷小量}。
 \end{definition}
@@ -222,7 +223,7 @@ $\sqrt{2}$不是有理数。
     \end{equation*}
 \end{proof}
 
-在给出数列极限的定义之后, 我们来考察下数列极限的性质。
+在给出数列极限的定义之后, 我们来考察下数列极限的性质。因为现在我们只讲了定义, 如果求所有的导数都从定义出发, 那么过程会极其地繁琐。因此我们需要总结规律, 使得我们能够方便地求解数列极限。
 \begin{theorem}[数列极限的唯一性]\label{theorem:limit-uniqueness}
     若
     \begin{equation*}
@@ -233,9 +234,25 @@ $\sqrt{2}$不是有理数。
         a = b
     \end{equation*}
 \end{theorem}
+\begin{remark}
+    以下我不再写$N \in \mathbb{N}^+$, 因为过于冗余。
+\end{remark}
 \begin{proof}
-    
+    \framebox{证法一(陈老版本)}: $\forall \epsilon > 0$, $\exists N_1$, $\forall n > N_1$, $\left| a_n - a \right|< \frac{\epsilon}{2}$。$\exists N_2$, $\forall n > N_2$, $\left| b_n - b \right|< \frac{\epsilon}{2}$。所以$\forall n > \max\{N_1, N_2\}$, 有:
+    \begin{equation*}
+        \left| a - b \right| = \left| (a - a_n) - (b - a_n) \right| \le \left| a_n - a \right| + \left| a_n - b \right| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+    \end{equation*}
+    即$\forall \epsilon$, $\forall n > \max\{N_1, N_2\}$, $\left| a - b \right| < \epsilon$。$\left| a - b \right| < \epsilon$要对所有的$\epsilon$和$n$都成立, 因此$\left| a - b \right| = 0$, 即$a = b$。若$a \neq b$, 则可取$\epsilon = \frac{\left| a - b \right|}{2}$, 使得$\exists n$使不等式不成立。
+
+    \begin{remark}
+        也可以把$\{a\}$看作一个恒等序列, 则$\forall \epsilon > 0$, $\exists N$, $\forall n > N$, $\left| a - b \right| < \epsilon$, 即恒等数列$\{a\}$的极限为b, 则$a = b$。
+    \end{remark}
+
+    \framebox{证法二}:用反证法, 设$a > b$, 取$\epsilon = \frac{a - b}{2}$, 则$\exists N_1$, $\forall n > N_1$, $\left| a_n - a \right| < \frac{a - b}{2}$, 则$a_n > \frac{a + b}{2}$。同理可得: $\exists N_2$, $\forall n > N_2$, $a_n < \frac{a + b}{2}$。则$\forall n > \max\{N_1, N_2\}$, $\frac{a+b}{2} < a_n < \frac{a+b}{2}$, 存在矛盾, 即$a \le b$。同理可以证$a \ge b$, 因此$a = b$。
 \end{proof}
+\begin{remark}
+    唯一性表明了收敛的数列极限$a$有且只有一个, 在定义中只说了$\exists a$, 并没有限定$a$的个数, 唯一性使得当我们求得一个极限时, 不用再去找别的极限值。
+\end{remark}
 
 
 \begin{definition}
