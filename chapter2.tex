@@ -254,18 +254,22 @@ $\sqrt{2}$不是有理数。
     唯一性表明了收敛的数列极限$a$有且只有一个, 在定义中只说了$\exists a$, 并没有限定$a$的个数, 唯一性使得当我们求得一个极限时, 不用再去找别的极限值。
 \end{remark}
 
+接下来我们再来看数列的有界性, 有界性也是极限非常重要的性质, 很多时候可以帮助我们放大不等式。
 
-\begin{definition}
+\begin{definition}\label{definition:limit-bound}
     \begin{enumerate}
         \item 对于数列$\collect{x_n}$, 若$\exists M \in \mathbb{R}$, $\forall n \in \mathbb{N}^+$, 成立$x_n \le M$, 则称M是$\collect{x_n}$的一个上界, 或称$\collect{x_n}$有上界。
         \item 对于数列$\collect{x_n}$, 若$\exists m \in \mathbb{R}$, $\forall n \in \mathbb{N}^+$, 成立$x_n \ge m$, 则称m是$\collect{x_n}$的一个下界, 或称$\collect{x_n}$有下界。
     \end{enumerate}
     $\collect{x_n}$既有上界又有下界, 则称$\collect{x_n}$有界。
 
-    $\collect{x_n}$有界的另一个定义：$\exists X \in \mathbb{R}^+$, $\forall x \in \mathbb{N}^+$, 成立$\left| x_n \right| \le X$
+    $\collect{x_n}$有界的另一个定义：$\exists X \in \mathbb{R}^+$, $\forall n \in \mathbb{N}^+$, 成立$\left| x_n \right| \le X$。
 \end{definition}
+\begin{remark}
+    我们先说明下这两个定义等价: 若$\collect{x_n}$有上界有下界, 则$\forall n \in \mathbb{N}^+$, $m \le x_n \le M$, 则$\left| x_n \right| \le \max\left\{ |m|, |M|\right\}$, 则我们找到了$X = \max\left\{ |m|, |M|\right\}$。若$\collect{x_n}$有界,即$\exists X \in \mathbb{R}^+$, $\forall n \in \mathbb{N}^+$, $\left| x_n \right| \le X$, 则$\forall n \in \mathbb{N}^+$, $-X \le x_n \le X$, 则我们找到了$m = -X, M = X$。
+\end{remark}
 
-\begin{theorem}[数列极限的有界性]
+\begin{theorem}[数列极限的有界性]\label{theorem:limit-bound}
     若$\{ x_n \}$的极限存在，则$\{ x_n \}$有界。
 \end{theorem}
 \begin{proof}
@@ -492,7 +496,7 @@ $\sqrt{2}$不是有理数。
     
 \end{theorem}
 \begin{proof}
-因为陈老的证明简介明了, 我们先写陈老的证明:
+\framebox{因为陈老的证明简洁明了, 我们先写陈老的证明}:
 
 当a = 0时: 
 因为$\mylim{n}{y_n} = +\infty$, 则$\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $y_n > 0$。
@@ -750,7 +754,15 @@ $\sqrt{2}$不是有理数。
     证明这两个数列极限存在且相等。
 \end{proposition}
 \begin{proof}
-
+因为
+\begin{equation*}
+    \frac{n}{\frac{1}{a_1}+\frac{1}{a_2}+\cdots+\frac{1}{a_2}} \le \sqrt[n]{a_1a_2\cdots a_n}
+\end{equation*}
+所以:
+\begin{equation*}
+    \left( 1 + \frac{1}{n}\right)^{n+1} = 1\cdot\left( 1 + \frac{1}{n}\right)^{n+1} < \left(\frac{n+2}{1+(n+1)\cdot\frac{1}{1+\frac{1}{n}}}\right)^{n+2} = \left(\frac{n+2}{n+1}\right)^{n+2} = \left(1 + \frac{1}{n+1}\right)^{n+2}
+\end{equation*}
+所以$\collect{y_n = \left(1 + \frac{1}{n}\right)^{n+1}}$单调递减。
 \end{proof}
 
 定义$\ln = \log_e$为自然对数，$e$自然对数的底数。

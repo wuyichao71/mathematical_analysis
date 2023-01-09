@@ -28,3 +28,5 @@
 \contentsline {subsection}{\numberline {4.4.1}隐函数的求导与微分}{44}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}函数的参数表示}{45}{subsection.4.4.2}%
 \contentsline {section}{\numberline {4.5}高阶导数和高阶微分}{45}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}高阶导数的运算法则}{46}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}复合函数}{47}{subsection.4.5.2}%

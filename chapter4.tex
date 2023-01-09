@@ -593,3 +593,70 @@ $f(x)$在$(a, b)$上每一点可导, 在$x = a$上有右导数, $x = b$又左导
 \begin{proof}
     
 \end{proof}
+
+% 陈老视频48(2022.01.09)
+\begin{example}
+    求
+    \begin{equation*}
+        y = x^m \quad (m\text{是正整数})
+    \end{equation*}
+    的高阶导数。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+\begin{example}
+    求
+    \begin{equation*}
+        y = \ln(x)
+    \end{equation*}
+    的高阶导数。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+\subsection{高阶导数的运算法则}
+\begin{theorem}
+    $f(x)$, $g(x)$都是n次可导, 则
+    \begin{equation*}
+        [c_1f(x)+c_2g(x)]^{(n)} = c_1f^{(n)}(x)+c_2g^{(n)}(x)
+    \end{equation*}
+\end{theorem}
+
+\begin{theorem}[Leibniz公式]
+    $f(x)$, $g(x)$都是n次可导, 则
+    \begin{equation*}
+        (f(x)g(x))^{(n)} = \sum_{k=0}^{n}C_n^kf^{(n-k)}(x)g^{k}(x)
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    求
+    \begin{equation*}
+        y = (3x^2-2)\sin(2x)
+    \end{equation*}
+    的100阶导数。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+$\left[\frac{f(x)}{g(x)}\right]^{n}$无固定公式, 要考虑成$\left[f(x)\cdot\frac{1}{g(x)}\right]^{n}$来算。
+
+复合函数, 隐函数, 参数表示的高阶导数并不简单。
+\subsection{复合函数}
+先考虑$y = f(u)$, $u = g(x)$的复合函数的二阶导数:
+\begin{equation*}
+    \begin{aligned}
+        y''(x) &= \der{}{x} \left( \der{y}{x}\right) = \der{}{x} \left( \der{y}{u} \cdot \der{u}{x}\right) \\
+        &= \der{}{x}\left(\der{y}{u}\right)\cdot\der{u}{x} + \der{y}{u}\cdot\der{}{x}\left( \der{y}{x}\right) \\ 
+        &= \der{}{u}\left(\der{y}{u}\right)\cdot\der{u}{x}\cdot\der{u}{x} + \der{y}{u}\cdot\dern{2}{y}{x} \\
+        &= f''(u)(g'(x))^2+f'(u)g''(x)
+    \end{aligned}
+\end{equation*}
+再求三阶导数:
+
+% 陈老视频49
