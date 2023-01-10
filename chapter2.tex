@@ -273,7 +273,9 @@ $\sqrt{2}$不是有理数。
     若$\{ x_n \}$的极限存在，则$\{ x_n \}$有界。
 \end{theorem}
 \begin{proof}
-    
+    设$\collect{x_n}$的极限为$a$, 取$\epsilon = 1$, 则$\exists N$, $\forall n > N$, $\left| x_n - a \right| < 1$, 则$a - 1 < x_n < a + 1$。
+
+    因为$N$是一个固定数, 则取$m = \min\{x_1, x_2, \cdots, x_N, a - 1\}$, $M = \max\{x_1, x_2, \cdots, x_N, a + 1\}$, $\forall n \in \mathbb{N}^+$, $m \le x_n \le M$。
 \end{proof}
 % 陈老视频11
 \begin{theorem}[数列极限的保序性]

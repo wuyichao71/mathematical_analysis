@@ -496,8 +496,10 @@ $f(x)$在$(a, b)$上每一点可导, 在$x = a$上有右导数, $x = b$又左导
             &y = \psi(t)
         \end{aligned}
     \right.
+    \quad \alpha \le t \le \beta
 \end{equation*}
-其中$\alpha \le t \le \beta$, $\phi, \psi$可微, $\phi$严格单调, $\phi '(t) \neq 0$。由反函数可导定理t可以表示为$t = \phi^{-1}(x)$,则:
+% 其中$\alpha \le t \le \beta$, 
+$\phi, \psi$可微, $\phi$严格单调, $\phi '(t) \neq 0$。由反函数可导定理t可以表示为$t = \phi^{-1}(x)$,则:
 \begin{equation*}
     y = \psi(\phi^{-1}(x))
 \end{equation*}
@@ -594,7 +596,7 @@ $f(x)$在$(a, b)$上每一点可导, 在$x = a$上有右导数, $x = b$又左导
     
 \end{proof}
 
-% 陈老视频48(2022.01.09)
+% 陈老视频48(2023.01.09)
 \begin{example}
     求
     \begin{equation*}
@@ -659,4 +661,92 @@ $\left[\frac{f(x)}{g(x)}\right]^{n}$无固定公式, 要考虑成$\left[f(x)\cdo
 \end{equation*}
 再求三阶导数:
 
-% 陈老视频49
+% 陈老视频49(2023.01.10)
+\subsection{隐函数}
+隐函数也没有固定的公式, 所以我们通过例题来说明。
+\begin{example}
+    求隐函数:
+    \begin{equation*}
+        \e^{xy}+x^2y-1 = 0
+    \end{equation*}
+    的$y$的二阶导数。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\subsection{参数表示}
+\begin{problem}
+函数的参数表示:
+    \begin{equation*}
+        \left\{
+            \begin{aligned}
+                x = \phi(t) \\
+                y = \psi(t)
+            \end{aligned}
+        \right.
+        \quad \alpha \le t \le \beta
+    \end{equation*}
+    如何求$y$的二阶导数。    
+\end{problem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}[(旋轮线)]
+    已知:
+    \begin{equation*}
+        \left\{
+            \begin{aligned}
+                x = t - \sin(t) \\
+                y = 1 - \cos(t)
+            \end{aligned}
+        \right.
+        \quad 0 \le t \le 2\pi
+    \end{equation*}
+    求$y$的一阶和二阶导数。$t= \pi$时$y$的二阶导数是多少。
+\end{example}
+
+\section{高阶微分}
+\begin{problem}
+    已知$y = f(x)$, 求$y$的高阶微分。
+\end{problem}
+\begin{proof}
+    $\D^2 y = \D(\D y) = \D(f'(x)\D x)$, 其中的$\D(\D x)$怎么求微分, 我们可以考虑:
+    \begin{equation*}
+        \Delta y = f'(x)\Delta x +o(\Delta x) \quad (f'(x) \neq 0)
+    \end{equation*}
+    该等式除了说明$\Delta y \sim f'(x) \Delta x$, 还说明在上式中$\Delta x$是与$x$无关的量, 因为$\Delta x$的变动与$x$无关, 因此可以看作是$x$的常数函数。
+
+    那么$\D^2 y = \D(f'(x)\D x) = \D(f'(x))\D x = f''(x)\D x \cdot \D x = f''(x)\D x^2$
+
+    依次类推: $\D^3 y = \D(\D^2 y) = \D(f''(x)\D x^2) = \D(f''(x))\D x^2 = f'''(x)\D x \cdot \D x^2 = f'''(x)\D x^3$。
+    
+    $n$阶微分为: $\D^n(y) = \D(\D^{(n-1)}y) = \D(f^{(n-1)}(x)dx^{n-1}) = f^{(n)}(x)\D x^n$
+\end{proof}
+
+\begin{remark}
+    高阶微分没有形式不变性。
+\end{remark}
+\begin{problem}
+    考虑$y = f(u), u = g(x)$, 求$\D^2 y$以$u$为自变量和以$x$为自变量下的形式。
+\end{problem}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        y = \e^{\sin(x)}
+    \end{equation*}
+    的二阶微分。
+\end{example}
+\begin{proof}
+    \framebox{解1}:
+    \begin{equation*}
+        \D^2 y = f''(x)\D x^2
+    \end{equation*}
+    \framebox{解2}:
+    \begin{equation*}
+        \D^2 y = f''(u)du^2+f'(u)d^u \quad (u = \sin(x))
+    \end{equation*}
+\end{proof}
+
