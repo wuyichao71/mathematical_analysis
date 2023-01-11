@@ -1,0 +1,72 @@
+\chapter{微分中值定理极其应用}
+% 陈老视频50(2023.01.11)
+\section{微分中值定理}
+\begin{definition}
+    设$f(x)$的定义区间为$(a, b)$, $x_0 \in (a, b)$, 若$\exists, O(x_0, \rho) \subset (a, b)$, 使得$f(x) \le f(x_0), x \in O(x_0, \rho)$,则称$x_0$是$f$的一个极大值点, $f(x_0)$是一个极大值。
+\end{definition}
+\begin{remark}
+    \begin{enumerate}
+        \item 极值是局部概念。
+        \item 极小值可以大于极大值。
+        \item 极值点可以有无穷多个, 例如: $y = \sin(1/x)$。
+        \item 极值概念与连续、可导等概念无关。
+    \end{enumerate}
+\end{remark}
+
+\begin{lemma}[Fermat引理]\label{theorem:fermat}
+    设$x_0$是$f(x)$的一个极值点, 若$f$在$x_0$可导, 则$f'(x_0) = 0$
+\end{lemma}
+\begin{proof}
+    
+\end{proof}
+\begin{remark}
+    导数等于0, 并不一定是极值点, 例如$f(x) = x^3$的$x = 0$点。
+\end{remark}
+
+\begin{theorem}[Rolle定理]\label{theorem:rolle}
+    $f(x)$在闭区间$[a, b]$连续, 在开区间$(a, b)$可导, $f(a) = f(b)$, 则至少存在一个$\xi \in (a, b)$, 使$f'(\xi) = 0$。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}[(Legendre多项式)]
+    若有函数:
+    \begin{equation*}
+        P_n(x) = \frac{1}{2^n n!}\dern{n}{}{x}(x^2-1)^n
+    \end{equation*}
+    则它在$(-1, 1)$有n个不同的根。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}[Lagrange中值定理]
+    $f(x)$在$[a, b]$连续, 在$(a, b)$可导, 则$\exists \xi \in (a, b)$, 使:
+    \begin{equation*}
+        f'(\xi) = \frac{f(b)-f(a)}{b-a}
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+\begin{remark}
+    除了以上形式之外, 还能写成别的形式, 例如
+    \begin{enumerate}
+        \item $f(b)-f(a)=f'(\xi)(b-a)$
+        \item $f(b)-f(a)=f'[a+\theta(b-a)](b-a), \theta \in (0, 1)$
+        \item $f(x+\Delta x) - f(x) = f'(x+\theta \Delta x)\Delta x, \theta \in (0, 1)$
+        \item $\Delta y = f'(x+\theta \Delta x)\Delta x$
+    \end{enumerate}
+\end{remark}
+
+\begin{example}
+    用Lagrange中值定理讨论函数:
+
+    我们已知$f(x) = c \Rightarrow f'(x) = 0$
+
+    现在证明$f'(x) = 0 \Rightarrow f(x) = c$
+\end{example}
+\begin{proof}
+    
+\end{proof}

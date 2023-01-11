@@ -283,7 +283,17 @@ $\sqrt{2}$不是有理数。
     \[ \mylim{n}{x_n} = a, \mylim{n}{y_n} = b, \text{\quad 且 \quad}a < b \]则$\exists N \in \mathbb{Z}^+$，当$n > N$时，$x_n < y_n$。
 \end{theorem}
 \begin{proof}
-    
+    取$\epsilon = \frac{b-a}{2}$, 则$\exists N_1$, $\forall a > N_1$, $\left| x_n - a \right| < \frac{b-a}{2}$, 即:
+    \begin{equation*}
+        x_n -a < \frac{b-a}{2} \rightarrow x_n < \frac{b+a}{2}
+    \end{equation*}
+    同理, $\exists N_2$, $\forall n > N_2$, $\left| y_n - b \right| < \frac{b-a}{2}$, 即:
+    \begin{equation*}
+        y_n - b > -\frac{b-a}{2} \rightarrow y_n > \frac{a+b}{2}
+    \end{equation*}
+    即$\forall n > \max\{N_1, N_2\}$, $x_n < \frac{a+b}{2} < y_n$。
+
+    \wyc{证毕}
 \end{proof}
 
 \begin{lemma}[数列极限的保序性逆命题]\label{lemma:progression-order}
@@ -970,3 +980,8 @@ $, 则:
 
     (2)闭区间套定理$\Rightarrow$确界存在定理。
 \end{proof}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\linewidth]{theorem-relation.png}
+    \caption{陈老视频中, 实数系定理的关系}
+\end{figure}
