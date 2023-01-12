@@ -35,3 +35,4 @@
 \contentsline {section}{\numberline {4.6}高阶微分}{48}{section.4.6}%
 \contentsline {chapter}{\numberline {5}微分中值定理极其应用}{50}{chapter.5}%
 \contentsline {section}{\numberline {5.1}微分中值定理}{50}{section.5.1}%
+\contentsline {section}{\numberline {5.2}函数的凸性}{51}{section.5.2}%

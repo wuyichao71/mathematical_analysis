@@ -70,3 +70,40 @@
 \begin{proof}
     
 \end{proof}
+
+% 陈老视频51(2023.01.12)
+\begin{theorem}[一阶导数与函数的单调性关系]
+    $f(x)$在区间$I$定义, 且可导, 则$f(x)$在$I$上单调增加的充分必要条件是: $f'(x) > 0, \forall x \in I$。
+
+    若$\forall x \in I$, $f'(x)>0$, 则$f(x)$在$I$上严格单调增加(充分条件)。
+\end{theorem}
+\begin{proof}
+    \framebox{充分性}:
+
+    \framebox{必要性}:
+
+\end{proof}
+\begin{remark}
+    若$f(x)$在$I$上连续, 除了有限个点$x_1, x_2, \cdots, x_n$之外, $f'(x)>0$, 则$f'(x)$在I上严格单调增加。
+\end{remark}
+
+\section{函数的凸性}
+convex(凸), convave(凹), 陈老版本将前者定义为下凸, 后者定义为上凸。
+
+几何上, 下凸: 弦在曲线上方; 上凸: 弦在曲线上方。
+
+\begin{definition}
+    $f(x)$在区间$I$上有定义, 若$\forall x_1, x_2 \in I$, $\forall \lambda \in (0, 1)$, 成立$f(\lambda x_1 + (1-\lambda)x_2) \le \lambda f(x_1) + (1-\lambda)f(x_2)$, 则称$f(x)$在区间$I$上是下凸函数。
+\end{definition}
+
+\begin{theorem}[二阶导数与凸性的关系]
+    设$f(x)$在$I$上二阶可导, 则$f(x)$在$I$下凸的充分必要条件是:$f''(x)\ge 0$, $\forall x \in I$。
+
+    若在$I$上有$f''(x) > 0$, 则$f(x)$在$I$上严格下凸。
+\end{theorem}
+\begin{proof}
+    \framebox{必要性}:
+
+    \framebox{充分性}:
+\end{proof}
+

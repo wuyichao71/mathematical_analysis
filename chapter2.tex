@@ -278,7 +278,7 @@ $\sqrt{2}$不是有理数。
     因为$N$是一个固定数, 则取$m = \min\{x_1, x_2, \cdots, x_N, a - 1\}$, $M = \max\{x_1, x_2, \cdots, x_N, a + 1\}$, $\forall n \in \mathbb{N}^+$, $m \le x_n \le M$。
 \end{proof}
 % 陈老视频11
-\begin{theorem}[数列极限的保序性]
+\begin{theorem}[数列极限的保序性]\label{theorem:progression-order}
     存在两个数列$\{ x_n \}$和$\{ y_n \}$，并且
     \[ \mylim{n}{x_n} = a, \mylim{n}{y_n} = b, \text{\quad 且 \quad}a < b \]则$\exists N \in \mathbb{Z}^+$，当$n > N$时，$x_n < y_n$。
 \end{theorem}
@@ -300,8 +300,16 @@ $\sqrt{2}$不是有理数。
     对于$\mylim{n}{x_n} = a,\mylim{n}{x_n} = b$, 若$\exists N \in \mathbb{N}^+$, $\forall n > N$, $x_n \le y_n$, 则$a \le b$。 
 \end{lemma}
 \begin{proof}
-    
+    \framebox{反证法}: 若$a > b$, 则$\exists N_1$, $\forall n > N_1$, $x_n > y_n$, 则$\forall, n > \max\{N, N_1\}$, $x_n > y_n$, 这与$\forall n > N$, $x_n \le y_n$条件矛盾, 则假设不成立。
+
+    \wyc{证毕}
 \end{proof}
+\begin{remark}
+    \begin{enumerate}
+        \item $\exists N$, $forall n > N$, $x_n < y_n$, 并不能推出$a < b$, 例如$\collect{x_n = \frac{1}{2n}}$和$\collect{y_n = \frac{1}{n}}$, 它们的极限都是0。
+        \item 可以直接从极限存在的情况下的逆否命题的角度思考该命题。写出定理~\ref{theorem:progression-order}的逆否命题: 对于$\mylim{n}{x_n} = a,\mylim{n}{x_n} = b$, $\forall N$, $\exists n > N$, $x_n \ge y_n$, 则$a \ge b$, $\exists N$, $\forall n > N$, $x_n \ge y_n$满足该情况, 因此$a \ge b$。
+    \end{enumerate}
+\end{remark}
 
 \begin{lemma}
     \begin{enumerate}
