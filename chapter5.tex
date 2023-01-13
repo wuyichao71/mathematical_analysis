@@ -75,7 +75,7 @@
 \begin{theorem}[一阶导数与函数的单调性关系]
     $f(x)$在区间$I$定义, 且可导, 则$f(x)$在$I$上单调增加的充分必要条件是: $f'(x) > 0, \forall x \in I$。
 
-    若$\forall x \in I$, $f'(x)>0$, 则$f(x)$在$I$上严格单调增加(充分条件)。
+    若$\forall x \in I$, $f'(x) \ge 0$, 则$f(x)$在$I$上严格单调增加(充分条件)。
 \end{theorem}
 \begin{proof}
     \framebox{充分性}:
@@ -105,5 +105,77 @@ convex(凸), convave(凹), 陈老版本将前者定义为下凸, 后者定义为
     \framebox{必要性}:
 
     \framebox{充分性}:
+\end{proof}
+
+% 陈老视频52(2023.01.13)
+\section{拐点}
+(拐点会使得作图像样)
+\begin{theorem}
+    $f(x)$在区间$I$上连续, $(x_0-\delta, x_0+\delta) \subset I$:
+    \begin{enumerate}
+        \item $f(x)$在$(x_0-\delta, x_0)$与$(x_0, x_0+\delta)$上都二阶可导, $f''(x)$在$(x_0-\delta, x_0)$与$(x_0, x_0+\delta)$上符号相反, 则$(x_0, f(x_0))$是拐点。$f(x)$在$(x_0-\delta, x_0)$与$(x_0, x_0+\delta)$上都二阶可导, $f''(x)$在$(x_0-\delta, x_0)$与$(x_0, x_0+\delta)$上符号相同, 则$(x_0, f(x_0))$不是拐点。
+        \item 若$f(x)$在$(x_0-\delta, x_0+\delta)$上二阶可导, $(x_0, f(x_0))$是曲线的拐点, 则$f''(x_0) = 0$。
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    求曲线$y = \sqrt[3]{x^2}(x^2-4x)$的拐点。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}[Jensen不等式]
+    $f(x)$在区间$I$下凸, 则对于$\forall x_1, x_2, \cdots, x_n \in I$, $\forall \lambda_1, \lambda_2, \cdots, \lambda_n, (\lambda_i > 0, \sum_i \lambda_i = 1)$, 成立:
+    \begin{equation*}
+        f(\sum_i\lambda_i x_i) \le \sum_i\lambda_i f(x_i)
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    取$f(x) = \ln(x)$, 证明:
+    \begin{equation*}
+        \mean{x}{n} > \sqrt[n]{x_1x_2\cdots x_n}
+    \end{equation*}
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    证明:
+    \begin{equation*}
+        \left| \arctan(b) - \arctan(a) \right| \le \left| b - a \right|
+    \end{equation*}
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    证明等式:
+    \begin{equation*}
+        \arctan\left( \frac{1+x}{1-x} \right) - \arctan(x) = \left\{
+            \begin{aligned}
+                \frac{\pi}{4} \quad x < 1 \\
+                -\frac{3\pi}{4} \quad x > 1
+            \end{aligned} \right.
+    \end{equation*}
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    判断$\e^{\pi}$和$\pi^\e$的大小。
+\end{example}
+\begin{proof}
+    
 \end{proof}
 

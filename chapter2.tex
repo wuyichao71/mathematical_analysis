@@ -318,7 +318,9 @@ $\sqrt{2}$不是有理数。
     \end{enumerate}
 \end{lemma}
 \begin{proof}
-    利用数列极限的保序性证明。当$b > 0$时，取$\collect{x_n = \frac{b}{2}}$, 则$\mylim{n}{x_n} = \frac{b}{2} < b$, 由数列极限的保序性可知，$\exists N \in \mathbb{N}^+$, $\forall n > N$, 有$y_n > x_n = \frac{b}{2}$, 证毕。
+    利用数列极限的保序性证明。当$b > 0$时，取$\collect{x_n = \frac{b}{2}}$, 则$\mylim{n}{x_n} = \frac{b}{2} < b$, 由数列极限的保序性可知，$\exists N \in \mathbb{N}^+$, $\forall n > N$, 有$y_n > x_n = \frac{b}{2}$。 
+    
+    \wyc{证毕}
 
     同理可证明$b < 0$的情况。
 \end{proof}
@@ -331,9 +333,13 @@ $\sqrt{2}$不是有理数。
     $\mylim{n}{y_n} = b$, 即$\forall \epsilon > 0$, $\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| y_n - b\right| < \epsilon$。
 
     由三角不等式得：
-    \[ \left| y_n - b\right| > \left| \left| y_n \right| - \left| b \right| \right| \]
+    \begin{equation*}
+        \left| y_n - b\right| \ge \left| \left| y_n \right| - \left| b \right| \right|
+    \end{equation*}
     即:
-    \[ \left| \left| y_n \right| - \left| b \right| \right| < \left| y_n - b\right| < \epsilon \]
+    \begin{equation*}
+        \left| \left| y_n \right| - \left| b \right| \right| \le \left| y_n - b\right| < \epsilon
+    \end{equation*}
     因此$\mylim{n}{\left| y_n \right|} = \left| b \right|$。之后的证明同上。
 \end{proof}
 
@@ -345,19 +351,55 @@ $\sqrt{2}$不是有理数。
 
     同理, $\forall \epsilon$, $\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $\left| y_n - a\right| < \epsilon$, 即$z_n -a < \epsilon$。
 
-    取$N = \max\left\{ N_1, N_2 \right\}$, 则：
-    \[ -\epsilon < x_n - a < y_n - a < z_n - a < \epsilon \]
-    即：
-    \[ -\epsilon < y_n - a <\epsilon \]
-    即：
-    \[ \left| y_n - a \right| < \epsilon \]
-    总结起来即为：
-    $\forall \epsilon$, $\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| y_n - a\right| < \epsilon$, 即$\mylim{n}{y_n} = a$, 证毕。
+    取$N = \max\left\{ N_1, N_2 \right\}$, 则:
+    \begin{equation*}
+        -\epsilon < x_n - a < y_n - a < z_n - a < \epsilon
+    \end{equation*}
+    即: 
+    \begin{equation*}
+        -\epsilon < y_n - a <\epsilon
+    \end{equation*}
+    即:
+    \begin{equation*}
+        \left| y_n - a \right| < \epsilon
+    \end{equation*}
+    总结起来即为:
+    $\forall \epsilon$, $\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| y_n - a\right| < \epsilon$, 即$\mylim{n}{y_n} = a$。
+
+    \wyc{证毕}
 \end{proof}
-\begin{proposition}
-    求：
-    \[ \mylim{n}{\sqrt{n+1} - \sqrt{n}}\]
-\end{proposition}
+\begin{example}
+    求: 
+    \begin{equation*}
+        \mylim{n}{\left(\sqrt{n+1} - \sqrt{n}\right)}
+    \end{equation*}
+\end{example}
+\begin{proof}
+    因为$\sqrt{n+1} > \sqrt{n}$, 所以$\sqrt{n+1} - \sqrt{n} > 0$。
+
+    又因为:
+    \begin{equation*}
+        \sqrt{n+1}-\sqrt{n} = \frac{1}{\sqrt{n+1}+\sqrt{n}} < \frac{1}{2\sqrt{n}}
+    \end{equation*}
+    因此:
+    \begin{equation*}
+        0 < \sqrt{n+1} - \sqrt{n} < \frac{1}{2\sqrt{n}}
+    \end{equation*}
+    又因为$\mylim{n}{\frac{1}{2\sqrt{n}}} = 0$, 所以根据夹逼定理:
+    \begin{equation*}
+        \mylim{n}{\left(\sqrt{n+1}-\sqrt{n}\right)} = 0
+    \end{equation*}
+\end{proof}
+\begin{example}
+    证明:
+    \begin{equation*}
+        \mylim{n}{\left( a_1^n + a_2^n + \cdots + a_p^n \right)^\frac{1}{n}} = \max_{1 \le i \le p}\{a_i\}
+    \end{equation*}
+    其中$a_1, a_2, \cdots, a_p > 0$, 且为常数。
+\end{example}
+\begin{proof}
+    
+\end{proof}
 % 陈老视频12
 \begin{theorem}[数列极限的四则运算]
     若$\lim\limits_{n \to \infty} x_n = a$, $\lim\limits_{n \to \infty} y_n = b$，则
