@@ -398,6 +398,39 @@ $\sqrt{2}$不是有理数。
     其中$a_1, a_2, \cdots, a_p > 0$, 且为常数。
 \end{example}
 \begin{proof}
+    \def\tmp{\left(a_1^n + a_2^n + \cdots + a_p^n\right)^{\frac{1}{n}}}
+    设$M = \max_{1 \le i \le p}\{a_i\}$, 则
+    \begin{equation*}
+        \begin{aligned}
+            \tmp > M \\
+            \tmp \le p^{\frac{1}{n}}M 
+        \end{aligned}
+    \end{equation*}
+    在之前的证明中我们已经证明$\mylim{n}{\sqrt[n]{p}} = 1$, 因此根据夹逼定理:
+    \begin{equation*}
+        \mylim{n}{\tmp} = M
+    \end{equation*}
+
+    \wyc{证毕}
+\end{proof}
+
+\begin{example}
+    用夹逼定理证明:
+    \begin{equation*}
+        \mylim{n}{\sqrt[n]{n}} = 1
+    \end{equation*}
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    用夹逼定理证明:
+    \begin{equation*}
+        \mylim{n}{\sqrt[n]{n^2}} = 1
+    \end{equation*}
+\end{example}
+\begin{proof}
     
 \end{proof}
 % 陈老视频12

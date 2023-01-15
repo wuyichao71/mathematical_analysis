@@ -73,9 +73,9 @@
 
 % 陈老视频51(2023.01.12)
 \begin{theorem}[一阶导数与函数的单调性关系]
-    $f(x)$在区间$I$定义, 且可导, 则$f(x)$在$I$上单调增加的充分必要条件是: $f'(x) > 0, \forall x \in I$。
+    $f(x)$在区间$I$定义, 且可导, 则$f(x)$在$I$上单调增加的充分必要条件是: $f'(x) \ge 0, \forall x \in I$。
 
-    若$\forall x \in I$, $f'(x) \ge 0$, 则$f(x)$在$I$上严格单调增加(充分条件)。
+    若$\forall x \in I$, $f'(x) > 0$, 则$f(x)$在$I$上严格单调增加(充分条件)。
 \end{theorem}
 \begin{proof}
     \framebox{充分性}:
@@ -179,3 +179,53 @@ convex(凸), convave(凹), 陈老版本将前者定义为下凸, 后者定义为
     
 \end{proof}
 
+% 陈老视频53(2023.01.15)
+\begin{example}
+    证明: 当$x > 0$时候, 
+    \begin{equation*}
+        \sin(x) > x - \frac{1}{6}x^3
+    \end{equation*}
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    证明: 当$a, b > 0$时:
+    \begin{equation*}
+        a\ln(a) + b\ln(b) \ge (a+b)[\ln(a+b) - \ln2]
+    \end{equation*}
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    $a, b \ge 0$, $p, q > 0$, 满足$\frac{1}{p} + \frac{1}{q} = 1$, 则:
+    \begin{equation*}
+        ab \le \frac{1}{p}a^p + \frac{1}{q}b^q
+    \end{equation*}    
+\end{example}
+\begin{proof}
+
+\end{proof}
+
+\begin{theorem}[Cauchy中值定理]\label{theorem:Cauchy-mean-value}
+    $f(x), g(x)$在$[a, b]$上连续, 在$(a, b)$上可导, 对$\forall x \in (a, b)$, $g'(x) \neq 0$, 则至少存在$\xi \in (a, b)$, 使得:
+    \begin{equation*}
+        \frac{f'(\xi)}{g'(\xi)} = \frac{f(b)-f(a)}{g(b) - g(a)}
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    \framebox{证法一}:
+
+    \framebox{证法二}:
+
+\end{proof}
+
+\begin{example}
+    设$f(x)$在$[1, +\infty)$连续, 在$(1, +\infty)$可导, $\e^{-x^2}f'(x)$在$(1, +\infty)$上有界,则$x\e^{-x^2}f(x)$也在$(1, +\infty)$上有界。
+\end{example}
+\begin{proof}
+    
+\end{proof}
