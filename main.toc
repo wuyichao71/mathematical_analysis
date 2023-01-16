@@ -1,8 +1,8 @@
 \contentsline {chapter}{\numberline {1}集合与映射}{2}{chapter.1}%
 \contentsline {chapter}{\numberline {2}实数的完备性}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}数列极限}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}无穷大量}{10}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}无穷大的运算}{11}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.2}无穷大量}{11}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}无穷大的运算}{12}{subsection.2.2.1}%
 \contentsline {section}{\numberline {2.3}收敛准则}{14}{section.2.3}%
 \contentsline {chapter}{\numberline {3}函数极限与连续函数}{22}{chapter.3}%
 \contentsline {section}{\numberline {3.1}函数极限和数列极限的关系}{24}{section.3.1}%
@@ -35,5 +35,6 @@
 \contentsline {section}{\numberline {4.6}高阶微分}{49}{section.4.6}%
 \contentsline {chapter}{\numberline {5}微分中值定理极其应用}{51}{chapter.5}%
 \contentsline {section}{\numberline {5.1}微分中值定理}{51}{section.5.1}%
-\contentsline {section}{\numberline {5.2}函数的凸性}{52}{section.5.2}%
-\contentsline {section}{\numberline {5.3}拐点}{52}{section.5.3}%
+\contentsline {subsection}{\numberline {5.1.1}函数的凸性}{52}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}拐点}{52}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}L'Hospital法则}{53}{section.5.2}%

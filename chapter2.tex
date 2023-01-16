@@ -325,7 +325,7 @@ $\sqrt{2}$不是有理数。
     同理可证明$b < 0$的情况。
 \end{proof}
 以上推论可以合起来写为：
-\begin{lemma}
+\begin{lemma}\label{lemma:progression-order-b}
     若$\mylim{n}{y_n} = b \neq 0$, 则$\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| y_n \right|> \frac{\left| b \right|}{2} > 0 $。
 \end{lemma}
 \begin{proof}
@@ -421,7 +421,10 @@ $\sqrt{2}$不是有理数。
     \end{equation*}
 \end{example}
 \begin{proof}
-    
+    这个用夹逼定理的证明实际上和之前提到的方法1接近, 即利用
+    \begin{equation*}
+        \sqrt[n]{n} = \sqrt[n]{1\cdot1\cdot1\cdots\sqrt{n}\cdot\sqrt{n}} <\frac{n-2+2\sqrt{n}}{n} < \frac{2}{\sqrt{n}} + 1
+    \end{equation*}
 \end{proof}
 
 \begin{example}
@@ -431,24 +434,82 @@ $\sqrt{2}$不是有理数。
     \end{equation*}
 \end{example}
 \begin{proof}
-    
+    这个用夹逼定理的证明实际上也和之前提到的方法1接近, 即利用
+    \begin{equation*}
+        \sqrt[n]{n^2} = \sqrt[n]{1\cdot1\cdot1\cdots\sqrt{n}\cdot\sqrt{n}\cdot\sqrt{n}\cdot\sqrt{n}} <\frac{n-4+4\sqrt{n}}{n} < \frac{4}{\sqrt{n}} + 1
+    \end{equation*}
 \end{proof}
 % 陈老视频12
+下面再来介绍下数列极限的四则运算, 有了四则运算法则我们可以快速地计算极限。推导四则运算法则需要用到数列极限的有界性。
 \begin{theorem}[数列极限的四则运算]
     若$\lim\limits_{n \to \infty} x_n = a$, $\lim\limits_{n \to \infty} y_n = b$，则
     \begin{enumerate}
-        \item $\lim\limits_{n \to \infty}(\alpha x_n + \beta y_n) = \alpha a + \beta b$
-        \item $\lim\limits_{n \to \infty}(x_n y_n) = ab$
-        \item $\lim\limits_{n \to \infty}(\frac{x_n}{y_n}) = \frac{a}{b}(b \neq 0)$
+        \item $\mylim{n}{(\alpha x_n + \beta y_n)} = \alpha a + \beta b$
+        \item $\mylim{n}{(x_n y_n)} = ab$
+        \item $\mylim{n}{(\frac{x_n}{y_n})} = \frac{a}{b}(b \neq 0)$
     \end{enumerate}
 \end{theorem}
 \begin{proof}
-    
-\end{proof}
+    首先根据收敛数列的有界性有: $\exists X > 0$, $\left| y_n \right| \le X$。
 
-\begin{proposition}
-    \[\text{求} \lim\limits_{n \to \infty} \frac{5^{n+1}-(-2)^n}{3 \cdot 5^n + 2\cdot 3^n} \]
-\end{proposition}
+    \begin{enumerate}
+        \item 证明: $\mylim{n}{(\alpha x_n + \beta y_n)} = \alpha a + \beta$ b。
+        
+        $\forall \epsilon$, $\exists N_1$, $\forall n > N_1$, $\left| x_n - a \right| < \frac{\epsilon}{|\alpha|+|\beta|}$; $\forall \epsilon$, $\exists N_2$, $\forall n > N_2$, $\left| y_n - b \right| < \frac{\epsilon}{|\alpha|+|\beta|}$。
+
+        则$\forall \epsilon$, $\exists N = \max\{N_1, N_2\}$, $forall n > N$, 有:
+        \begin{equation*}
+            \left| \alpha x_n + \beta y_n - \alpha a - \beta b\right| \le |\alpha||x_n-a| + |\beta||y_n-b| < \epsilon
+        \end{equation*}
+        即:
+        \begin{equation*}
+            \mylim{n}{(\alpha x_n + \beta y_n)} = \alpha a + \beta b
+        \end{equation*}
+        \wyc{证毕}
+        \item 证明: $\mylim{n}{(x_n y_n)} = ab$
+        
+        \begin{equation*}
+            | x_ny_n - ab | = |x_ny_n - ay_n +ay_n - ab| \le | x_n - a||y_n| + |a||y_n - b| \le X|x_n-a| +|a||y_n-b| 
+        \end{equation*}
+        $\forall \epsilon$, $\exists N_1, N_2$, $\forall n > N_1$, $|x_n - a| < \frac{\epsilon}{X+|a|}$, $\forall n > N_2$, $|y_n - b| < \frac{\epsilon}{X+|a|}$。则$\forall n > \max\{N_1, N_2\}$, 有
+        \begin{equation*}
+            | x_ny_n - ab | < \epsilon
+        \end{equation*}
+        即:
+        \begin{equation*}
+            \mylim{n}{(x_n y_n)} = ab
+        \end{equation*}
+        \wyc{证毕}
+        \item 证明: $\mylim{n}{(\frac{x_n}{y_n})} = \frac{a}{b}(b \neq 0)$
+        
+        因为$\mylim{n}{y_n} = b \neq 0$, 根据引理~\ref{lemma:progression-order-b}: $\exists N_0$, $\forall n > N_0$, $|y_n| > \frac{|b|}{2} > 0$。则:
+        \begin{equation*}
+            \left|\frac{x_n}{y_n} - \frac{a}{b} \right| = \frac{|bx_n - ay_n|}{|b||y_n|} < \frac{2|bx_n-ab+ab-ay_n|}{|b|^2} \le \frac{2(|b||x_n-a|+|a||y_n-b|)}{|b|^2}
+        \end{equation*}
+        $\forall \epsilon$, $\exists N_1, N_2$, $\forall n > N_1$, $|x_n - a| < \frac{|b|^2\epsilon}{2(|a|+|b|)}$, $\forall n > N_2$, $|y_n - b| < \frac{|b|^2\epsilon}{2(|a|+|b|)}$。则$\forall n > \max\{N_0, N_1, N_2\}$:
+        \begin{equation*}
+            \left| \frac{x_n}{y_n} - \frac{a}{b} \right| < \epsilon
+        \end{equation*}
+        即:
+        \begin{equation*}
+            \mylim{n}{(\frac{x_n}{y_n})} = \frac{a}{b}
+        \end{equation*}
+        \wyc{证毕}
+    \end{enumerate}
+\end{proof}
+\begin{remark}
+    \begin{enumerate}
+        \item 对于第三个式子, 我们还可以先证明$\mylim{n}{\frac{1}{y_n}} = \frac{1}{b}$, 再用第二个式子, 这样的方式简化运算。
+        \item 四则运算的适用范围是极限存在, 发散的情况下则不适用了。
+    \end{enumerate}
+\end{remark}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \mylim{n}{\frac{5^{n+1}-(-2)^n}{3 \cdot 5^n + 2\cdot 3^n}} 
+    \end{equation*}
+\end{example}
 \begin{proof}
     
 \end{proof}
@@ -484,7 +545,7 @@ $\sqrt{2}$不是有理数。
 \end{proof}
 
 \begin{proposition}
-    若$\{ x_n \}$是无穷小量，$\{ y_n \}$有界($| y_n | < 0$)，则$\{ x_n y_n \}$也是无穷小量。
+    若$\{ x_n \}$是无穷小量，$\{ y_n \}$有界($| y_n | < X$)，则$\{ x_n y_n \}$也是无穷小量。
 \end{proposition}
 \begin{proof}
 
