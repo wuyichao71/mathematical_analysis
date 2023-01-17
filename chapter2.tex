@@ -94,7 +94,7 @@ $\sqrt{2}$不是有理数。
 \end{proof}
 
 % 陈老视频10
-\begin{example}
+\begin{example}\label{example-chapter2-1}
     证明:
     \[ \lim_{n \to \infty } \sqrt[n]{a}= 1 (a > 1)\]
 \end{example}
@@ -293,7 +293,7 @@ $\sqrt{2}$不是有理数。
     \end{equation*}
     即$\forall n > \max\{N_1, N_2\}$, $x_n < \frac{a+b}{2} < y_n$。
 
-    \wyc{证毕}
+    \qed
 \end{proof}
 
 \begin{lemma}[数列极限的保序性逆命题]\label{lemma:progression-order}
@@ -302,7 +302,7 @@ $\sqrt{2}$不是有理数。
 \begin{proof}
     \framebox{反证法}: 若$a > b$, 则$\exists N_1$, $\forall n > N_1$, $x_n > y_n$, 则$\forall, n > \max\{N, N_1\}$, $x_n > y_n$, 这与$\forall n > N$, $x_n \le y_n$条件矛盾, 则假设不成立。
 
-    \wyc{证毕}
+    \qed
 \end{proof}
 \begin{remark}
     \begin{enumerate}
@@ -320,7 +320,7 @@ $\sqrt{2}$不是有理数。
 \begin{proof}
     利用数列极限的保序性证明。当$b > 0$时，取$\collect{x_n = \frac{b}{2}}$, 则$\mylim{n}{x_n} = \frac{b}{2} < b$, 由数列极限的保序性可知，$\exists N \in \mathbb{N}^+$, $\forall n > N$, 有$y_n > x_n = \frac{b}{2}$。 
     
-    \wyc{证毕}
+    \qed
 
     同理可证明$b < 0$的情况。
 \end{proof}
@@ -366,7 +366,7 @@ $\sqrt{2}$不是有理数。
     总结起来即为:
     $\forall \epsilon$, $\exists N \in \mathbb{N}^+$, $\forall n > N$, $\left| y_n - a\right| < \epsilon$, 即$\mylim{n}{y_n} = a$。
 
-    \wyc{证毕}
+    \qed
 \end{proof}
 \begin{example}
     求: 
@@ -411,7 +411,7 @@ $\sqrt{2}$不是有理数。
         \mylim{n}{\tmp} = M
     \end{equation*}
 
-    \wyc{证毕}
+    \qed
 \end{proof}
 
 \begin{example}
@@ -465,7 +465,7 @@ $\sqrt{2}$不是有理数。
         \begin{equation*}
             \mylim{n}{(\alpha x_n + \beta y_n)} = \alpha a + \beta b
         \end{equation*}
-        \wyc{证毕}
+        \qed
         \item 证明: $\mylim{n}{(x_n y_n)} = ab$
         
         \begin{equation*}
@@ -479,7 +479,7 @@ $\sqrt{2}$不是有理数。
         \begin{equation*}
             \mylim{n}{(x_n y_n)} = ab
         \end{equation*}
-        \wyc{证毕}
+        \qed
         \item 证明: $\mylim{n}{(\frac{x_n}{y_n})} = \frac{a}{b}(b \neq 0)$
         
         因为$\mylim{n}{y_n} = b \neq 0$, 根据引理~\ref{lemma:progression-order-b}: $\exists N_0$, $\forall n > N_0$, $|y_n| > \frac{|b|}{2} > 0$。则:
@@ -494,7 +494,7 @@ $\sqrt{2}$不是有理数。
         \begin{equation*}
             \mylim{n}{(\frac{x_n}{y_n})} = \frac{a}{b}
         \end{equation*}
-        \wyc{证毕}
+        \qed
     \end{enumerate}
 \end{proof}
 \begin{remark}
@@ -511,30 +511,112 @@ $\sqrt{2}$不是有理数。
     \end{equation*}
 \end{example}
 \begin{proof}
-    
+    上下同除以$5^n$, 则:
+    \begin{equation*}
+        \frac{5^{n+1}-(-2)^n}{3 \cdot 5^n + 2\cdot 3^n} = \frac{5-\left(-\frac{2}{5}\right)^n}{3+2\left(\frac{3}{5}\right)^n}
+    \end{equation*}
+    根据极限的四则运算得:
+    \begin{equation*}
+        \mylim{n}{\frac{5^{n+1}-(-2)^n}{3 \cdot 5^n + 2\cdot 3^n}} = \frac{5}{3}
+    \end{equation*}
 \end{proof}
 
-\begin{proposition}
-    \[\text{当} a > 0 \text{时，} \lim\limits_{n \to \infty} \sqrt[n]{a} = 1 \]
-\end{proposition}
+\begin{example}
+    当$a > 0$时, 证明:
+    \begin{equation*}
+        \mylim{n}{\sqrt[n]{a}} = 1
+    \end{equation*}
+\end{example}
 \begin{proof}
-    
+    在例题~\ref{example-chapter2-1}中我们已经证明了当$a > 1$时:
+    \begin{equation*}
+        \mylim{n}{\sqrt[n]{a}} = 1
+    \end{equation*}
+    当$a = 1$时, $\sqrt[n]{a} = 1$, 极限显然成立。
+
+    当$a < 1$时:
+    \begin{equation*}
+        \sqrt[n]{a} = \frac{1}{\sqrt[n]{\frac{1}{a}}}
+    \end{equation*}
+    因为$a < 1$, 则$\frac{1}{a} > 1$, 则根据$a > 1$的情况得:
+    \begin{equation*}
+        \mylim{n}{\sqrt[n]{\frac{1}{a}}} = 1
+    \end{equation*}
+    根据极限的四则运算得:
+    \begin{equation*}
+        \mylim{n}{\sqrt[n]{a}} = 1
+    \end{equation*}
+    综上, $\mylim{n}{\sqrt[n]{a}} = 1$。
+
+    \qed
 \end{proof}
 
-\begin{proposition}
-    \[\text{求}\lim\limits_{n \to \infty} n\left( \sqrt{n^2+1} - \sqrt{n^2 - 1}\right) \]
-\end{proposition}
+\begin{example}
+    求:
+    \begin{equation*}
+        \mylim{n}{n\left( \sqrt{n^2+1} - \sqrt{n^2 - 1}\right)}
+    \end{equation*}
+\end{example}
 \begin{proof}
-    
-\end{proof}
+    因为:
+    \begin{equation*}
+        n\left(\sqrt{n^2+1} - \sqrt{n^2 - 1}\right) = \frac{2n}{\sqrt{n^2+1}+\sqrt{n^2-1}}
+    \end{equation*}
+    所以:
+    \begin{equation*}
+        \frac{n}{\sqrt{n^2+1}} < n\left(\sqrt{n^2+1} - \sqrt{n^2 - 1}\right) < \frac{n}{\sqrt{n^2-1}}
+    \end{equation*}
+    又因为:
+    \begin{equation*}
+        \mylim{n}{\frac{n}{\sqrt{n^2+1}}} = \mylim{n}{\frac{1}{\sqrt{1+\left(\frac{1}{n}\right)^2}}} = 1
+    \end{equation*}
+    同理:
+    \begin{equation*}
+        \mylim{n}{\frac{n}{\sqrt{n^2-1}}} = 1
+    \end{equation*}
+    因此根据夹逼定理:
+    \begin{equation*}
+        \mylim{n}{n\left( \sqrt{n^2+1} - \sqrt{n^2 - 1}\right)} = 1
+    \end{equation*}
 
-\begin{proposition}
-    \[\text{求}\lim\limits_{n \to \infty} \left( \frac{1}{\sqrt{n^2+1}} + \frac{1}{\sqrt{n^2 + 2}} + \cdots \frac{1}{\sqrt{n^2+n}} \right) \]
-\end{proposition}
-\begin{proof}
-    
+    \framebox{陈老的证明}:
+    \begin{equation*}
+        n\left(\sqrt{n^2+1} - \sqrt{n^2 - 1}\right) = \frac{2n}{\sqrt{n^2+1}+\sqrt{n^2-1}} = \frac{2}{\sqrt{1+\left(\frac{1}{n}\right)^2}+\sqrt{1-\left(\frac{1}{n}\right)^2}}
+    \end{equation*}
+    之后直接进行四则运算。
 \end{proof}
-有限个
+\begin{remark}
+    如果直接对原式使用四则运算,则会得到$\infty \cdot 0$, 该极限无法计算, 因此需要对式子进行变形。
+\end{remark}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \mylim{n}{\left( \frac{1}{\sqrt{n^2+1}} + \frac{1}{\sqrt{n^2 + 2}} + \cdots \frac{1}{\sqrt{n^2+n}} \right)}
+    \end{equation*}
+
+\end{example}
+\begin{proof}
+    为了书写方便, 我们令:
+    \begin{equation*}
+        y_n = \frac{1}{\sqrt{n^2+1}} + \frac{1}{\sqrt{n^2 + 2}} + \cdots \frac{1}{\sqrt{n^2+n}}
+    \end{equation*}
+    对每一项进行缩放, 则:
+    \begin{equation*}
+        \frac{n}{\sqrt{n^2+n}} < y_n < \frac{n}{n} = 1
+    \end{equation*}
+    又因为:
+    \begin{equation*}
+        \mylim{n}{\frac{n}{\sqrt{n^2+n}}} = \mylim{n}{\frac{1}{\sqrt{1+\frac{1}{n}}}} = 1
+    \end{equation*}
+    根据夹逼定理得:
+    \begin{equation*}
+        \mylim{n}{y_n} = 1
+    \end{equation*}
+\end{proof}
+\begin{remark}
+    在数列中有无穷多项时, 我们不能直接用四则运算对每一项进行极限之后加和, 特别是每一项都趋向于0的情况下。四则运算只适用于有限项的情况下, 对于无限项的情况要具体讨论。
+\end{remark}
 
 \begin{proposition}
     设$a_n > 0$,$\lim\limits_{n \to \infty} a_n = a$，证明
@@ -870,7 +952,7 @@ $\sqrt{2}$不是有理数。
 并且根据数列极限的四则运算有:
 \[ \mylim{n}{S_1(n)} = \mylim{n}{n \sin\left( \frac{180^\circ}{n}\right)} \mylim{n}{\cos\left( \frac{180^\circ}{n}\right)} = \pi\]
 \[ \mylim{n}{S_2(n)} = \frac{\mylim{n}{n\sin\left( \frac{180^\circ}{n}\right)}}{\mylim{n}{\cos\left( \frac{180^\circ}{n}\right)}} = \pi\]
-则根据夹逼性原理得:
+则根据夹逼性定理得:
 \[ S' = \pi \]
 
 其中, 对于外接正多边形的面积, 考虑:
@@ -946,7 +1028,7 @@ $p = 1$时，$a_n = 1 + \frac{1}{2} +\frac{1}{3} + \cdots + \frac{1}{n}$为调�
 \[ \mylim{n}{\frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n}} = \ln 2\]
 \end{proposition}
 \begin{proof}
-除了夹逼准则，还能用上一个数列相减计算。
+除了夹逼定理，还能用上一个数列相减计算。
 \end{proof}
 
 \begin{proposition}
