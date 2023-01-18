@@ -187,9 +187,11 @@ $\sqrt{2}$不是有理数。
 \end{remark}
 
 
-\begin{example}
+\begin{example}\label{example-chapter2-2}
     设$a_n > 0$,$\lim_{n \to \infty} a_n = a$，证明
-    \[ \lim_{n \to \infty}\frac{a_1+a_2+\cdots+a_n}{n} = a \]
+    \begin{equation*}
+        \mylim{n}{\mean{a}{n}} = a
+    \end{equation*}
 \end{example}
 \begin{proof}
     \def\tmp#1{\left| a_{#1} - a \right|}
@@ -618,23 +620,62 @@ $\sqrt{2}$不是有理数。
     在数列中有无穷多项时, 我们不能直接用四则运算对每一项进行极限之后加和, 特别是每一项都趋向于0的情况下。四则运算只适用于有限项的情况下, 对于无限项的情况要具体讨论。
 \end{remark}
 
-\begin{proposition}
-    设$a_n > 0$,$\lim\limits_{n \to \infty} a_n = a$，证明
-    \[ \lim_{n \to \infty}\sqrt[n]{a_1a_2\cdots a_n} = a \]
-\end{proposition}
+\begin{example}
+    设$a_n > 0$, $\mylim{n}{a_n} = a$，证明:
+    \begin{equation*}
+        \mylim{n}{\sqrt[n]{a_1a_2\cdots a_n}} = a
+    \end{equation*}
+\end{example}
 \begin{proof}
-    
+    若$a > 0$, 根据均值不等式有:
+    \begin{equation*}
+        \frac{n}{\frac{1}{a_1}+\frac{1}{a_2}+\cdots+\frac{1}{a_n}} \le \sqrt[n]{a_1a_2\cdots a_n} \le \mean{n}{a}
+    \end{equation*}
+    根据例题~\ref{example-chapter2-2}的结果, 我们已知当$\mylim{n}{a_n} = a$时, 有:
+    \begin{equation*}
+        \mylim{n}{\mean{a}{n}} = a
+    \end{equation*}
+    根据极限的四则运算, 当$\mylim{n}{a_n} = a$时, $\mylim{n}{\frac{1}{a_n}} = \frac{1}{a}$, 根据例题~\ref{example-chapter2-2}, 有:
+    \begin{equation*}
+        \mylim{n}{\frac{\frac{1}{a_1}+\frac{1}{a_2}+\cdots+\frac{1}{a_n}}{n}} = \frac{1}{a}
+    \end{equation*}
+    则根据夹逼定理:
+    \begin{equation*}
+        \mylim{n}{\sqrt[n]{a_1a_2\cdots a_n}} = a
+    \end{equation*}
+
+    若$a = 0$, 则:
+    \begin{equation*}
+        0 < \sqrt[n]{a_1a_2\cdots a_n} \le \mean{n}{a}
+    \end{equation*}
+    同上, 可以证明:
+    \begin{equation*}
+        \mylim{n}{\sqrt[n]{a_1a_2\cdots a_n}} = 0
+    \end{equation*}
+    综上所诉:
+    \begin{equation*}
+        \mylim{n}{\sqrt[n]{a_1a_2\cdots a_n}} = a \quad (a_n > 0)
+    \end{equation*}    
+
+    \qed
 \end{proof}
 
 \begin{proposition}
-    若$\{ x_n \}$是无穷小量，$\{ y_n \}$有界($| y_n | < X$)，则$\{ x_n y_n \}$也是无穷小量。
+    若$\{ x_n \}$是无穷小量，$\{ y_n \}$有界($| y_n | \le X$)，则$\{ x_n y_n \}$也是无穷小量。
 \end{proposition}
 \begin{proof}
+    因为$\collect{x_n}$为无穷小量, 则$\forall \epsilon > 0$, $\exists N$, $\forall n > N$, $|x_n| < \frac{\epsilon}{X}$。由于$\collect{y_n}$有界, 即$|y_n| \le X$, 则$\forall n > N$, 有: 
+    \begin{equation*}
+        |x_ny_n| = |x_n||y_n| < \epsilon
+    \end{equation*}
+    即$\collect{x_ny_n}$也是无穷小量。
 
+    \qed
 \end{proof}
 
 \section{无穷大量}
 % 陈老视频13
+除了上一节中介绍的数列收敛的情况外, 有时候我们还需要研究数列趋向于无穷的情况。对于极限存在的情况, 我们是说: $\forall \epsilon$, $\exists N$, $\forall n > N$, $|x_n - a| < \epsilon$, 即在$n > N$之后, 数列的点落在$\rho(a, \epsilon)$邻域内。而对于无穷大的情况, 我们需要适当修改定义, 因为我们的极限并不趋于一个具体的有限值, 也就无法给出该有限值的邻域。要研究无穷大量, 我们需要理解什么是无穷。 我们可以这样理解无穷: 无穷比任意一个有限值都要大。接下来我们给出无穷大量的定义:
 \begin{definition}[无穷大量]
 对于一个数列$\{ x_n \}$，若对于任意给定的$G > 0$, 可以找到正整数N, 使得当$n > N$时，$| x_n |> G$，则称数列$\{ x_n \}$是无穷大量，记为
 \[ \lim_{n \to \infty } x_n = \infty \]
