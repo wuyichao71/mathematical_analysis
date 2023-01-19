@@ -684,11 +684,29 @@ $\sqrt{2}$不是有理数。
 若对于该数列$\{ x_n \}$, $| x_n |> G$可以恒表示为$x_n < -G$，则称数列$\{ x_n \}$是负无穷大量，记为$-\infty$。
 \end{definition}
 
-\begin{proposition}
+\begin{example}
     设$| q | > 1$，证明$\{ q^n \}$是无穷大量。 
-\end{proposition}
+\end{example}
 \begin{proof}
-    
+    \framebox{证明一(陈老证明)}: 取$G > |q|$, 令:
+    \begin{equation*}
+        \left| q^n \right| > G
+    \end{equation*}
+    则:
+    \begin{equation*}
+        n > \frac{\lg{G}}{\lg{|q|}}
+    \end{equation*}
+    则$\forall G > 0$, 取$N = \max\left\{\left[\frac{\lg{G}}{\lg{|q|}}\right], 1\right\}$, 当$n > N$时, $\left| q^n \right| > G$, 即$\collect{q^n}$是无穷大量。
+
+    \qed
+
+    \framebox{证明二}:
+    \begin{equation*}
+        \left| q^n \right| = (1 + |q| - 1)^n > n(|q| - 1) > G
+    \end{equation*}
+    则$\forall G > 0$, 取$N = \max\left\{\left[\frac{G}{|q|-1}\right], 1\right\}$, 当$n > N$时, $\left| q^n \right| > G$, 即$\collect{q^n}$是无穷大量。
+
+    \qed
 \end{proof}
 
 \begin{proposition}

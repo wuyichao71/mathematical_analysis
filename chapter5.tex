@@ -374,6 +374,7 @@ L'Hospital是求待定型的一种重要方法(有的书翻译成洛必达, 有�
 
 % 陈老视频56(2023.01.18)
 \section{Taylor多项式与插值多项式}
+\subsection{Taylor多项式}
 \begin{theorem}[带Peano余项的Taylor公式]
     设$f(x)$在$x_0$有$n$阶导数, 则在$x_0$的领域, 成立:
     \begin{equation*}
@@ -395,3 +396,94 @@ L'Hospital是求待定型的一种重要方法(有的书翻译成洛必达, 有�
 \begin{proof}
     
 \end{proof}
+
+% 陈老视频57(2023.01.19)
+\begin{theorem}[带Lagrange余项的泰勒公式]
+    设$f(x)$在$[a, b]$有$n$阶连续导数, 在$(a, b)$上有$n+1$阶导数, 设$x_0 \in [a, b]$为一定点, 则对任意的$x \in [a, b]$, 有:
+    \begin{equation*}
+        f(x) = f(x_0) + f'(x_0)(x-x_0) + \frac{1}{2!}f''(x_0)(x-x_0)^2+\cdots+\frac{1}{n!}f^{(n)}(x_0)(x-x_0)^n
+    \end{equation*}
+    其中:
+    \begin{equation*}
+        r_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{(n+1)} \quad (\xi\text{在}x, x_0\text{之间} )
+    \end{equation*}
+\end{theorem}
+\begin{remark}
+    带Lagrange余项的泰勒公式并不要求$x \to x_0$, 它可以描述一定区间的内的情况。
+\end{remark}
+\begin{proof}
+    \framebox{陈老证明(惊为天人)}:
+    \wyc{这部分我们暂不写, 待整体的进度到了再写。}
+
+    \framebox{证明二}:
+    设两个辅助函数:
+    \begin{equation*}
+        \begin{split}
+            G(x) &= f(x) - \sum_{k=0}^n\frac{1}{k!}f^{(k)}(x_0)(x - x_0)^k \\
+            H(x) &= (x - x_0)^{k+1}
+        \end{split}
+    \end{equation*}
+    并且$G(x_0) = 0$, $H(x_0) = 0$。考察$G(x)$和$H(x)$导数:
+    \begin{equation*}
+        \begin{split}
+            G'(x) &= f'(x) - \sum_{k=0}^{n-1}\frac{1}{k!}f^{(k+1)}(x_0)(x-x_0)^k \\ 
+            H'(x) &= (n+1)(x - x_0)^{n}
+        \end{split}
+    \end{equation*}
+    并且有$G'(x_0) = 0$, $H'(x_0) = 0$。依次类推, $G^{(i)}(x)$和$H^{(i)}(x)$为:
+    \begin{equation*}
+        \begin{split}
+            G^{(i)}(x) &= f^{(i)}(x) - \sum_{k=0}^{n-i}\frac{1}{k!}f^{(k+i)}(x_0)(x-x_0)^k \\ 
+            H^{(i)}(x) &= \frac{(n+1)!}{(n+1-i)!}(x - x_0)^{n+1-i}            
+        \end{split}
+    \end{equation*}
+    并且$G^{(i)}(x_0) = 0$, $H^{(i)}(x) = 0$。
+    
+    
+    现在不妨设$x > x_0$, 则根据Cauchy中值定理(定理~\ref{theorem:Cauchy-mean-value}):
+    \begin{equation*}
+        \frac{G(x)}{H(x)} = \frac{G(x) - G(x_0)}{H(x) - H(x_0)} = \frac{G'(\xi_1)}{H'(\xi_1)} = \frac{G'(\xi_2)}{H'(\xi_2)} = \cdots = \frac{G'(\xi_n)}{H'(\xi_n)} = \frac{f^{n}(\xi_n) - f^{(n)}(x_0)}{(n+1)!(\xi_n - x_0)} = \frac{f^{(n+1)}(\xi_{n+1})}{(n+1)!}
+    \end{equation*}
+    因此:
+    \begin{equation*}
+        r_n(x) = G(x) = \frac{f^{(n+1)}(\xi_{n+1})}{(n+1)!}(x - x_0)^{n+1}
+    \end{equation*}
+    % 并且有:
+    % \begin{equation*}
+    %     \begin{split}
+    %         G'(x) &= f'(x) - \sum_{k=0}^{n-1}\frac{1}{k!}f^{(k+1)}(x_0)(x-x_0)^k \\ 
+    %         H'(x) &= (n+1)(x - x_0)^{n}
+    %     \end{split}
+    % \end{equation*}
+    
+\end{proof}
+
+\begin{remark}
+    取$n = 0$:
+    \begin{equation*}
+        f(x) = f(x_0) + f'(\xi)(x - x_0)
+    \end{equation*}
+    即Lagrange中值定理, 因此带Lagrange余项的Taylor展开是Lagrange中值定理的推广。
+\end{remark}
+
+\subsection{插值多项式}
+假设有一个多项式:
+\begin{equation*}
+    P_n(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n
+\end{equation*}
+要确定多项式的系数, 则需要$n+1$个条件。
+
+设$f(x)$定义于$[a, b]$上有$n$阶导数, 取$x_0, x_1, x_2, \cdots, x_m \in [a, b]$, 要求$P_n(x)$满足:
+\begin{equation*}
+    P_n^{(j)}(x_i) = f^{(j)}(x_i) \quad (i = 0, 1, 2, \cdots, m; j = 0, 1, 2, \cdots, n_i-1)
+\end{equation*}
+即, 在$x_i$点, 有$n_i$个条件。那么假设$n+1 = \sum_{i = 0}^m n_i$, 那么我们就能用这些条件确定$n$阶多项式$P_n$。
+
+现在, 我们用$m_j$表示$f^{(j)}(x)$的条件个数, 那么$n+1 = \sum_{j} m_j$。
+
+
+现在有两个问题:
+\begin{enumerate}
+    \item 如何找$P_n(x)$?
+    \item 如何求余项$r_n(x)$?
+\end{enumerate}
