@@ -487,3 +487,64 @@ L'Hospital是求待定型的一种重要方法(有的书翻译成洛必达, 有�
     \item 如何找$P_n(x)$?
     \item 如何求余项$r_n(x)$?
 \end{enumerate}
+
+% 陈老视频58(2023.01.21)
+\begin{theorem}[插值多项式的余项定理]
+    $f(x)$在$[a, b]$上有$n$阶连续导数, 在$(a, b)$上有$n+1$阶导数, $x_0, x_1, x_2, \cdots, x_m \in [a, b]$, 设$P_n(x)$是满足插值条件
+    \begin{equation*}
+        P_n^{(j)}(x_i) = f^{(j)}(x_i) \quad (i = 0, 1, 2, \cdots, m; j = 0, 1, 2, \cdots, n_i-1)
+    \end{equation*}
+    的$n$次插值多项式, 则:
+    \begin{equation*}
+        r_n(x) =f(x) - P_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}\prod_{i=0}^{m}(x-x_i)^{n_i}
+    \end{equation*}
+    其中$\xi \in (x_{min}, x_{max})$, $x_{min} = \min\{x, x_0, x_1, \cdots, x_m\}$, $x_{max} = \max\{x, x_0, x_1, \cdots, x_m\}$
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+现在我们已经证明了余项的公式, 接下来我们来讨论如何找插值多项式$P_n(x)$, 但是关于找插值多项式的内容已经超出了数学分析的内容, 因此我们只讨论两种特殊的多项式:
+\begin{enumerate}
+    \item \framebox{情况一}: $n_0 = n_1 = \cdots = n_m = 1$
+    
+    在该情况下, 因为$\sum_{i=0}^{m}n_m = n+1$, 因此$n = m$。
+    考虑$\omega_{n+1} = \prod_{i=0}^{n}(x-x_i) = \prod_{i=0}^{m}(x-x_i)$, 现在我们定义基函数:
+    \begin{equation*}
+        q_k(x) = \frac{\prod_{i=0, i\neq k}^{n}(x-x_i)}{\prod_{i=0, i\neq k}^{n}(x_k-x_i)}
+    \end{equation*}
+    这样定义的$q_k(x)$是一个$n$次多项式, 并且有以下的性质:
+    \begin{equation*}
+        q_k(x_i) = \left\{
+            \begin{aligned}
+                1 \quad i = k\\
+                0 \quad i \neq k
+            \end{aligned}
+         \right.
+    \end{equation*}
+    现在我们定义:
+    \begin{equation*}
+        P_n(x) = \sum_{k=0}^{n}f(x_k)q_k(x) = f(x_0)q_0(x)+f(x_1)q_1(x) + \cdots + f(x_n)q_n(x)
+    \end{equation*}
+    \item \framebox{情况二}: 节点仅一个$x_0$
+    
+    在该情况下, 插值条件为:
+    \begin{equation*}
+        P_n^{(j)}(x_0) = f^{(j)}(x_0) \quad (j = 0, 1, 2, \cdots , n)
+    \end{equation*}
+    定义基函数$g_k(x) = \frac{(x-x_0)^k}{k!}$, 那么基函数$q_k(x)$有如下性质:
+    \begin{equation*}
+        q_k^{(j)}(x_0) = \left\{
+            \begin{aligned}
+                0 \quad j < k \\
+                1 \quad j = k \\
+                0 \quad j > k
+            \end{aligned}
+        \right.
+    \end{equation*}
+    那么我们就可以用基函数定义:
+    \begin{equation*}
+        P_n(x) = \sum_{k=0}^{n}f^{(k)}(x_0)q_k(x) = \sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k
+    \end{equation*}
+    这是$f$在$x_0$的Taylor多项式。
+\end{enumerate}
