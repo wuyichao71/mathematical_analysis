@@ -401,7 +401,7 @@ L'Hospital是求待定型的一种重要方法(有的书翻译成洛必达, 有�
 \begin{theorem}[带Lagrange余项的泰勒公式]
     设$f(x)$在$[a, b]$有$n$阶连续导数, 在$(a, b)$上有$n+1$阶导数, 设$x_0 \in [a, b]$为一定点, 则对任意的$x \in [a, b]$, 有:
     \begin{equation*}
-        f(x) = f(x_0) + f'(x_0)(x-x_0) + \frac{1}{2!}f''(x_0)(x-x_0)^2+\cdots+\frac{1}{n!}f^{(n)}(x_0)(x-x_0)^n
+        f(x) = f(x_0) + f'(x_0)(x-x_0) + \frac{1}{2!}f''(x_0)(x-x_0)^2+\cdots+\frac{1}{n!}f^{(n)}(x_0)(x-x_0)^n + r_n(x)
     \end{equation*}
     其中:
     \begin{equation*}
@@ -488,7 +488,7 @@ L'Hospital是求待定型的一种重要方法(有的书翻译成洛必达, 有�
     \item 如何求余项$r_n(x)$?
 \end{enumerate}
 
-% 陈老视频58(2023.01.21)
+% 陈老视频58(2023.01.20)
 \begin{theorem}[插值多项式的余项定理]
     $f(x)$在$[a, b]$上有$n$阶连续导数, 在$(a, b)$上有$n+1$阶导数, $x_0, x_1, x_2, \cdots, x_m \in [a, b]$, 设$P_n(x)$是满足插值条件
     \begin{equation*}
@@ -548,3 +548,182 @@ L'Hospital是求待定型的一种重要方法(有的书翻译成洛必达, 有�
     \end{equation*}
     这是$f$在$x_0$的Taylor多项式。
 \end{enumerate}
+
+% 陈老视频59(2023.01.21)
+\section{函数的Taylor公式及其应用}
+对于泰勒公式:
+\begin{equation*}
+    f(x) = f(x_0) + f'(x_0)(x - x_0) + \cdots + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n + r_n(x)
+\end{equation*}
+当$x_0 = 0$时, 该公式又称为Maclaurin公式。
+
+\begin{example}
+    求:
+    \begin{equation*}
+        f(x) = \e^x
+    \end{equation*}
+    在$x = 0$的Taylor公式。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        f(x) = \sin(x)
+    \end{equation*}
+    在$x = 0$的Taylor公式。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        f(x) = \cos(x)
+    \end{equation*}
+    在$x = 0$的Taylor公式。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        f(x) =(1+x)^\alpha
+    \end{equation*}
+    在$x = 0$的Taylor公式。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+\begin{remark}
+    \begin{enumerate}
+        \item $\alpha = n$
+        \item $\alpha = -1$
+        \item $\alpha = 1/2$
+        \item $\alpha = -1/2$
+    \end{enumerate}
+\end{remark}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        f(x) = 2^x
+    \end{equation*}
+    在$x = 0$的Taylor公式。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        f(x) = \sin(x)
+    \end{equation*}
+    在$x = \frac{\pi}{3}$的Taylor公式。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    求
+    \begin{equation*}
+        f(x) = \sqrt[3]{2-\cos(x)}
+    \end{equation*}
+    在$x = 0$的Talyor公式(展开到$x^4$)。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频60(2023.01.22)
+\begin{theorem}
+    设$f(x)$在$x_0$有$n+2$阶导数, 则它的$n+1$次Taylor多项式的导数就是$f'(x)$的$n$次多项式。
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+\begin{example}
+    求
+    \begin{equation*}
+        f(x) = \ln(1+x)
+    \end{equation*}
+    在$x = 0$的Talyor公式。    
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+
+\begin{example}
+    求
+    \begin{equation*}
+        f(x) = \arctan(x)
+    \end{equation*}
+    在$x = 0$的Talyor公式。    
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\subsection{Taylor公式的应用}
+\subsubsection{近似运算}
+\begin{example}
+    已知$\e^x$的Taylor公式为:
+    \begin{equation*}
+        \e^x = 1 + x + \frac{1}{2!}x^2 + \cdots + \frac{1}{n!}x^n + r_n(x)
+    \end{equation*}
+    其中:
+    \begin{equation*}
+        r_n = \frac{\e^{\theta x}}{(n+1)!}x^{n+1} \quad \theta \in (0, 1)
+    \end{equation*}
+    求计算$\e$。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+是否所有的情况都能用Taylor公式算近似值?
+\begin{example}
+    求$\ln2$的近似值。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+\begin{remark}
+    我们在算完一个近似值后要估算下精确度是多少。
+\end{remark}
+
+\begin{example}
+    用:
+    \begin{equation*}
+        f(x) = \ln\left(\frac{1+x}{1-x}\right)
+    \end{equation*}
+    的Taylor公式估算$\ln2$。
+\end{example}
+
+\subsubsection{求极限}
+\begin{example}
+    求:
+    \begin{equation*}
+        \funclim{x}{0}{\frac{\cos(x) - \e^{-\frac{x^2}{2}}}{x^4}}
+    \end{equation*}    
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \funclim{x}{0}{\frac{\ln\left(1+\sin^2(x)\right)-6\left(\sqrt[3]{2-\sin(x)}-1\right)}{x^4}}
+    \end{equation*}
+\end{example}
+\begin{proof}
+    
+\end{proof}

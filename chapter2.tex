@@ -720,7 +720,7 @@ $\sqrt{2}$不是有理数。
     \begin{equation*}
         \frac{n^2-1}{n+5} > \frac{n^2-25}{n+5} = n-5 > G 
     \end{equation*}
-    则可取$N = G + 5$, 当$n > N$时, 有:
+    则可取$N = [G] + 5$, 当$n > N$时, 有:
     \begin{equation*}
         \left| \frac{n^2-1}{n+5} \right| > \frac{n^2-1}{n+5} > G
     \end{equation*}
@@ -738,7 +738,7 @@ $\sqrt{2}$不是有理数。
     \begin{equation*}
         2n^2-2 > n^2 + 5n
     \end{equation*}
-    得只要$n > 5$时, 不等式就能成立。因此我们可以取$N = \max\{2G, 5\}$, 当$n > N$时候:
+    得只要$n > 5$时, 不等式就能成立。因此我们可以取$N = \max\{[2G], 5\}$, 当$n > N$时候:
     \begin{equation*}
         \frac{n^2-1}{n+5} > \frac{n}{2} > G
     \end{equation*}
@@ -748,7 +748,7 @@ $\sqrt{2}$不是有理数。
 
 \end{proof}
 \begin{remark}
-    对于分母是$n-c$($c$为常数)的情况, 我们可以令$n > 2c$, 此时$n - c > \frac{n}{2}$, 而对于分母是$n+c$的情况, 我们可以令$n > c$, 此时$n + c < 2n$
+    对于分母是$n-c$($c$为常数)的情况, 我们可以令$n > 2c$, 此时$n - c > \frac{n}{2}$, 而对于分母是$n+c$的情况, 我们可以令$n > c$, 此时$n + c < 2n$。
 \end{remark}
 
 下面我们再来讨论下无穷大量和无穷小量之间的关系。
@@ -756,7 +756,9 @@ $\sqrt{2}$不是有理数。
     若$x_n \neq 0$，则$\{ x_n \}$是无穷大量的充要条件是$\{ \frac{1}{x_n} \}$是无穷小量。    
 \end{lemma}
 \begin{proof}
+    \framebox{充分性}: 因为$\collect{\frac{1}{x_n}}$是无穷小量, 则$\forall G > 0$, 令$\epsilon = \frac{1}{G}$, $\exists N$, $\forall n > N$, $\left| \frac{1}{x_n}\right| < \epsilon = \frac{1}{G}$, 则$|x_n| > G$, 即$\collect{x_n}$是无穷大量。
 
+    \framebox{必要性}: 因为$\collect{x_n}$是无穷大量, 则$\forall \epsilon > 0$, 令$G = \frac{1}{G}$, $\exists N$, $\forall n > N$, $|x_n| > G = \frac{1}{\epsilon}$, $\left| \frac{1}{x_n}\right| < \epsilon$, 即$\collect{\frac{1}{x_n}}$是无穷小量。
 \end{proof}
 
 % 陈老视频14
