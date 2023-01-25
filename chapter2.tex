@@ -376,7 +376,7 @@ $\sqrt{2}$不是有理数。
         \mylim{n}{\left(\sqrt{n+1} - \sqrt{n}\right)}
     \end{equation*}
 \end{example}
-\begin{proof}
+\begin{solution}
     因为$\sqrt{n+1} > \sqrt{n}$, 所以$\sqrt{n+1} - \sqrt{n} > 0$。
 
     又因为:
@@ -391,7 +391,7 @@ $\sqrt{2}$不是有理数。
     \begin{equation*}
         \mylim{n}{\left(\sqrt{n+1}-\sqrt{n}\right)} = 0
     \end{equation*}
-\end{proof}
+\end{solution}
 \begin{example}
     证明:
     \begin{equation*}
@@ -502,7 +502,7 @@ $\sqrt{2}$不是有理数。
 \begin{remark}
     \begin{enumerate}
         \item 对于第三个式子, 我们还可以先证明$\mylim{n}{\frac{1}{y_n}} = \frac{1}{b}$, 再用第二个式子, 这样的方式简化运算。
-        \item 四则运算的适用范围是极限存在, 发散的情况下则不适用了。
+        \item 四则运算的适用范围是极限存在, 发散的情况下则不适用了, 所以在之后研究无穷大量的时候, 我们并没有直接用四则运算。
     \end{enumerate}
 \end{remark}
 
@@ -512,7 +512,7 @@ $\sqrt{2}$不是有理数。
         \mylim{n}{\frac{5^{n+1}-(-2)^n}{3 \cdot 5^n + 2\cdot 3^n}} 
     \end{equation*}
 \end{example}
-\begin{proof}
+\begin{solution}
     上下同除以$5^n$, 则:
     \begin{equation*}
         \frac{5^{n+1}-(-2)^n}{3 \cdot 5^n + 2\cdot 3^n} = \frac{5-\left(-\frac{2}{5}\right)^n}{3+2\left(\frac{3}{5}\right)^n}
@@ -521,7 +521,7 @@ $\sqrt{2}$不是有理数。
     \begin{equation*}
         \mylim{n}{\frac{5^{n+1}-(-2)^n}{3 \cdot 5^n + 2\cdot 3^n}} = \frac{5}{3}
     \end{equation*}
-\end{proof}
+\end{solution}
 
 \begin{example}
     当$a > 0$时, 证明:
@@ -559,7 +559,7 @@ $\sqrt{2}$不是有理数。
         \mylim{n}{n\left( \sqrt{n^2+1} - \sqrt{n^2 - 1}\right)}
     \end{equation*}
 \end{example}
-\begin{proof}
+\begin{solution}
     因为:
     \begin{equation*}
         n\left(\sqrt{n^2+1} - \sqrt{n^2 - 1}\right) = \frac{2n}{\sqrt{n^2+1}+\sqrt{n^2-1}}
@@ -586,7 +586,7 @@ $\sqrt{2}$不是有理数。
         n\left(\sqrt{n^2+1} - \sqrt{n^2 - 1}\right) = \frac{2n}{\sqrt{n^2+1}+\sqrt{n^2-1}} = \frac{2}{\sqrt{1+\left(\frac{1}{n}\right)^2}+\sqrt{1-\left(\frac{1}{n}\right)^2}}
     \end{equation*}
     之后直接进行四则运算。
-\end{proof}
+\end{solution}
 \begin{remark}
     如果直接对原式使用四则运算,则会得到$\infty \cdot 0$, 该极限无法计算, 因此需要对式子进行变形。
 \end{remark}
@@ -598,7 +598,7 @@ $\sqrt{2}$不是有理数。
     \end{equation*}
 
 \end{example}
-\begin{proof}
+\begin{solution}
     为了书写方便, 我们令:
     \begin{equation*}
         y_n = \frac{1}{\sqrt{n^2+1}} + \frac{1}{\sqrt{n^2 + 2}} + \cdots \frac{1}{\sqrt{n^2+n}}
@@ -615,7 +615,7 @@ $\sqrt{2}$不是有理数。
     \begin{equation*}
         \mylim{n}{y_n} = 1
     \end{equation*}
-\end{proof}
+\end{solution}
 \begin{remark}
     在数列中有无穷多项时, 我们不能直接用四则运算对每一项进行极限之后加和, 特别是每一项都趋向于0的情况下。四则运算只适用于有限项的情况下, 对于无限项的情况要具体讨论。
 \end{remark}
@@ -762,29 +762,39 @@ $\sqrt{2}$不是有理数。
 \end{proof}
 
 % 陈老视频14
-\begin{lemma}
+\begin{lemma}\label{lemma:infity-relation}
     设$\{ x_n \}$是无穷大量，$\{ y_n \}$满足$\exists N_0 \in \mathbb{Z}^+$, $\forall n > N_0$，有$| y_n | \ge \delta > 0$，则$\{ x_n y_n\}$也是无穷大量。
 \end{lemma}
 \begin{proof}
+    因为$\collect{x_n}$是无穷大量, 所以$\forall G > 0$, $\exists N_1$, $\forall n > N_1$, $|x_n| > \frac{G}{\delta}$。因此取$N = \max\{N_0, N_1\}$, $\forall n > N$, 有:
+    \begin{equation*}
+        |x_ny_n| = |x_n||y_n| \ge G
+    \end{equation*}
+    因此，$\collect{x_ny_n}$是无穷大量。
 \end{proof}
 
 \begin{lemma}
-    设$\{ x_n \}$是无穷大量，$\{ y_n \}$极限存在，且$\lim\limits_{n \to \infty}y_n = b \ne 0$，则$\{ x_n y_n\}$与$\left\{ \frac{x_n}{y_n} \right\}$都是无穷大量。
+    设$\{ x_n \}$是无穷大量，$\{ y_n \}$极限存在，且$\mylim{n}{y_n} = b \ne 0$，则$\{ x_n y_n\}$与$\left\{ \frac{x_n}{y_n} \right\}$都是无穷大量。
 \end{lemma}
 \begin{proof}
+    {\bf 证明$\collect{x_ny_n}$是无穷大量}:
+    因为$\mylim{n}{y_n} = b \ne 0$, 所以根据引理~\ref{lemma:progression-order-b}, $\exists N$, $\forall n > N$, $|y_n| > \frac{|b|}{2}$。因此根据引理~\ref{lemma:infity-relation}知, $\collect{x_ny_n}$为无穷大量。
+
+    {\bf 证明$\collect{\frac{x_n}{y_n}}$是无穷大量}:
+    因为$\mylim{n}{y_n} = b \ne 0$, 根据极限的四则运算, $\mylim{n}{\frac{1}{y_n}} = \frac{1}{b} \ne 0$, 之后的证明同上。
 \end{proof}
 
-\begin{proposition}
-    $\{ \frac{n}{\sin(n)}\}$和$\{ n \cdot \arctan(n)\}$是无穷大量。
-\end{proposition}
+\begin{example}
+    证明$\{ \frac{n}{\sin(n)}\}$和$\{ n \cdot \arctan(n)\}$是无穷大量。
+\end{example}
 \begin{proof}
 \end{proof}
 
-\begin{proposition}
+\begin{example}
     讨论极限
     \[ \lim_{n \to \infty} \frac{\listsum{a}{n}{k}}{\listsum{b}{n}{l}}\]
-    其中$a_0, b_0 \ne 0$, $k, l \in \mathbb{Z}^+$
-\end{proposition}
+    其中$a_0, b_0 \ne 0$, $k, l \in \mathbb{Z}^+$。
+\end{example}
 \begin{proof}
     从分子上提出$n^k$，分母上提出$n^l$次
 \end{proof}
