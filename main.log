@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.14)  25 JAN 2023 13:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.14)  26 JAN 2023 12:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1476,7 +1476,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 21.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<picture//cover.jpg, id=240, 308.5929pt x 246.6816pt>
+<picture//cover.jpg, id=244, 308.5929pt x 246.6816pt>
 File: picture//cover.jpg Graphic file (type jpg)
 <use picture//cover.jpg>
 Package pdftex.def Info: picture//cover.jpg  used on input line 21.
@@ -1508,7 +1508,7 @@ LaTeX Font Info:    Trying to load font information for C70+zhkai on input line 
 File: c70zhkai.fd 2009/09/23 4.8.2
 )
 Package CJKpunct Info: use punctuation spaces for family 'zhkai' with punctstyle (quanjiao) on input line 21.
-<picture//nju-emblem.pdf, id=249, 287.64764pt x 358.66698pt>
+<picture//nju-emblem.pdf, id=253, 287.64764pt x 358.66698pt>
 File: picture//nju-emblem.pdf Graphic file (type pdf)
 <use picture//nju-emblem.pdf>
 Package pdftex.def Info: picture//nju-emblem.pdf  used on input line 21.
@@ -1555,52 +1555,31 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 5.0pt on input line 43.
  [3
 
-] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
+] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 801.
- [14] [15] [16] [17] [18] [19]
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 1147.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 1147.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 1147.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 1147.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.0pt on input line 1147.
- [20]
-Underfull \hbox (badness 3735) in paragraph at lines 1158--1159
+(Font)              scaled to size 12.0pt on input line 847.
+ [15] [16] [17] [18] [19] [20]
+Underfull \hbox (badness 3735) in paragraph at lines 1205--1206
 []\C70/zhkai/m/n/10/50 G \C70/zhkai/m/n/10/59 ‚$[]$\C70/zhkai/m/n/10/66 / \C70/zhkai/m/n/10/4e ^^@ * \C70/zhkai/m/n/10/95 í \C70/zhkai/m/n/10/53 : \C70/zhkai/m/n/10/95 ô \C70/zhkai/m/n/10/59 W|\C70/zhkai/m/n/10/ff ^^L| \C70/zhkai/m/n/10/52 ^^Y \C70/zhkai/m/n/10/5b X \C70/zhkai/m/n/10/57 ( \C70/zhkai/m/n/10/55 / \C70/zhkai/m/n/10/4e ^^@ \C70/zhkai/m/n/10/76 „ \C70/zhkai/m/n/10/5b ž \C70/zhkai/m/n/10/65 p$\OML/cmm/m/it/10 ^^X$|\C70/zhkai/m/n/10/ff ^^L| \C70/zhkai/m/n/10/5b ƒ \C70/zhkai/m/n/10/5c ^ \C70/zhkai/m/n/10/4e Ž ^^@ \C70/zhkai/m/n/10/52 ^^G \C70/zhkai/m/n/10/95 í \C70/zhkai/m/n/10/53 : \C70/zhkai/m/n/10/95 ô$[]$|\C70/zhkai/m/n/10/30 ^^B| \C70/zhkai/m/n/10/4e ^^T$[][] \OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 =
  []
 
-
-Underfull \hbox (badness 2181) in paragraph at lines 1173--1174
+[21]
+Underfull \hbox (badness 2181) in paragraph at lines 1220--1221
 []\C70/zhkai/m/n/10/5b X \C70/zhkai/m/n/10/57 ( \C70/zhkai/m/n/10/4e ^^@ * \C70/zhkai/m/n/10/65 p \C70/zhkai/m/n/10/52 ^^W$[]$|\C70/zhkai/m/n/10/ff ^^L| \C70/zhkai/m/n/10/53 Ö \C70/zhkai/m/n/10/4e ^^@ \C70/zhkai/m/n/10/52 ^^W \C70/zhkai/m/n/10/4e % \C70/zhkai/m/n/10/68 < \C70/zhkai/m/n/10/53 U \C70/zhkai/m/n/10/8c ^^C \C70/zhkai/m/n/10/58 ž \C70/zhkai/m/n/10/52   \C70/zhkai/m/n/10/76 „ \C70/zhkai/m/n/10/6b c \C70/zhkai/m/n/10/65 t p$\OML/cmm/m/it/10 n[] < n[] < n[] < [] < n[] < [] $|\C70/zhkai/m/n/10/ff ^^L|
  []
 
 
-Underfull \hbox (badness 3108) in paragraph at lines 1173--1174
+Underfull \hbox (badness 3108) in paragraph at lines 1220--1221
 \C70/zhkai/m/n/10/52 ^^Y$\OML/cmm/m/it/10 x[]; x[]; []  ; x[]; \OMS/cmsy/m/n/10 ^^A$\C70/zhkai/m/n/10/79 ð \C70/zhkai/m/n/10/4e :$[]$\C70/zhkai/m/n/10/76 „ \C70/zhkai/m/n/10/4e ^^@ * \C70/zhkai/m/n/10/5b P \C70/zhkai/m/n/10/52 ^^W|\C70/zhkai/m/n/10/ff ^^L| \C70/zhkai/m/n/10/8b ° \C70/zhkai/m/n/10/4e :$[]$\OT1/ntxtlf/m/n/10 , $\OML/cmm/m/it/10 k$\C70/zhkai/m/n/10/4e ã \C70/zhkai/m/n/10/88 h \C70/zhkai/m/n/10/5b P \C70/zhkai/m/n/10/52 ^^W \C70/zhkai/m/n/10/4e - \C70/zhkai/m/n/10/76 „ \C70/zhkai/m/n/10/7b ,$\OML/cmm/m/it/10 k$\C70/zhkai/m/n/10/98 y|\C70/zhkai/m/n/10/ff ^^L| \C70/zhkai/m/n/10/53 È \C70/zhkai/m/n/10/60 p \C70/zhkai/m/n/10/59 } \C70/zhkai/m/n/10/66 /$[]$\C70/zhkai/m/n/10/4e - \C70/zhkai/m/n/10/76 „
  []
 
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 1206.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 1206.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 1206.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 1206.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.0pt on input line 1206.
-[21] [22]
-<figure//theorem-relation.png, id=865, 439.4016pt x 214.1601pt>
+[22] [23]
+<figure//theorem-relation.png, id=884, 439.4016pt x 214.1601pt>
 File: figure//theorem-relation.png Graphic file (type png)
 <use figure//theorem-relation.png>
-Package pdftex.def Info: figure//theorem-relation.png  used on input line 1318.
+Package pdftex.def Info: figure//theorem-relation.png  used on input line 1365.
 (pdftex.def)             Requested size: 338.58632pt x 165.03122pt.
-) (./chapter3.tex [23] [24 <./figure//theorem-relation.png>]
+) (./chapter3.tex [24 <./figure//theorem-relation.png>]
 ç¬¬ 3{} ç«  3.
 [25
 
@@ -1624,24 +1603,24 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 Missing character: There is no Ë in font cmr10!
 [62] [63]) [64] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1365000E572CE12765FEEC7508573D6D;7060.
+(rerunfilecheck)             Checksum: 7DA4F09587D155B5AD4914AE8786C48F;7186.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48169 strings out of 478268
- 929746 string characters out of 5850344
- 1726533 words of memory out of 5000000
- 64375 multiletter control sequences out of 15000+600000
- 598994 words of font info for 482 fonts, out of 8000000 for 9000
+ 48251 strings out of 478268
+ 930789 string characters out of 5850344
+ 1727579 words of memory out of 5000000
+ 64450 multiletter control sequences out of 15000+600000
+ 600344 words of font info for 487 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,17n,136p,839b,1322s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf>{c:/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/texlive/2022/texmf-dist/fonts/type1/public/niceframe-type1/bbding10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on main.pdf (67 pages, 1957048 bytes).
+<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simfang.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf>{c:/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/texlive/2022/texmf-dist/fonts/type1/public/niceframe-type1/bbding10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on main.pdf (67 pages, 1977207 bytes).
 PDF statistics:
- 2279 PDF objects out of 2487 (max. 8388607)
- 1816 compressed objects within 19 object streams
- 468 named destinations out of 1000 (max. 500000)
- 824 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2312 PDF objects out of 2487 (max. 8388607)
+ 1845 compressed objects within 19 object streams
+ 477 named destinations out of 1000 (max. 500000)
+ 836 words of extra memory for PDF output out of 10000 (max. 10000000)
 

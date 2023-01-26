@@ -773,7 +773,7 @@ $\sqrt{2}$不是有理数。
     因此，$\collect{x_ny_n}$是无穷大量。
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{lemma:infty-relation2}
     设$\{ x_n \}$是无穷大量，$\{ y_n \}$极限存在，且$\mylim{n}{y_n} = b \ne 0$，则$\{ x_n y_n\}$与$\left\{ \frac{x_n}{y_n} \right\}$都是无穷大量。
 \end{lemma}
 \begin{proof}
@@ -785,27 +785,74 @@ $\sqrt{2}$不是有理数。
 \end{proof}
 
 \begin{example}
-    证明$\{ \frac{n}{\sin(n)}\}$和$\{ n \cdot \arctan(n)\}$是无穷大量。
+    证明$\collect{\frac{n}{\sin(n)}}$和$\collect{n \cdot \arctan(n)}$是无穷大量。
 \end{example}
 \begin{proof}
+    因为有$\left|\sin(n)\right| \le 1$, 所以：
+    \begin{equation*}
+        \frac{1}{\left|\sin(n)\right|} \ge 1
+    \end{equation*}
+    根据引理~\ref{lemma:infity-relation}得$\collect{\frac{n}{\sin(n)}}$是无穷大量。
+
+    因为$n \ge 1$, 因此有$\left|\arctan(n)\right| \ge \frac{\pi}{4}$, 根据引理~\ref{lemma:infity-relation}得$\collect{n \cdot \arctan(n)}$是无穷大量。
 \end{proof}
 
 \begin{example}
     讨论极限
-    \[ \lim_{n \to \infty} \frac{\listsum{a}{n}{k}}{\listsum{b}{n}{l}}\]
+    \begin{equation*}
+        \mylim{n}{\frac{\listsum{a}{n}{k}}{\listsum{b}{n}{l}}}
+    \end{equation*}
     其中$a_0, b_0 \ne 0$, $k, l \in \mathbb{Z}^+$。
 \end{example}
 \begin{proof}
-    从分子上提出$n^k$，分母上提出$n^l$次
+    从分子上提出$n^k$，分母上提出$n^l$次, 则:
+    \def\tmp#1#2{#1_0+#1_1n^{-1}+\cdots+#1_{#2-1}n^{1-#2}+#1_{#2}n^{-#2}}
+    \begin{equation*}
+        \mylim{n}{\frac{\listsum{a}{n}{k}}{\listsum{b}{n}{l}}} = \mylim{n}{n^{k-l}\frac{\tmp{a}{k}}}{\tmp{b}{l}}
+    \end{equation*}
+    根据极限的四则运算, 有:
+    \begin{equation*}
+        \mylim{n}{\frac{\tmp{a}{k}}}{\tmp{b}{l}} = \frac{a_0}{b_0} \neq 0
+    \end{equation*}
+    因此, {\bf 当$k > l$时}:
+    \begin{equation*}
+        \mylim{n}{n^{k-l}} = \infty
+    \end{equation*}
+    根据引理~\ref{lemma:infty-relation2}有:
+    \begin{equation*}
+        \mylim{n}{\frac{\listsum{a}{n}{k}}{\listsum{b}{n}{l}}} = \infty
+    \end{equation*}
+
+
+    当{\bf 当$k = l$时}:
+    \begin{equation*}
+        \mylim{n}{n^{k-l}} = 1
+    \end{equation*}
+    根据极限的四则运算有:
+    \begin{equation*}
+        \mylim{n}{\frac{\listsum{a}{n}{k}}{\listsum{b}{n}{l}}} = \frac{a_0}{b_0}
+    \end{equation*}
+
+    当{\bf 当$k < l$时}:
+    \begin{equation*}
+        \mylim{n}{n^{k-l}} = 0
+    \end{equation*}
+    根据极限的四则运算有:
+    \begin{equation*}
+        \mylim{n}{\frac{\listsum{a}{n}{k}}{\listsum{b}{n}{l}}} = 0
+    \end{equation*}
+
+    \qed
 \end{proof}
 \subsection{无穷大的运算}
-若$\mylim{n}{x_n} = +\infty$，则记$\collect{x_n}$为``+$\infty$''。
+在之上我们已经提到, 极限的四则运算适用于极限存在的情况, 而对于极限发散的情况则并不一定成立, 下面我们来讨论下对于极限趋向于无穷大的情况, 在哪些情况下是可以运用四则运算的。为了方便起见, 我们先做如下定义:
+\begin{enumerate}
+    \item 若$\mylim{n}{x_n} = +\infty$，则记$\collect{x_n}$为``+$\infty$''。
+    \item 若$\mylim{n}{y_n} = +\infty$，则记$\collect{y_n}$为``+$\infty$''。
+    \item 若$\mylim{n}{z_n} = \infty$，则记$\collect{z_n}$为``+$\infty$''。
+    \item 若$\mylim{n}{w_n} = 0$，则记$\collect{z_n}$为``0''。
+\end{enumerate}
 
-若$\mylim{n}{y_n} = +\infty$，则记$\collect{y_n}$为``+$\infty$''。
-
-若$\mylim{n}{z_n} = \infty$，则记$\collect{z_n}$为``+$\infty$''。
-
-若$\mylim{n}{w_n} = 0$，则记$\collect{z_n}$为``0''。
 \begin{theorem}
     \begin{enumerate}
         \item $(+\infty) + (+\infty) = +\infty$
