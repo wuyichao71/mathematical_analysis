@@ -762,8 +762,8 @@ $\sqrt{2}$不是有理数。
 \end{proof}
 
 % 陈老视频14
-\begin{lemma}\label{lemma:infity-relation}
-    设$\{ x_n \}$是无穷大量，$\{ y_n \}$满足$\exists N_0 \in \mathbb{Z}^+$, $\forall n > N_0$，有$| y_n | \ge \delta > 0$，则$\{ x_n y_n\}$也是无穷大量。
+\begin{lemma}\label{lemma:infty-relation}
+    设$\{ x_n \}$是无穷大量，$\{ y_n \}$满足$\exists N_0$, $\forall n > N_0$，有$| y_n | \ge \delta > 0$，则$\{ x_n y_n\}$也是无穷大量。
 \end{lemma}
 \begin{proof}
     因为$\collect{x_n}$是无穷大量, 所以$\forall G > 0$, $\exists N_1$, $\forall n > N_1$, $|x_n| > \frac{G}{\delta}$。因此取$N = \max\{N_0, N_1\}$, $\forall n > N$, 有:
@@ -778,7 +778,7 @@ $\sqrt{2}$不是有理数。
 \end{lemma}
 \begin{proof}
     {\bf 证明$\collect{x_ny_n}$是无穷大量}:
-    因为$\mylim{n}{y_n} = b \ne 0$, 所以根据引理~\ref{lemma:progression-order-b}, $\exists N$, $\forall n > N$, $|y_n| > \frac{|b|}{2}$。因此根据引理~\ref{lemma:infity-relation}知, $\collect{x_ny_n}$为无穷大量。
+    因为$\mylim{n}{y_n} = b \ne 0$, 所以根据引理~\ref{lemma:progression-order-b}, $\exists N$, $\forall n > N$, $|y_n| > \frac{|b|}{2}$。因此根据引理~\ref{lemma:infty-relation}知, $\collect{x_ny_n}$为无穷大量。
 
     {\bf 证明$\collect{\frac{x_n}{y_n}}$是无穷大量}:
     因为$\mylim{n}{y_n} = b \ne 0$, 根据极限的四则运算, $\mylim{n}{\frac{1}{y_n}} = \frac{1}{b} \ne 0$, 之后的证明同上。
@@ -792,10 +792,13 @@ $\sqrt{2}$不是有理数。
     \begin{equation*}
         \frac{1}{\left|\sin(n)\right|} \ge 1
     \end{equation*}
-    根据引理~\ref{lemma:infity-relation}得$\collect{\frac{n}{\sin(n)}}$是无穷大量。
+    根据引理~\ref{lemma:infty-relation}得$\collect{\frac{n}{\sin(n)}}$是无穷大量。
 
-    因为$n \ge 1$, 因此有$\left|\arctan(n)\right| \ge \frac{\pi}{4}$, 根据引理~\ref{lemma:infity-relation}得$\collect{n \cdot \arctan(n)}$是无穷大量。
+    因为$n \ge 1$, 因此有$\left|\arctan(n)\right| \ge \frac{\pi}{4}$, 根据引理~\ref{lemma:infty-relation}得$\collect{n \cdot \arctan(n)}$是无穷大量。
 \end{proof}
+\begin{remark}
+    对于$\collect{n \cdot \arctan(n)}$, 我们也可以用它的极限为$\frac{\pi}{2}$结合引理~\ref{lemma:infty-relation2}来证明。
+\end{remark}
 
 \begin{example}
     讨论极限
@@ -848,8 +851,8 @@ $\sqrt{2}$不是有理数。
 在之上我们已经提到, 极限的四则运算适用于极限存在的情况, 而对于极限发散的情况则并不一定成立, 下面我们来讨论下对于极限趋向于无穷大的情况, 在哪些情况下是可以运用四则运算的。为了方便起见, 我们先做如下定义:
 \begin{enumerate}
     \item 若$\mylim{n}{x_n} = +\infty$，则记$\collect{x_n}$为``+$\infty$''。
-    \item 若$\mylim{n}{y_n} = +\infty$，则记$\collect{y_n}$为``+$\infty$''。
-    \item 若$\mylim{n}{z_n} = \infty$，则记$\collect{z_n}$为``+$\infty$''。
+    \item 若$\mylim{n}{y_n} = \infty$，则记$\collect{y_n}$为``-$\infty$''。
+    \item 若$\mylim{n}{z_n} = \infty$，则记$\collect{z_n}$为$\infty$''。
     \item 若$\mylim{n}{w_n} = 0$，则记$\collect{z_n}$为``0''。
 \end{enumerate}
 
@@ -862,8 +865,9 @@ $\sqrt{2}$不是有理数。
         \item $(+\infty) \cdot (-\infty) = -\infty$
     \end{enumerate}
 \end{theorem}
+以上的极限是可以通过四则运算简单地判断出来的, 而以下的极限则无法通过四则运算判断出来, 我们将以下的这些极限类型称为``待定型''。
 
-\begin{definition}
+\begin{definition}[待定型]
     \begin{enumerate}
         \item $(+\infty) - (+\infty) = ?$
         \item $(+\infty) + (-\infty) = ?$
@@ -872,7 +876,7 @@ $\sqrt{2}$不是有理数。
         \item $\frac{\infty}{\infty} = ?$
         \item $\cdots$
     \end{enumerate}
-    上述情况称为``待定型''
+    上述情况称为``待定型''。
 \end{definition}
 \begin{definition}
     若数列$\collect{x_n}$，有$x_n \le x_{n + 1}, \forall n \in \mathbb{N}^+$，则称数列$\collect{x_n}$单调增加，记为$\collect{x_n} \uparrow$。若有$x_n < x_{n + 1}$，则称数列$\collect{x_n}$严格单调增加，记为$\collect{x_n} \text{严格} \uparrow$。
@@ -881,67 +885,112 @@ $\sqrt{2}$不是有理数。
 \end{definition}
 
 \begin{theorem}[Stolz定理]
-    假设$\collect{y_n}$严格单调增加数列，且$\mylinelim{n}{y_n} = + \infty$。若
-    \[ \mylim{n}{ \frac{x_n - x_{n-1}}{y_n - y_{n-1}} } = a(a\text{为有限数}, +\infty, -\infty) \]
-    则
-    \[ \mylim{n}{\frac{x_n}{y_n}} = a\]
-    
+    假设$\collect{y_n}$严格单调增加数列，且$\mylinelim{n}{y_n} = + \infty$。若:
+    \begin{equation*}
+        \mylim{n}{ \frac{x_n - x_{n-1}}{y_n - y_{n-1}} } = a(a\text{为有限数}, +\infty, -\infty) 
+    \end{equation*}
+
+    则:
+    \begin{equation*}
+        \mylim{n}{\frac{x_n}{y_n}} = a 
+    \end{equation*}
 \end{theorem}
 \begin{proof}
 \framebox{因为陈老的证明简洁明了, 我们先写陈老的证明}:
 
-当a = 0时: 
+{\bf 当a = 0时}: 
 因为$\mylim{n}{y_n} = +\infty$, 则$\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $y_n > 0$。
 
-又因为$\mylim{n}{\frac{x_n - x_{n-1}}{y_n - y_{n-1}}} = a$, 则$\forall \epsilon > 0$, $\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $\left| \frac{x_n - x_{n-1}}{y_n - y_{n-1}} \right| < \frac{\epsilon}{2}$。
+又因为$\mylim{n}{\frac{x_n - x_{n-1}}{y_n - y_{n-1}}} = 0$, 则$\forall \epsilon > 0$, $\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $\left| \frac{x_n - x_{n-1}}{y_n - y_{n-1}} \right| < \frac{\epsilon}{2}$。
 
 取$N_3 = \max\{N_1, N_2\}$, $\forall n > N_3$:
-\[  \left| x_n - x_{n-1}\right| < \frac{\epsilon}{2}\left| y_n - y_{n-1} \right| \]
+\begin{equation*}
+    \left| x_n - x_{n-1}\right| < \frac{\epsilon}{2}\left| y_n - y_{n-1} \right|
+\end{equation*}
+
 又因为$\collect{y_n}$严格单调增加, 则上式可以化为:
-\[  \left| x_n - x_{n-1}\right| < \frac{\epsilon}{2} \left( y_n - y_{n-1} \right) \]
+\begin{equation*}
+    \left| x_n - x_{n-1}\right| < \frac{\epsilon}{2} \left( y_n - y_{n-1} \right)
+\end{equation*}
+
 根据三角不等式:
-\[ \left| x_n - x_{N_3} \right| \le \left| x_n - x_{n-1}\right| + \left| x_{n-1} - x_{n-2} \right| + \cdots + \left| x_{N_3+1} - x_{N_3}\right|\]
+\begin{equation*}
+    \left| x_n - x_{N_3} \right| \le \left| x_n - x_{n-1}\right| + \left| x_{n-1} - x_{n-2} \right| + \cdots + \left| x_{N_3+1} - x_{N_3}\right|
+\end{equation*}
+
 根据上两式, 我们可以得出:
-\[ \left| x_n - x_{N_3} \right| < \frac{\epsilon}{2} \left( y_n - y_{N_3} \right) \]
+\begin{equation*}
+    \left| x_n - x_{N_3} \right| < \frac{\epsilon}{2} \left( y_n - y_{N_3} \right)
+\end{equation*}
+
 两边同除以$y_n$得:
-\[ \left| \frac{x_n}{y_n} - \frac{x_{N_3}}{y_n} \right| < \frac{\epsilon}{2}(1 - \frac{y_{N_3}}{y_n}) < \frac{\epsilon}{2}\]
+\begin{equation*}
+    \left| \frac{x_n}{y_n} - \frac{x_{N_3}}{y_n} \right| < \frac{\epsilon}{2}(1 - \frac{y_{N_3}}{y_n}) < \frac{\epsilon}{2}
+\end{equation*}
+
 则根据三角不等式:
-\[ \left| \frac{x_n}{y_n} \right| < \frac{\epsilon}{2} + \left|\frac{x_{N_3}}{y_n}\right|\]
-因为$\mylim{n}{y_n} = +\infty$, $\exists N_4 \in \mathbb{N}^+$, $\forall n > N_4$, $y_n > \frac{2\left| x_{N_3}\right|}{\epsilon}$
+\begin{equation*}
+    \left| \frac{x_n}{y_n} \right| < \frac{\epsilon}{2} + \left|\frac{x_{N_3}}{y_n}\right|
+\end{equation*}
+
+因为$\mylim{n}{y_n} = +\infty$, $\exists N_4 \in \mathbb{N}^+$, $\forall n > N_4$, $y_n > \frac{2| x_{N_3}\|}{\epsilon}$
 
 则可以取$N = \max\{N_3, N_4\}$, $\forall n > N_4$:
-\[ \left| \frac{x_n}{y_n} \right| < \epsilon \]
+\begin{equation*}
+    \left| \frac{x_n}{y_n} \right| < \epsilon
+\end{equation*}
+
 则对于$a = 0$时:
-\[ \mylim{n}{\frac{x_n}{y_n}} = 0\]
+\begin{equation*}
+    \mylim{n}{\frac{x_n}{y_n}} = 0
+\end{equation*}
 
-当$a \neq 0 $时:
+{\bf 当$a \neq 0 $时}:
 
-取$z_n = x_n - ay_n$, 则
-\[ \frac{z_n-z_{n-1}}{y_n-y_{n-1}} = \frac{x_n-x_{n-1}}{y_n-y_{n-1}} - a \]
+取$z_n = x_n - ay_n$, 则:
+\begin{equation*}
+    \frac{z_n-z_{n-1}}{y_n-y_{n-1}} = \frac{x_n-x_{n-1}}{y_n-y_{n-1}} - a
+\end{equation*}
+
 因此:
-\[ \mylim{n}{\frac{z_n-z_{n-1}}{y_n-y_{n-1}}} = \mylim{n}{\left(\frac{x_n-x_{n-1}}{y_n-y_{n-1}} - a\right)} = 0\]
-根据以上证明的$a = 0$的情况可知:
-\[\mylim{n}{\frac{z_n}{y_n}} = 0\]
-又因为:
-\[ \frac{x_n}{y_n} = \frac{z_n}{y_n} + a\]
-所以当$a \neq 0$时:
-\[ \mylim{n}{\frac{x_n}{y_n}} = a\]
+\begin{equation*}
+    \mylim{n}{\frac{z_n-z_{n-1}}{y_n-y_{n-1}}} = \mylim{n}{\left(\frac{x_n-x_{n-1}}{y_n-y_{n-1}} - a\right)} = 0
+\end{equation*}
 
-当$a = +\infty$时:
+根据以上证明的$a = 0$的情况可知:
+\begin{equation*}
+    \mylim{n}{\frac{z_n}{y_n}} = 0
+\end{equation*}
+
+又因为:
+\begin{equation*}
+    \frac{x_n}{y_n} = \frac{z_n}{y_n} + a
+\end{equation*}
+
+所以当$a \neq 0$时:
+\begin{equation*}
+    \mylim{n}{\frac{x_n}{y_n}} = a
+\end{equation*}
+
+{\bf 当$a = +\infty$时}:
 
 因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n-y_{n-1}}} = +\infty$, 则$\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $\frac{x_n-x_{n-1}}{y_n-y_{n-1}} > 1$, 即:
 \[ x_n - x_{n-1} > y_n - y_{n-1} \]
-因为$\collect{y_n}$严格单调增加, 则
+因为$\collect{y_n}$严格单调增加, 则:
 \[ x_n - x_{n-1} > y_n - y_{n-1}> 0 \]
+
+
 即$\collect{x_n}${\bf 严格单调增加}。
 
 同时, 同其他情况的证明, 我们有:
 \[ x_n - x_N > y_n - y_N\]
 
-又因为$\mylim{n}{y_n} = +\infty$, 则$\forall G > \max\{0, y_N - x_N\}$, $\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $y_n > 2G$。
+又因为$\mylim{n}{y_n} = +\infty$, 则$\forall G > \max\{0, y_N - x_N\}$, $\exists N_2$, $\forall n > N_2$, $y_n > 2G$。
 
-则
-\[ x_n > y_n - y_N + x_N > G \]
+则:
+\begin{equation*}
+    x_n > y_n - y_N + x_N > G 
+\end{equation*}
 即$\mylim{n}{x_n} = +\infty$, $\collect{x_n}$趋向于$+\infty$。
 
 此时考虑$\frac{y_n - y_{n-1}}{x_n - x_{n-1}}$, 因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n - y_{n-1}}} = +\infty$, 则$\mylim{n}{\frac{y_n - y_{n-1}}{x_n-x_{n-1}}} = 0$(引理~\ref{lemma:inverse})。根据$a = 0$的情况得：$\mylim{n}{\frac{y_n}{x_n}} = 0$, 因此$\mylim{n}{\frac{x_n}{y_n}} = \infty$, 即$\forall G > 0$, $\exists N_3 \in \mathbb{N}^+$, $\forall n > N_3$, $\left| \frac{x_n}{y_n} \right| > G$。
@@ -956,20 +1005,40 @@ $\sqrt{2}$不是有理数。
 
 现在用定义证明:
 
-当a为有限数时:
+{\bf 当a为有限数时}:
 
-因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n-y_{n-1}}} = a$, 则$\forall \epsilon > 0$, $\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $\left| \frac{x_n - x_{n-1}}{y_n - y_{n-1}} - a\right| < \frac{\epsilon}{2}$。
+因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n-y_{n-1}}} = a$, 则$\forall \epsilon > 0$, $\exists N_1$, $\forall n > N_1$, $\left| \frac{x_n - x_{n-1}}{y_n - y_{n-1}} - a\right| < \frac{\epsilon}{2}$。
 
-又因为$\mylim{n}{y_n} = +\infty$, 则$\exists N_2 \in \mathbb{N}^+$, $\forall n > N_2$, $y_n > 0$。
+又因为$\mylim{n}{y_n} = +\infty$, 则$\exists N_2$, $\forall n > N_2$, $y_n > 0$。
 
 则$\forall n > N_3 = \max\{N_1, N_2\}$, 结合三角不等式, 我们有:
-\[ \frac{x_n}{y_n}-a < \frac{\epsilon}{2}\left(1 - \frac{y_{N_3}}{y_n}\right) + \frac{x_{N_3}-ay_{N_3}}{y_n} < \frac{\epsilon}{2} + \frac{x_{N_3}-ay_{N_3}}{y_n}\]
+\begin{equation*}
+    \frac{x_n}{y_n}-a < \frac{\epsilon}{2}\left(1 - \frac{y_{N_3}}{y_n}\right) + \frac{x_{N_3}-ay_{N_3}}{y_n} < \frac{\epsilon}{2} + \frac{x_{N_3}-ay_{N_3}}{y_n} 
+\end{equation*}
 
-因为$\mylim{n}{y_n} = +\infty$, 所以$\mylim{n}{\frac{x_{N_3}-ay_{N_3}}{y_n}} = 0$, 即$\exists N_4 \in \mathbb{N}^+$, $\forall n > N_4$, $\left| \frac{x_{N_3}-ay_{N_3}}{y_n} \right| < \frac{\epsilon}{2}$。
+因为$\mylim{n}{y_n} = +\infty$, 所以$\mylim{n}{\frac{x_{N_3}-ay_{N_3}}{y_n}} = 0$, 即$\exists N_4$, $\forall n > N_4$, $\left| \frac{x_{N_3}-ay_{N_3}}{y_n} \right| < \frac{\epsilon}{2}$。
 
 即$\forall \epsilon > 0$, $\exists N_5 = \max\{N_3, N_4\}$, $\forall n > N_5$, $\frac{x_n}{y_n} - a < \epsilon$。
 
 同理可以证明:$\forall n > N_5$, $\frac{x_n}{y_n} - a > -\epsilon$。因此$\mylim{n}{\frac{x_n}{y_n}} = a$。
+
+{\bf 当$a = +\infty$时}:
+
+因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n-y_{n-1}}} = +\infty$, 则$\forall G > 0$, $\exists N_1$, $\forall n > N_1$, $\frac{x_n-x_{n-1}}{y_n-y_{n-1}} > 3G$。
+
+又因为$\mylim{n}{y_n} = +\infty$, 则$\exists N_2$, $\forall n > N_2$, $y_n > 0$。
+
+则$\forall n > N_3 = \max\{N_1, N_2\}$, 结合三角不等式, 我们有:
+\begin{equation*}
+    \frac{x_n}{y_n} > 3G\left(1 - \frac{y_{N_3}}{y_n}\right) + \frac{x_{N_3}}{y_n}
+\end{equation*}
+
+
+因为$\mylim{n}{y_n} = +\infty$, 所以$\mylim{n}{\frac{y_{N_3}}{y_n}} = 0$, 则$\exists N_4$, $\forall n > N_4$, $\left|\frac{y_{N_3}}{y_n}\right| < \frac{1}{3}$。同理, $\exists N_5$, $\forall n > N_5$, $\left|\frac{x_{N_3}}{y_n}\right| < G$。
+
+因此, $\forall G > 0$, $\exists N = \max\{N_3, N_4, N_5\}$, $\forall n > N$, $\frac{x_n}{y_n} > G$, 即$\mylim{n}{\frac{x_n}{y_n}} = +\infty$。
+
+\qed
 \end{proof}
 \begin{proposition}
     用Stolz定理证明, 若$\mylim{n}{a_n} = a$，则
