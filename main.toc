@@ -52,3 +52,5 @@
 \contentsline {subsection}{\numberline {5.5.2}最值问题}{64}{subsection.5.5.2}%
 \contentsline {subsection}{\numberline {5.5.3}数学建模}{65}{subsection.5.5.3}%
 \contentsline {subsection}{\numberline {5.5.4}函数作图}{65}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}方程的近似求解}{66}{subsection.5.5.5}%
+\contentsline {chapter}{\numberline {6}不定积分}{67}{chapter.6}%

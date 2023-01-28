@@ -952,3 +952,30 @@ $y = f(x)$在$[a, b]$上连续, 则$f(x)$在$[a, b]$上能取到最大最小值�
     
 \end{solution}
 
+% 陈老视频65(2023.01.28)
+\subsection{方程的近似求解}
+求解方程的方法有解析方法和数值方法, 本节我们主要学习数值方法。在本节中, 我们主要介绍二分法和牛顿迭代法。
+\begin{proposition}[二分法]
+    求$f(x) = 0, x \in [a, b]$, 其中$f(x)x$在$[a, b]$上连续, $f(a)f(b) < 0$, 则$\exists x^* \in (a, b)$, 使$f(x^*) = 0$。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}[Newton迭代法(Newton切线法)]
+    $f(x)$在$[a, b]$上连续, $f(a)f(b) < 0$, $f'(x) \neq 0$。
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    设$f(x)$在$[a, b]$上有二阶导数, 满足:
+    \begin{enumerate}
+        \item $f(a)f(b) < 0$
+        \item $f'(x)$在$(a, b)$保号
+        \item $f''(x)$在$(a, b)$保号
+    \end{enumerate}
+    取$x_0$满足$f(x_0)f''(x_0) > 0$, 则由$x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}$得到的$\collect{x_k}$单调收敛于$f(x) = 0$的解。
+\end{example}
+

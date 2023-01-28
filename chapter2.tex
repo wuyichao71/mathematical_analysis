@@ -800,7 +800,7 @@ $\sqrt{2}$不是有理数。
     对于$\collect{n \cdot \arctan(n)}$, 我们也可以用它的极限为$\frac{\pi}{2}$结合引理~\ref{lemma:infty-relation2}来证明。
 \end{remark}
 
-\begin{example}
+\begin{example}\label{example-chapter2-3}
     讨论极限
     \begin{equation*}
         \mylim{n}{\frac{\listsum{a}{n}{k}}{\listsum{b}{n}{l}}}
@@ -884,7 +884,7 @@ $\sqrt{2}$不是有理数。
     若数列$\collect{x_n}$，有$x_n \ge x_{n + 1}, \forall n \in \mathbb{N}^+$，则称数列$\collect{x_n}$单调减少，记为$\collect{x_n} \downarrow$。若有$x_n > x_{n + 1}$，则称数列$\collect{x_n}$严格单调减少，记为$\collect{x_n} \text{严格} \downarrow$。
 \end{definition}
 
-\begin{theorem}[Stolz定理]
+\begin{theorem}[Stolz定理]\label{theorem:Stolz}
     假设$\collect{y_n}$严格单调增加数列，且$\mylinelim{n}{y_n} = + \infty$。若:
     \begin{equation*}
         \mylim{n}{ \frac{x_n - x_{n-1}}{y_n - y_{n-1}} } = a(a\text{为有限数}, +\infty, -\infty) 
@@ -975,15 +975,21 @@ $\sqrt{2}$不是有理数。
 {\bf 当$a = +\infty$时}:
 
 因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n-y_{n-1}}} = +\infty$, 则$\exists N_1 \in \mathbb{N}^+$, $\forall n > N_1$, $\frac{x_n-x_{n-1}}{y_n-y_{n-1}} > 1$, 即:
-\[ x_n - x_{n-1} > y_n - y_{n-1} \]
-因为$\collect{y_n}$严格单调增加, 则:
-\[ x_n - x_{n-1} > y_n - y_{n-1}> 0 \]
+\begin{equation*}
+    x_n - x_{n-1} > y_n - y_{n-1}
+\end{equation*}
 
+因为$\collect{y_n}$严格单调增加, 则:
+\begin{equation*}
+    x_n - x_{n-1} > y_n - y_{n-1}> 0
+\end{equation*}
 
 即$\collect{x_n}${\bf 严格单调增加}。
 
 同时, 同其他情况的证明, 我们有:
-\[ x_n - x_N > y_n - y_N\]
+\begin{equation*}
+    x_n - x_N > y_n - y_N
+\end{equation*}
 
 又因为$\mylim{n}{y_n} = +\infty$, 则$\forall G > \max\{0, y_N - x_N\}$, $\exists N_2$, $\forall n > N_2$, $y_n > 2G$。
 
@@ -991,6 +997,7 @@ $\sqrt{2}$不是有理数。
 \begin{equation*}
     x_n > y_n - y_N + x_N > G 
 \end{equation*}
+
 即$\mylim{n}{x_n} = +\infty$, $\collect{x_n}$趋向于$+\infty$。
 
 此时考虑$\frac{y_n - y_{n-1}}{x_n - x_{n-1}}$, 因为$\mylim{n}{\frac{x_n-x_{n-1}}{y_n - y_{n-1}}} = +\infty$, 则$\mylim{n}{\frac{y_n - y_{n-1}}{x_n-x_{n-1}}} = 0$(引理~\ref{lemma:inverse})。根据$a = 0$的情况得：$\mylim{n}{\frac{y_n}{x_n}} = 0$, 因此$\mylim{n}{\frac{x_n}{y_n}} = \infty$, 即$\forall G > 0$, $\exists N_3 \in \mathbb{N}^+$, $\forall n > N_3$, $\left| \frac{x_n}{y_n} \right| > G$。
@@ -1003,7 +1010,7 @@ $\sqrt{2}$不是有理数。
 同理, 也能证明$a = -\infty$的情况。
 
 
-现在用定义证明:
+\framebox{现在用定义证明}:
 
 {\bf 当a为有限数时}:
 
@@ -1040,26 +1047,70 @@ $\sqrt{2}$不是有理数。
 
 \qed
 \end{proof}
-\begin{proposition}
+\begin{example}
     用Stolz定理证明, 若$\mylim{n}{a_n} = a$，则
-    \[ \mylim{n}{\mean{a}{n}} = a \]
-\end{proposition}
+    \begin{equation*}
+        \mylim{n}{\mean{a}{n}} = a
+    \end{equation*}
+\end{example}
 \begin{proof}
+    取$x_n = a_1 + a_2 + \cdots + a_n$, $y_n = n$, 则有$\collect{y_n}$严格单调增加, 且$\mylim{n}{y_n} = +\infty$, 并且有:
+    \begin{equation*}
+        \mylim{n}{\frac{x_n-x_{n-1}}{y_n - y_{n-1}}} = \mylim{n}{a_n} = 0
+    \end{equation*}
+
+    则根据Stolz定理(定理~\ref{theorem:Stolz})得:
+    \begin{equation*}
+        \mylim{n}{\frac{x_n}{y_n}} = \mylim{n}{\mean{a}{n}} = a
+    \end{equation*}
 \end{proof}
 
-\begin{proposition}
-    \[ \text{求} \mylim{n}{\frac{1^k+2^k+\cdots+n^k}{n^{k+1}}} \]
-\end{proposition}
-\begin{proof}
+\begin{example}
+    求:
+    \begin{equation*}
+        \mylim{n}{\frac{1^k+2^k+\cdots+n^k}{n^{k+1}}}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    取$x_n = 1^k + 2^k + \cdots + n^k$, $y_n = n^{k+1}$, 其中$y_n$严格单调增加, 且$\mylim{n}{y_n} = +\infty$, 将$(n-1)^{k+1}$进行多项式展开有:
+    \begin{equation*}
+        \mylim{n}{\frac{x_n-x_{n-1}}{y_n-y_{n-1}}} = \mylim{n}{\frac{n^k}{n^{k+1}- (n-1)^{k+1}}} = \mylim{n}{\frac{n^k}{(k+1)n^k - C^2_{n+1}n^{k-1} + \cdots + C^{n+1}_{n+1}(-1)^{n+1}}}
+    \end{equation*}
 
-\end{proof}
+    根据例题~\ref{example-chapter2-3}有:
+    \begin{equation*}
+        \mylim{n}{\frac{x_n-x_{n-1}}{y_n-y_{n-1}}} = \frac{1}{k+1}
+    \end{equation*}
 
-\begin{proposition}
-    \[ \text{设}\mylim{n}{a_n} = a\text{，求}\mylim{n}{\frac{a_1+2a_2+3a_3+\cdots+na_n}{n^2}} \]    
-\end{proposition}
-\begin{proof}
+    则根据Stolz定理(定理~\ref{theorem:Stolz})得:
+    \begin{equation*}
+        \mylim{n}{\frac{x_n}{y_n}} = \mylim{n}{\frac{1^k+2^k+\cdots+n^k}{n^{k+1}}} = \frac{1}{k+1}
+    \end{equation*}
+\end{solution}
 
-\end{proof}
+\begin{example}
+    设$\mylim{n}{a_n} = a$, 求:
+    \begin{equation*}
+        \mylim{n}{\frac{a_1+2a_2+3a_3+\cdots+na_n}{n^2}}
+    \end{equation*}  
+\end{example}
+\begin{solution}
+    取$x_n = a_1+2a_2+3a_3+\cdots+na_n$, $y_n = n^2$, 其中$y_n$严格单调增加, 且$\mylim{n}{y_n} = +\infty$, 并且有:
+    \begin{equation*}
+        \mylim{n}{\frac{na_n}{n^2-(n-1)^2}} = \mylim{n}{\frac{na_n}{2n-1}} = \mylim{n}{\frac{a_n}{2-1/n}}
+    \end{equation*}
+    
+    根据极限的四则运算有:
+    \begin{equation*}
+        \mylim{n}{\frac{na_n}{n^2-(n-1)^2}} = \frac{a}{2}
+    \end{equation*}
+
+    则根据Stolz定理(定理~\ref{theorem:Stolz})得:
+    \begin{equation*}
+        \mylim{n}{\frac{x_n}{y_n}} = \mylim{n}{\frac{a_1+2a_2+3a_3+\cdots+na_n}{n^2}} = \frac{a}{2}
+    \end{equation*}
+\end{solution}
+到此为止, 我们已经熟悉了极限的求解方法, 因此接下来我们不会再将极限的求解步骤写得如此详细。
 
 % 陈老视频15
 \section{收敛准则}
