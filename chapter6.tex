@@ -1,1 +1,258 @@
 \chapter{不定积分}
+% 陈老视频66(2023.01.29)
+\section{不定积分的概念和运算法则}
+\subsection{不定积分的概念}
+在之前讨论人口模型和液体过滤问题时, 实际上我们已经涉及了积分的概念。
+\begin{definition}
+    在某个区间上, $F'(x) = f(x)$, 则称$F(x)$是$f(x)$的一个原函数。
+\end{definition}
+\begin{remark}
+    这里说一个, 是因为原函数不唯一。设$G(x)$是该区间上的另一个原函数, 则$(F(x)-G(x))' = f(x) - f(x) = 0$, 则$F(x) - G(x) = C$, $C$为常数。
+\end{remark}
+
+\begin{definition}
+    一个函数$f(x)$的原函数的全体称为这个函数的不定积分, 记作$\int f(x)\D x$。其中, $\int$为积分号, $f(x)$为被积函数, $x$是积分变量。不定积分可以记为:
+    \begin{equation*}
+        \int f(x) \D x = F(x) + C
+    \end{equation*}
+\end{definition}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int sin(x) \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+% 陈老视频66(2023.01.31)
+\begin{example}
+    求:
+    \begin{equation*}
+        \int x^\alpha \D x \quad (\alpha \neq -1)
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{1}{x} \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+不定积分表
+
+\subsection{不定积分的线性性质}
+\begin{theorem}[不定积分的线性性质]
+    设$f(x)$, $g(x)$的原函数都存在, $k_1, k_2$是任意常数, 则:
+    \begin{equation*}
+        \int [k_1 f(x) + k_2 g(x)] \D x = k_1 \int f(x) \D x + k_2 \int g(x) \D x
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \tan^2(x) \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int sin^2(\frac{x}{2}) \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{\left(x+\sqrt{x}\right)\left(x-2\sqrt{x}\right)^2}{\sqrt{x}} \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{x^4}{1+x^2} \D x
+    \end{equation*}
+\end{example}
+
+\begin{example}
+    曲线$g=f(x)$在没一点$(x, f(x))$切线的斜率为$x^2$, 且曲线经过$(3, 2)$, 求$y = f(x)$。
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+% 陈老视频67(2023.02.01)
+\section{换元积分法和分步积分法}
+\begin{theorem}[第一类换元积分法]
+    若要求$\int f(x) dx$, 若$f(x)$可以写成$f(x)=\widetilde{f}(g(x))g'(x)$, 且$\int \widetilde{f}(u) \D u = F(u) + C$, 则$\int f(x) \D x = F(g(x)) + C$。    
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+\begin{remark}
+    第一类换元积分法又称为``凑微分法''。
+\end{remark}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{\D x}{x - a}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{\D x}{(x-a)^n}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{\D x}{x^2 - a^2}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{\D x}{x^2 + a^2}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{\D x}{\sqrt{a^2-x^2}}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \tan(x) \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \cot(x) \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \sec(x) \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \csc(x) \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation}
+        \int \frac{\D x}{\sqrt{x}(1+x)}
+    \end{equation}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation}
+        \int \sin(mx)\cos(nx) dx \quad (m \neq n)
+    \end{equation}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation}
+        \int \sin(mx) \cos(nx) \D x
+    \end{equation}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation}
+        \int \cos(mx) \cos(nx) \D x
+    \end{equation}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation}
+        \int \sin(mx) \sin(nx) \D x
+    \end{equation}
+\end{example}
+\begin{solution}
+    
+\end{solution}
