@@ -107,6 +107,7 @@
 
 % 陈老视频67(2023.02.01)
 \section{换元积分法和分步积分法}
+\subsection{第一类换元积分法}
 \begin{theorem}[第一类换元积分法]
     若要求$\int f(x) dx$, 若$f(x)$可以写成$f(x)=\widetilde{f}(g(x))g'(x)$, 且$\int \widetilde{f}(u) \D u = F(u) + C$, 则$\int f(x) \D x = F(g(x)) + C$。    
 \end{theorem}
@@ -258,6 +259,7 @@
 \end{solution}
 
 % 陈老视频68(2023.02.03)
+\subsection{第二类换元积分法}
 \begin{theorem}[第二类换元积分法]
     若要求$\int f(x) dx$, 若存在$x = \phi(t)$使得$\int f(\phi(t))\phi'(t) \D t = F(t) + C$, 则$\int f(x) \D x = F(\phi^{-1}(x)) + C$
 \end{theorem}
@@ -317,3 +319,105 @@
 \begin{solution}
     
 \end{solution}
+
+% 陈老视频69(2023.02.04)
+\subsection{分步积分法}
+\begin{theorem}[分步积分法]
+    若要求$\int u(x)v'(x)\D x$, 且已知$\int v(x)u'(x) \D x = F(x) + c$, 则:
+    \begin{equation*}
+        \int u(x)v'(x) \D x = u(x)v(x) - F(x) + C
+    \end{equation*}
+\end{theorem}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int x \cos(x) \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int x^2\e^x \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+\begin{remark}
+    \begin{enumerate}
+        \item 令$P_n(x)$是$n$次多项式:
+        \begin{equation*}
+            \int P_n(x)\sin(\alpha x) \D x, \quad \int P_n(x)\cos(\lambda x) \D x, \quad \int P_n(x) \e^{\lambda x} \D x
+        \end{equation*}
+        都可以用分步积分法, 其中要把$\sin(\alpha x), \cos(\lambda x) \e^{\lambda x}$放入微分符号内。
+        \item 对于$\int P_n(x) \arcsin(x) \D x, \quad \int P_n(x) \arctan(x) \D x,, \quad \int P_n(x)\ln(x) \D x$, 需要把$P_n(x)$放入微分符号内。
+    \end{enumerate}
+\end{remark}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \ln(x) \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int x\arctan(x) \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{x}{1+cos(x)} \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+考虑$\int \e^{\lambda x} \cos(\alpha x) \D x, \quad \int \sin(\lambda x) \D x, \quad \int \sqrt{a^2 + x^2} \D x$, 如果使用分步积分法会无法简化。
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \e^x \sin(x) \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \sqrt{x^2+a^2} \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \sqrt{x^2-a^2} \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+\begin{remark}
+    现在我们已经求解了$\int \frac{\D x}{\sqrt{a^2-x^2}}, \int \frac{\D x}{\sqrt{x^2 \pm a^2}}, \int \sqrt{a^2-x^2} \D x, \int \sqrt{x^2\pm a^2} \D x$。
+\end{remark}
