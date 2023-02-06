@@ -421,3 +421,62 @@
 \begin{remark}
     现在我们已经求解了$\int \frac{\D x}{\sqrt{a^2-x^2}}, \int \frac{\D x}{\sqrt{x^2 \pm a^2}}, \int \sqrt{a^2-x^2} \D x, \int \sqrt{x^2\pm a^2} \D x$。
 \end{remark}
+
+% 陈老视频70(2023.02.05)
+\begin{remark}
+    要求求$\int f^n(x) \D x$, 可以通过分部积分法降低$f(x)$的次数, 得到一个递推公式。
+\end{remark}
+
+\begin{example}
+    求:
+    \begin{equation}
+        \int \frac{\D x}{(x^2+a^2)^n}
+    \end{equation}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+积分表
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \sqrt{x^2-2x+5} \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int (x+1)\sqrt{x^2=2x+5} \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+% 陈老视频71(2023.02.06)
+\section{有理函数的不定积分及其应用}
+$\int \frac{\sin(x)}{x} \D x$, $\int \e^{\pm x^2} \D x$, $\int \sqrt{1-k^2\sin^2(x)} \D x \quad (0 < k^2 < 1)$无法用初等函数表示。
+
+\begin{definition}[有理函数]
+    记有理函数$R(x) = \frac{p_m(x)}{q_n(x)}$, $p_m(x)$, $q_n(x)$分别是次数为$m$, $n$的多项式。
+\end{definition}
+
+\begin{theorem}
+    若$f(x)$是有理函数, 则$\int f(x) \D x$是初等函数。
+\end{theorem}
+\begin{proof}
+    不妨设$p_m$, $q_n$没有公因式, $q_n(x)$最高次的系数为1, 且$m < n$, 即$R(x)$是真分数。
+\end{proof}
+
+\begin{theorem}
+    设有$\frac{p(x)}{q(x)}$, 多项式$q(x)$有$k$重根, 即$q(x)=(x-\alpha)q_1(x), q_1(\alpha) \neq 0$, 则存在实数$\lambda$和$p_1(x)$($p_1(x)$次数小于$(x-\alpha)^{k-1}q_1(x)$的次数), 使得
+    \begin{equation}
+        \frac{p(x)}{q(x)} = \frac{\lambda}{(x-\alpha)^k} + \frac{p_1(x)}{(x-\alpha)^{k-1}q_1(x)}
+    \end{equation}
+\end{theorem}
