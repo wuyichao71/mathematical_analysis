@@ -472,6 +472,10 @@ $\int \frac{\sin(x)}{x} \D x$, $\int \e^{\pm x^2} \D x$, $\int \sqrt{1-k^2\sin^2
 \end{theorem}
 \begin{proof}
     不妨设$p_m$, $q_n$没有公因式, $q_n(x)$最高次的系数为1, 且$m < n$, 即$R(x)$是真分数。
+
+    \begin{equation*}
+        q_n(x) = \prod_{k=1}^{i}(x-\alpha_k)^{m_k}\prod_{k=1}^{j}(x^2+2\xi_k x + \eta_k^2)^{n_k}
+    \end{equation*}
 \end{proof}
 
 \begin{theorem}
@@ -480,3 +484,85 @@ $\int \frac{\sin(x)}{x} \D x$, $\int \e^{\pm x^2} \D x$, $\int \sqrt{1-k^2\sin^2
         \frac{p(x)}{q(x)} = \frac{\lambda}{(x-\alpha)^k} + \frac{p_1(x)}{(x-\alpha)^{k-1}q_1(x)}
     \end{equation}
 \end{theorem}
+% 陈老视频72(2023.02.07)
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}
+    设有$\frac{p(x)}{q(x)}$, 多项式$q(x)$有$l$重共轭虚根$\beta\pm i\lambda$, 即$q(x) = (x^2+2\xi x+ \eta^2)^l q*(x), q*(\beta\pm i\lambda) \neq 0$, 其中$\xi = -\beta, \eta^2 = \gamma^2+\beta^2$, 则存在实数$\mu$, $\nu$, 多项式$p*(x)$($p*$次数小于$(x^2+2\xi x+\eta^2)^{l-1}q*(x)$的次数), 使得
+    \begin{equation}
+        \frac{p(x)}{q(x)} = \frac{\mu x + \nu}{(x^2+2\xi x+\eta^2)^l} + \frac{q*(x)}{(x^2+2\xi x+\eta^2)^{l-1}q*(x)}
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+最后$\frac{p_m(x)}{q_n(x)}$可以写成
+\begin{equation*}
+    \frac{p_m(x)}{q_n(x)} = \sum_{k=1}^{i}\sum_{r=1}^{m_k}\frac{\lambda_r}{(x-\alpha_k)^r}+\sum_{k=1}^{j}\sum_{r=1}^{n_k}\frac{\mu_r x+ \nu_r}{(x^2+2\xi_k x +\eta_k^2)^r}
+\end{equation*}
+部分分式
+
+\begin{equation*}
+    \int \frac{\D x}{(x-\alpha)^n} = \left\{
+        \begin{aligned}
+            &\ln|x-\alpha| + C &\quad n = 1 \\
+            &\frac{1}{-n+1}(x-\alpha)^{-n+1} + C &\quad n \ge 2
+        \end{aligned}
+    \right.    
+\end{equation*}
+
+\begin{equation*}
+    \int \frac{\mu x + \nu}{(x^2+2\xi x+\eta^2)^n}\D x = \frac{\mu}{2}\int\frac{2x+2\xi}{(x^2+2\xi x+\eta^2)^n} \D x + (\nu-\mu \xi)\int\frac{\D x}{(x^2+2\xi x+\eta^2)^n}
+\end{equation*}
+
+\begin{equation*}
+    \int\frac{(2x+2\xi)\D x}{(x^2+2\xi x+\eta^2)^n} = \left\{
+        \begin{aligned}
+            &\ln|x^2+2\xi x +\eta^2| + C & \quad n = 1 \\
+            &\frac{1}{-n+1}(x^2+2\xi x + \eta^2)^{-n+1} + C & \quad n \ge 2
+        \end{aligned}
+    \right.
+\end{equation*}
+
+令
+\begin{equation*}
+    I_n = \int \frac{\D x}{(x^2+2\xi x + \eta^2)^n}
+\end{equation*}
+
+则
+\begin{equation*}
+    \begin{aligned}
+        I_n &= \int \frac{\D (x+\xi)}{((x+\xi)^2+a^2)^n} = \int\frac{\D u}{(u^2+a^2)^n} \\
+        &= \frac{1}{2(\eta^2-\xi^2)(n-1)}\left[(2n-3)I_{n-1}+\frac{x+\xi}{(x^2+2\xi x+\eta^2)^{n-1}}\right]
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    I_1 = \int\frac{\D x}{x^2+2\xi x+\eta^2} = \frac{1}{\sqrt{\eta^2-\xi^2}}\arctan\left(\frac{x+\xi}{\sqrt{\eta^2-\xi^2}}\right) + C
+\end{equation*}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{4x^3-13x^2+3x+8}{(x+1)(x-2)(x-1)^2} \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+\begin{remark}
+    待定系数法
+\end{remark}
+
+\begin{example}
+    求:
+    \begin{equation}
+        \int \frac{x^4+x^3+3x^2-1}{(x^2+1)^2(x-1)} \D x
+    \end{equation}
+\end{example}
+\begin{solution}
+    
+\end{solution}
