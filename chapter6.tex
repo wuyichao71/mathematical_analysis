@@ -479,7 +479,7 @@ $\int \frac{\sin(x)}{x} \D x$, $\int \e^{\pm x^2} \D x$, $\int \sqrt{1-k^2\sin^2
 \end{proof}
 
 \begin{theorem}
-    设有$\frac{p(x)}{q(x)}$, 多项式$q(x)$有$k$重根, 即$q(x)=(x-\alpha)q_1(x), q_1(\alpha) \neq 0$, 则存在实数$\lambda$和$p_1(x)$($p_1(x)$次数小于$(x-\alpha)^{k-1}q_1(x)$的次数), 使得
+    设有$\frac{p(x)}{q(x)}$, 多项式$q(x)$有$k$重根, 即$q(x)=(x-\alpha)^kq_1(x), q_1(\alpha) \neq 0$, 则存在实数$\lambda$和$p_1(x)$($p_1(x)$次数小于$(x-\alpha)^{k-1}q_1(x)$的次数), 使得
     \begin{equation}
         \frac{p(x)}{q(x)} = \frac{\lambda}{(x-\alpha)^k} + \frac{p_1(x)}{(x-\alpha)^{k-1}q_1(x)}
     \end{equation}
@@ -559,10 +559,54 @@ $\int \frac{\sin(x)}{x} \D x$, $\int \e^{\pm x^2} \D x$, $\int \sqrt{1-k^2\sin^2
 
 \begin{example}
     求:
-    \begin{equation}
+    \begin{equation*}
         \int \frac{x^4+x^3+3x^2-1}{(x^2+1)^2(x-1)} \D x
-    \end{equation}
+    \end{equation*}
 \end{example}
 \begin{solution}
     
 \end{solution}
+
+% 陈老视频73(2023.02.08)
+可化为有理函数不定积分的例子
+
+(1) 带有根式的不定积分
+
+$R(u, v)$是关于$u$, $v$的有理函数, 即$R(u, v) = \frac{p(u, v)}{q(u, v)}$, $p(u, v)$, $q(u, v)$都是关于$u$, $v$的多项式。
+
+现在令$u = x$, $v = \sqrt[n]{\frac{\xi x + u}{\mu x + v}}$, 通过令$t = \sqrt[n]{\frac{\xi x + u}{\mu x + v}}$可以化为有理函数。
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{x \D x}{\sqrt{4x-3}}
+    \end{equation*}    
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{\D x}{x(\sqrt[3]{x}-\sqrt{x})}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{\sqrt{1+x}}{x\sqrt{1-x}} \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+考虑$\sqrt[n]{(\xi x+\eta)^i(\mu x + \nu)^j}$, 其中$i + j = kn, k \in \mathbb{N}^+$, 则该函数的积分可以化为有理函数。因为
+\begin{equation*}
+    \sqrt[n]{(\xi x+\eta)^i(\mu x + \nu)^j} = \sqrt[n]{(\xi x+\eta)^{kn}\frac{(\mu x + \nu)^j}{(\xi x+\eta)^j}} = (\xi x+\eta)^k\sqrt[n]{\left(\frac{\mu x + \nu}{\xi x+\eta}\right)^j}
+\end{equation*}
