@@ -606,7 +606,53 @@ $R(u, v)$是关于$u$, $v$的有理函数, 即$R(u, v) = \frac{p(u, v)}{q(u, v)}
     
 \end{solution}
 
-考虑$\sqrt[n]{(\xi x+\eta)^i(\mu x + \nu)^j}$, 其中$i + j = kn, k \in \mathbb{N}^+$, 则该函数的积分可以化为有理函数。因为
+(1)考虑$\sqrt[n]{(\xi x+\eta)^i(\mu x + \nu)^j}$, 其中$i + j = kn, k \in \mathbb{N}^+$, 则该函数的积分可以化为有理函数。因为
 \begin{equation*}
     \sqrt[n]{(\xi x+\eta)^i(\mu x + \nu)^j} = \sqrt[n]{(\xi x+\eta)^{kn}\frac{(\mu x + \nu)^j}{(\xi x+\eta)^j}} = (\xi x+\eta)^k\sqrt[n]{\left(\frac{\mu x + \nu}{\xi x+\eta}\right)^j}
 \end{equation*}
+
+% 陈老视频74(2023.02.09)
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{\D x}{\sqrt[3]{(x-1)^2(x+1)^4}}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+$R(u, v)$定义如(1), 则$R(\sin(x), \cos(x))$代表了所有三角函数的有理函数。
+考虑
+\begin{equation*}
+    I = \int R(\sin(x), \cos(x)) \D x
+\end{equation*}
+
+令$\tan\left(\frac{x}{2}\right) = t$, 则:
+% \begin{equation*}
+\begin{gather*}
+    \sin(x) = \frac{2t}{1+t^2} \\
+    \cos(x) = \frac{1-t^2}{1+t^2} \\ 
+    I = \int R\left(\frac{2t}{1+t^2}, \frac{1-t^2}{1+t^2}\right)\frac{2}{1+t^2}\D t
+\end{gather*}
+% \end{equation*}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{\D x}{4 + 4\sin(x)+\cos(x)}
+    \end{equation*}
+\end{example}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int \frac{\cot(x) \D x}{1+ \sin(x)} 
+    \end{equation*}
+\end{example}
+\begin{solution}
+    \framebox{解法一}:
+
+    \framebox{解法二}:
+\end{solution}
+
