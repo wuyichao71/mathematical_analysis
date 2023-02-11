@@ -1,2 +1,54 @@
 \chapter{定积分}
 % 陈老视频75(2023.02.10)
+设$f(x)$定义在区间$(a, b)$上, 讨论$f(x)$在$[a, b]$上的定积分, 首先必须要求$f(x)$有界。无界的情况是之后的推广, 现在阶段我们只考虑有界情况。
+\begin{definition}[定积分的定义]
+    设$f(x)$在$[a, b]$有界, 对$[a, b]$作划分$P$: $a = x_0 < x_1 < x_2 < \cdots < x_n = b $, 任取$\xi_i \in [x_{i-1}, x_i]$, 若极限
+    \begin{equation*}
+        \funclim{\lambda}{0}{\sum_{i=1}^nf(\xi_i)\Delta x_i} \quad (\lambda = \max\{\Delta x_i\})
+    \end{equation*}
+    存在, 且极限值与划分$P$及取点$\xi_i$无关。则称$f(x)$在闭区间$[a, b]$上Riemann可积, 简称可积。极限值$I$称为$f(x)$在$[a, b]$上的定积分, 记为
+    \begin{equation*}
+        \funclim{\lambda}{0}{\sum_{i=1}^nf(\xi_i)\Delta x_i} = I = \int_{a}^{b}f(x) \D x
+    \end{equation*}
+    
+    其中极限中的和式称为Riemann和。
+\end{definition}
+\begin{remark}
+    定义中, $a < b$, 若$a \ge b$, 规定$\int_{a}^{b}f(x)\D x = -\int_{b}^{a}f(x)\D x$。根据以上的定义可知$\int_a^af(x)\D x = 0$。
+\end{remark}
+
+\begin{definition}[Riemann可积的``$\epsilon$-$\delta$''语言]
+    $\exists I$, $\forall \epsilon > 0$, $\exists \delta > 0$, 使得$\forall P$: $a < x_0 < x_1 < x_2 < \cdots < x_n = b$, $\forall \xi_i \in [x_{i-1}, x_i]$, 只需$\lambda = \max\{\Delta x_i\} < \delta$, 成立
+    \begin{equation*}
+        \left| \sum_{i=1}^{n}f(\xi_i)\Delta x_i - I \right| < \epsilon
+    \end{equation*}
+    则$f(x)$在$[a, b]$上可积。
+\end{definition}
+
+\begin{example}[Dirichlet函数]
+    证明
+    \begin{equation*}
+        D(x) = 
+        \begin{cases}
+            1 & x\text{是有理数} \\
+            0 & x\text{是无理数}
+        \end{cases}
+    \end{equation*}
+    在$[0, 1]$区间上不可积。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+现在我们要讨论哪些函数是可积的, 哪些函数是不可积的。在讨论函数是可积的还是不可积的之前我们先介绍Darboux和(达布和)。
+\begin{definition}
+    $f(x)$在$[a, b]$闭区间上有界, 设$M=\sup_{x\in [a, b]} f(x)$, $m=\inf_{x\in [a, b]} f(x)$, 存在划分$P$: $a = x_0 < x_1 < x_2 < \cdots < x_n = b$, 并且设$M_i = \sup_{x\in [x_{i-1}, x_i]} f(x)$, $m_i=\inf_{x\in [x_{i-1}, x_i]} f(x)$, 则称
+    \begin{equation*}
+        \bar{S}(P) = \sum_{i=0}^n M_i\Delta x_i
+    \end{equation*}
+    为达布大和, 称
+    \begin{equation*}
+        \underbar{S}(P) = \sum_{i=0}^n m_i\Delta x_i
+    \end{equation*}
+    为达布小和。
+\end{definition}
