@@ -1,5 +1,5 @@
 \chapter{定积分}
-% 陈老视频75(2023.02.10)
+% 陈老视频76(2023.02.10)
 设$f(x)$定义在区间$(a, b)$上, 讨论$f(x)$在$[a, b]$上的定积分, 首先必须要求$f(x)$有界。无界的情况是之后的推广, 现在阶段我们只考虑有界情况。
 \begin{definition}[定积分的定义]
     设$f(x)$在$[a, b]$有界, 对$[a, b]$作划分$P$: $a = x_0 < x_1 < x_2 < \cdots < x_n = b $, 任取$\xi_i \in [x_{i-1}, x_i]$, 若极限
@@ -40,6 +40,7 @@
     
 \end{proof}
 
+% 陈老视频77(2023.02.12)
 现在我们要讨论哪些函数是可积的, 哪些函数是不可积的。在讨论函数是可积的还是不可积的之前我们先介绍Darboux和(达布和)。
 \begin{definition}
     $f(x)$在$[a, b]$闭区间上有界, 设$M=\sup_{x\in [a, b]} f(x)$, $m=\inf_{x\in [a, b]} f(x)$, 存在划分$P$: $a = x_0 < x_1 < x_2 < \cdots < x_n = b$, 并且设$M_i = \sup_{x\in [x_{i-1}, x_i]} f(x)$, $m_i=\inf_{x\in [x_{i-1}, x_i]} f(x)$, 则称
@@ -69,4 +70,76 @@
 \begin{proof}
     
 \end{proof}
+下面我们做一些规定:
+\begin{enumerate}
+    \item $\bar{S}$表示对一切划分的达布大和构成的集合。
+    \item $\underbar{S}$表示对一切划分的达布小和构成的集合。
+\end{enumerate}
+再令$L = \inf\{\bar{S}(P) | \bar{S}(P) \in \bar{S}\}$, $l = \sup\{\underbar{S}(P) | \underbar{S}(P) \in \underbar{S}\}$, 那么则有$\underbar{S}(P) \le l \le L \le \bar{S}(P_1)$
+
+\begin{theorem}[Darboux定理]
+    $f(x)$在$[a, b]$有界, 则有
+    \begin{equation*}
+        \funclim{\lambda}{0}{\bar{S}(P)} = L \quad \funclim{\lambda}{0}{\underbar{S}(P)} = l
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频78(2023.02.14)
+
+\section{可积的充要条件}
+\begin{theorem}[可积的充要条件]
+    $f(x)$在$[a, b]$上可积的充分必要条件是:
+    \begin{equation*}
+        \funclim{\lambda}{0}{\bar{S}(P)} = \funclim{\lambda}{0}{\underbar{S}(P)} \Longleftrightarrow L = l
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    \framebox{必要性}
+
+    \framebox{充分性}
+\end{proof}
+
+$M_i-m_i$表示了$f(x)$在$[x_{i-1}, x_i]$上的振幅, 记为$\omega_i$。
+\begin{theorem}
+    $f(x)$在$[a, b]$上可积的充分必要条件是:
+    \begin{equation*}
+        \funclim{\lambda}{0}{\sum_{i=0}^n\omega_i\Delta x_i} = 0
+    \end{equation*}
+\end{theorem}
+
+\begin{example}[Dirichlet函数]
+    用以上的定理证明:
+    \begin{equation*}
+        D(x) = 
+        \begin{cases}
+            1 & x\text{是有理数} \\
+            0 & x\text{是无理数}
+        \end{cases}
+    \end{equation*}
+    在$[0, 1]$区间上不可积。
+\end{example}
+\begin{proof}
+    
+\end{proof}
+
+\begin{lemma}
+    闭区间上的连续函数一定可积。
+\end{lemma}
+\begin{proof}
+    
+\end{proof}
+
+\begin{lemma}
+    闭区间上的单调函数一定可积。
+\end{lemma}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}
+    在$[a, b]$上有界的函数$f(x)$可积的充分必要条件是: $\forall \epsilon > 0$, $\exists P$, 使得$\sum_{i=0}^n\omega_i \Delta x_i < \epsilon$。
+\end{theorem}
 
