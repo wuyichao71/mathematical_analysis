@@ -2307,6 +2307,8 @@ INPUT ./chapter7.tex
 INPUT chapter7.tex
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei8a.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei89.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong8d.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong8d.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
