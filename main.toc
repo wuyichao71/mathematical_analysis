@@ -64,3 +64,5 @@
 \contentsline {section}{\numberline {6.3}有理函数的不定积分及其应用}{71}{section.6.3}%
 \contentsline {chapter}{\numberline {7}定积分}{74}{chapter.7}%
 \contentsline {section}{\numberline {7.1}可积的充要条件}{75}{section.7.1}%
+\contentsline {section}{\numberline {7.2}定积分的基本性质}{76}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}线性性}{76}{subsection.7.2.1}%
