@@ -296,3 +296,100 @@ $M_i-m_i$表示了$f(x)$在$[x_{i-1}, x_i]$上的振幅, 记为$\omega_i$。
 \begin{proof}
     
 \end{proof}
+
+% 陈老视频81(2023.02.19)
+\section{微积分基本定理(Newton-Libniz公式)}
+\begin{example}[变速运动]
+    物体的速度为$v(t)$, 走过的路程为$S(t)$, 求在时间段$[T_1, T_2]$中物体走过的路程。
+\end{example}
+\begin{solution}
+    取划分$P: T_1 = t_0 < t_1 < t_2 \cdots < t_n = T2, \forall \xi_i \in [t_{i-1}, t_i]$, 则
+    \begin{equation*}
+        \int_{T_1}^{T_2} = \funclim{\lambda}{0}{\sum_{i=1}^{n}v(\xi_i) \Delta t_i} = S(T_2) - S(T_1)
+    \end{equation*}
+    其中$S'(t) = v(t)$
+\end{solution}
+
+% 陈老视频82(2023.02.20)
+\begin{theorem}
+    设$f(x)$在$[a, b]$可积， 作函数
+    \begin{equation*}
+        F(x) = \int_{a}^{x} f(t) \D t \quad x \in [a, b]
+    \end{equation*}
+    则
+    \begin{enumerate}
+        \item $F(x)$是$[a, b]$上的连续函数。
+        \item 若$f(x)$在$[a, b]$上连续, 则$f(x)$可导, $F'(x) = f(x)$
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    令$x > 0$
+    \begin{align}
+        F(x) &= \int_0^x \sin\sqrt{t} \D t , F'(x) = \sin\sqrt{x} \\
+        F(x) &= \int_0^{x^2}\sin\sqrt{t} \D t \\
+        F(x) &= \int_{x^2}^1\sin\sqrtsign{t} \D t \\
+        F(x) &= \int_{x^2}^x\sin\sqrtsign{t} \D t
+    \end{align}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \funclim{x}{0^+}{\frac{\int_{0}^{x^2}\sin\sqrt{t}\D t}{x^3}}
+    \end{equation*}
+\end{example}
+
+\begin{solution}
+    
+\end{solution}
+
+\begin{theorem}[微积分基本定理]
+    设$f(x)$在$[a, b]$连续, $F(x)$是$f(x)$的一个原函数, 则
+    \begin{equation*}
+        \int_a^b f(x)\D x = F(b) - F(a)
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int_{0}^{1}x^2 \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求:
+    \begin{equation*}
+        \int_0^\pi \sin x \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+% 陈老视频83(2023.02.21)
+\begin{example}
+    求:
+    \begin{equation*}
+        \def\tmp{\frac{1}{n+1}+\frac{1}{n+2}+\cdots+\frac{1}{2n}}
+        \funclim{x}{\infty}{\tmp}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\section{定积分的分部积分法}
