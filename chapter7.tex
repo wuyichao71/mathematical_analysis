@@ -393,3 +393,58 @@ $M_i-m_i$表示了$f(x)$在$[x_{i-1}, x_i]$上的振幅, 记为$\omega_i$。
 \end{solution}
 
 \section{定积分的分部积分法}
+\begin{align}
+    &\int_a^b u \D v = uv\Big|_a^b -\int_a^b v \D u \\
+    &\int_a^b u(x)v'(x) \D x = u(x)v(x)\Big|_a^b -\int_a^b v(x)u'(x) \D x
+\end{align}
+
+\begin{example}
+    求
+    \begin{equation*}
+        y = x\sin x \quad x \in [0, \pi]
+    \end{equation*}
+    与$x$轴所围区域面积。
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{definition}
+    $\collect{g_n(x)}, n = 0, 1, 2 \cdots$是$[a, b]$上一列函数, 若
+    \begin{equation*}
+        \int_a^b g_m(x) g_n(x) \D x = \begin{cases}
+            0 &\quad m \neq n \\
+            \int_a^b g_n^2(x) \D x > 0 &\quad m = n 
+        \end{cases}
+    \end{equation*}
+    则称$\collect{g_n(x)}$是$[a, b]$上的正交函数列。
+
+    若$g_n(x)$是多项式$P_n(x)$, 则称$\collect{P_n(x)}$是$[a, b]$上的正交多项式列。
+\end{definition}
+
+\begin{example}[Lagandre多项式]
+    对于
+    \begin{equation*}
+        P_n(x) = \frac{1}{2^n n!}\frac{\D^n}{\D x^n}(x^2-1)^n
+    \end{equation*}
+    证明
+    \begin{equation*}
+        \int_{-1}^1 P_m(x)P_n(x) \D x = \begin{cases}
+            0 &\quad m \neq n \\
+            \frac{2}{2n+1} &\quad m = n
+        \end{cases}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求
+    \begin{equation*}
+        I_n = \int_0^{\frac{\pi}{2}} \sin^n x \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
