@@ -439,7 +439,7 @@ $M_i-m_i$表示了$f(x)$在$[x_{i-1}, x_i]$上的振幅, 记为$\omega_i$。
     
 \end{solution}
 
-\begin{example}
+\begin{example}\label{example-chapter7-1}
     求
     \begin{equation*}
         I_n = \int_0^{\frac{\pi}{2}} \sin^n x \D x
@@ -448,3 +448,71 @@ $M_i-m_i$表示了$f(x)$在$[x_{i-1}, x_i]$上的振幅, 记为$\omega_i$。
 \begin{solution}
     
 \end{solution}
+
+\section{定积分换元法}
+\begin{theorem}[定积分换元法]
+    设$f(x)$在$[a, b]$上连续, $x = \phi(t)$在$[\alpha, \beta]$(或$[\beta, \alpha]$)上有连续导数, $\phi$的值域包含在$[a, b]$中, $\phi(\alpha) = a, \phi(\beta) = b$, 则
+    \begin{equation*}
+        \int_a^b f(x) \D x = \int_\alpha^\beta f(\phi(t))\phi'(t)\D t
+    \end{equation*}
+\end{theorem}
+\begin{remark}
+    \begin{equation*}
+        \int_a^b f(x) \D x \text{是否等于} \int_\alpha^\beta f(\phi(t))\phi'(t)\D t
+    \end{equation*}
+    需要证明。
+\end{remark}
+\begin{proof}
+    
+\end{proof}
+
+\begin{example}
+    求
+    \begin{equation*}
+        \int_1^2 \frac{\D x}{x(1+x^4)}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    \framebox{解法一}:
+
+    \framebox{解法二}:
+\end{solution}
+\begin{remark}
+    \begin{enumerate}
+        \item 对于$\frac{\D x}{x}$, 我们可以取$x^n = t$, 那么此时$n\ln x = \ln t$, $\frac{n}{x}\D x = \frac{\D t}{t}$。
+        \item 
+    \end{enumerate}
+\end{remark}
+
+\begin{example}
+    求
+    \begin{equation*}
+        \int_0^{\frac{\pi}{2}} \sin^3x\cos^4x \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+\begin{remark}
+    \begin{enumerate}
+        \item $\int_\alpha^\beta \sin^mx\cos^nx \D x$, $m, n$中只要有一个奇数, 就可按上面的方法计算。
+        \item 若$m, n$都是偶数, 例如$\int_\alpha^\beta \sin^4x\cos^2x \D x$, 则可以通过三角公式降低次数。
+        \begin{equation*}
+            \int_\alpha^\beta \sin^4x\cos^2x \D x = \frac{1}{8}\int_\alpha^\beta 2\sin^2x 4\sin^2x\cos^2x \D x = \frac{1}{8} \int_\alpha^\beta (1-\cos2x)sin^22x \D x
+        \end{equation*}
+        \item 若$\alpha = 0, \beta = \frac{\pi}{2}$, 则可用例\ref{example-chapter7-1}的结论。
+    \end{enumerate}
+\end{remark}
+
+\begin{example}
+    求半径为$r$的圆面积。
+\end{example}
+\begin{solution}
+    
+\end{solution}
+\begin{remark}
+    \begin{enumerate}
+        \item $\int_a^bf(x)\D x = \int_\alpha^\beta f(\phi(t))\phi'(t)\D t$, 该式对$\phi(t)$没有单调的要求。而在求不定积分时, $\int f(x)\D x = \int f(\phi(t))\phi'(t)\D t$ 有单调要求, 因为最后还是要换回$x$的函数。
+        \item $\phi(t)$的值域在$[a, b]$中, 若$\phi(t)$的值域超出该范围则没定义了。
+    \end{enumerate}
+\end{remark}
