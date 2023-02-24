@@ -513,6 +513,38 @@ $M_i-m_i$表示了$f(x)$在$[x_{i-1}, x_i]$上的振幅, 记为$\omega_i$。
 \begin{remark}
     \begin{enumerate}
         \item $\int_a^bf(x)\D x = \int_\alpha^\beta f(\phi(t))\phi'(t)\D t$, 该式对$\phi(t)$没有单调的要求。而在求不定积分时, $\int f(x)\D x = \int f(\phi(t))\phi'(t)\D t$ 有单调要求, 因为最后还是要换回$x$的函数。
-        \item $\phi(t)$的值域在$[a, b]$中, 若$\phi(t)$的值域超出该范围则没定义了。
+        \item $\phi(t)$的值域在$[a, b]$中, 若$\phi(t)$的值域超出该范围则没定义了, 但是在实际应用中, 如果$\phi(t)$连续, 则超出也可以。
     \end{enumerate}
 \end{remark}
+
+% 陈老视频85(2023.02.24)
+\begin{example}
+    求
+    \begin{equation*}
+        \int_{\ln2}^1 \frac{\D x}{\sqrt{\e^x-1}}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    有
+    \begin{equation*}
+        f(x) = \begin{cases}
+            \sin\frac{x}{2} &\quad x \ge 0 \\
+            x\arctan x &\quad x < 0
+        \end{cases}
+    \end{equation*}
+    求$\int_{0}^{\pi+1}f(x-1)\D x$。                                                            
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    求
+    \begin{equation*}
+        \int_0^1 \frac{\ln(1+x)}{1+x^2} \D x
+    \end{equation*}
+\end{example}
