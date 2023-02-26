@@ -69,3 +69,7 @@
 \contentsline {section}{\numberline {7.3}微积分基本定理(Newton-Libniz公式)}{78}{section.7.3}%
 \contentsline {section}{\numberline {7.4}定积分的分部积分法}{79}{section.7.4}%
 \contentsline {section}{\numberline {7.5}定积分换元法}{80}{section.7.5}%
+\contentsline {section}{\numberline {7.6}定积分在几何中的应用}{81}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}平面图形的面积}{81}{subsection.7.6.1}%
+\contentsline {subsubsection}{\numberline {7.6.1.1}参数表示下求面积}{81}{subsubsection.7.6.1.1}%
+\contentsline {subsubsection}{\numberline {7.6.1.2}极坐标表示下求面积}{82}{subsubsection.7.6.1.2}%

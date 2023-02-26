@@ -1875,6 +1875,8 @@ INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong89.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei79.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong6b.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong90.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong97.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong68.tfm
 OUTPUT main.toc
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai76.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai5f.tfm
@@ -1949,7 +1951,6 @@ INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai55.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai5e.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai90.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai98.tfm
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong97.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong9e.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong77.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei88.tfm
@@ -2005,7 +2006,6 @@ INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs76.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs6b.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs7a.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs66.tfm
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong68.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong72.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong66.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong67.tfm
@@ -2322,6 +2322,9 @@ INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong54.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong7b.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong54.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong7b.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei97.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei57.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei68.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
@@ -2426,7 +2429,6 @@ INPUT c:/Windows/Fonts/simhei.ttf
 INPUT c:/Windows/Fonts/simhei.ttf
 INPUT c:/Windows/Fonts/simhei.ttf
 INPUT c:/Windows/Fonts/simsun.ttc
-INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simfang.ttf
 INPUT c:/Windows/Fonts/simfang.ttf
 INPUT c:/Windows/Fonts/simfang.ttf
@@ -2478,7 +2480,6 @@ INPUT c:/Windows/Fonts/simkai.ttf
 INPUT c:/Windows/Fonts/simhei.ttf
 INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
-INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simkai.ttf
 INPUT c:/Windows/Fonts/simkai.ttf
 INPUT c:/Windows/Fonts/simkai.ttf
@@ -2506,6 +2507,8 @@ INPUT c:/Windows/Fonts/simkai.ttf
 INPUT c:/Windows/Fonts/simkai.ttf
 INPUT c:/Windows/Fonts/simhei.ttf
 INPUT c:/Windows/Fonts/simhei.ttf
+INPUT c:/Windows/Fonts/simsun.ttc
+INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
