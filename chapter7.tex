@@ -678,3 +678,127 @@ $x(t)$有连续导数, $x'(t) \neq 0$。假设$a = x(T_1), b = x(T_2)$, 则面�
 \begin{solution}
     
 \end{solution}
+
+\subsection{曲线的弧长}
+什么是曲线的弧长?
+
+设存在曲线
+\begin{equation*}
+    \begin{cases}
+        x = x(t) \\
+        y = y(t)
+    \end{cases}
+    t \in [T_1, T_2]
+\end{equation*}
+
+现在做划分$P: T_1 = t_0 < t_1 < t_2<\cdots<t_n=T_2$。
+
+若$\funclim{\lambda}{0}{\overline{P_{i-1}P_i}}$存在, 且极限与划分$P$无关, 则称曲线$L$是可求长的, 长度为$\funclim{\lambda}{0}{\overline{P_{i-1}P_i}}$。
+
+现在来求曲线的长度
+\begin{equation*}
+    \overline{P_{i-1}P_i} = \sqrt{(x(t_i)-x(t_{i-1}))^2+(y(t_i)-y(t_{i-1}))^2}
+\end{equation*}
+
+设$x(t), y(t)$在$[T_1, T_2]$连续, 在$(T_1, T_2)$可导, 则
+\begin{equation*}
+    x(t_i) - x(t_{i-1}) = x'(\eta_i)\Delta t_i, \quad y(t_i) - y(t_{i-1}) = y'(\sigma_i)\Delta t_i, \quad \eta_i, \sigma_i \in [T_{i-1}, T_i]
+\end{equation*}
+
+\begin{equation*}
+    \overline{P_{i-1}P_i} = \sqrt{(x(\eta_i))^2+(y(\sigma_i))^2} \Delta t_i
+\end{equation*}
+
+\begin{equation*}
+    \sum\overline{P_{i-1}P_i} = \sum \sqrt{(x(\eta_i))^2+(y(\sigma_i))^2} \Delta t_i
+\end{equation*}
+
+上式并不是黎曼和, 现在我们要讨论它的极限。
+
+\begin{definition}
+    若$x'(t), y'(t)$在$[T_1, T_2]$连续, 且$x'(t)^2+y'(t)^2 \neq 0$, 则称曲线是光滑曲线。
+\end{definition}
+\begin{remark}
+    曲线的向量$\vec{\tau} = (x'(t), y'(t))$
+\end{remark}
+
+\begin{theorem}
+    设
+    \begin{equation*}
+        \begin{cases}
+            x = x(t) \\
+            y = x(t)
+        \end{cases}
+        t \in [T_1, T_2]
+    \end{equation*}
+    表示一条光滑曲线, 则它是可求长的, 且弧长$l = \int_{T_1}^{T_2}\sqrt{x'(t)^2 + y'(t)^2} \D t$
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+% 陈老视频88(2023.02.28)
+$\D l = \sqrt{x'(t)^2+y'(t)^2} \D t$称为弧长微分, 那么弧长可以表示为
+\begin{equation*}
+    l = \int_{T_1}^{T_2}\D l
+\end{equation*}
+
+若曲线方程为显式表示, 则
+\begin{equation*}
+    l = \int_a^b \sqrt{1 + y'(x)^2} \D x
+\end{equation*}
+
+若曲线方程为极坐标表示, 则
+\begin{equation*}
+    l = \int_\alpha^\beta \sqrt{r(\theta)^2 + r'(\theta)^2} \D \theta
+\end{equation*}
+
+\begin{example}
+    求半径为$a$的圆周长。
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\subsubsection{空间曲线}
+\begin{equation*}
+    \begin{cases}
+        x = x(t) \\
+        y = y(t) \\
+        z = z(t)
+    \end{cases}
+    t \in [T_1, T_2]
+\end{equation*}
+则弧长为
+\begin{equation*}
+    l = \int_{T_1}^{T_2} \sqrt{x'(t)^2+y'(t)^2+z'(t)^2} \D t
+\end{equation*}
+
+\begin{example}
+    求圆锥螺线
+    \begin{equation*}
+        \begin{cases}
+            x = at \cos t \\
+            y = -at \sin t \\
+            z = bt
+        \end{cases}
+        t \in [0, 2\pi]
+    \end{equation*}
+    的弧长。
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\subsection{求几何体的体积}
+\begin{equation*}
+    V = \int_a^b A(x) \D x
+\end{equation*}
+$A(x)$为截面面积。
+
+\begin{example}
+    
+\end{example}
+\begin{solution}
+    
+\end{solution}
