@@ -924,3 +924,29 @@ Verhulst
 \begin{equation*}
     P'(t) = \lambda P(t)\left(1-\frac{P(t)}{P'(t)}\right)
 \end{equation*}
+
+% 陈老视频93(2023.03.07)
+\section{定积分的数值计算}
+Newton-Leibniz公式, 分布积分法, 换元法
+
+数值计算:
+\begin{equation*}
+    \int_a^b f(x)\D x = \funclim{\lambda}{0}{\sum f(\xi_i)\Delta x_i}
+\end{equation*}
+\begin{enumerate}
+    \item 对$[a, b]$作划分。
+    \item 对$[x_{i-1}, x_i]$, 找简单函数$P(x)$, 使$\int_{x_{i-1}}^{x_i} f(x) \D x = \int_{x_{x-1}}^{x_i} P(x) \D x$。
+\end{enumerate}
+
+\begin{enumerate}
+    \item $\int_{x_{i-1}}^{x_i} (x) \D x$, 不妨令$x_{i-1} = a, x_i = b$。
+    \begin{enumerate}
+        \item 梯形公式: $\int_a^b f(x) \D x \approx \int_a^b P(x) \D x = \frac{b-a}{2}(f(a) + f(b))$。
+        \item Simpson公式: $\int_a^b f(x) \D x \approx \int_a^b (c_1x^2+c_2x+c_3) \D x = \frac{b-a}{6}[f(a) + f(b) + 4f(\frac{a+b}{2})]$。
+    \end{enumerate}
+    \item $\int_a^b f(x) \D x$, 对$[a, b]$作划分, $\Delta x_i = \frac{b-a}{m}$。
+    \begin{enumerate}
+        \item 复化梯形公式: $\int_a^b f(x) \D x \approx \sum_1^m \int_{x_{i-1}^{x_i}} f(x) \D x \approx \sum_1^m \frac{b-a}{2m}(f(x_{i-1}) + f(x_i)) = \frac{b-a}{2m} [f(a) + f(b) + 2\sum_1^{m-1} f(x_i)]$
+        \item 复化Simpson公式: $\int_a^b f(x) \D x \approx \sum_1^m \int_{x_{i-1}}^{x_i} f(x) \D x \approx \sum_1^m \frac{b-a}{6m}(f(x_{i-1})+f(x_i)+4f(x_{i-\frac{1}{2}})) = \frac{b-a}{6m}[f(a)+ f(b) + 2\sum_i^{m-1} f(x_i) + 4\sum_{i = 1}^m f(x_{i-\frac{1}{2}})]$。
+    \end{enumerate}
+\end{enumerate}
