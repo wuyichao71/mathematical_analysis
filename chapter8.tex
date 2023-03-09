@@ -1,0 +1,119 @@
+\chapter{反常积分}
+% 陈老视频94(2023.03.08)
+有的书称为广义积分, 有的书称为瑕积分。
+\section{反常积分的概念与计算}
+定积分$\int_a^b f(x) \D x$, $[a, b]$是有限区间, $f(x)$有界。
+
+\begin{example}[第二宇宙速度]
+    $\frac{1}{2}m v_0^2 \ge W$, $W$指物体(质量m)从地球表明到$\infty$克服地球引力作的功。
+\end{example}
+\begin{solution}
+
+\end{solution}
+
+\begin{definition}
+    $f(x)$在$[a, +\infty]$有定义, $f(x)$在$\forall [a, A]$可积, $f(A) = \int_a^A f(x) \D x$, 若$\funclim{A}{+\infty}{F(A)} = \funclim{A}{+\infty}{\int_a^A f(x) \D x}$存在(指有限), 则称反常积分$\int_a^{+\infty} f(x) \D x$收敛, 记$\int_a^{+\infty} = \funclim{A}{+\infty}{\int_a^A f(x) \D x}$。
+
+    设$F(x)$是$f(x)$的一个原函数, 则
+    \begin{equation*}
+        \int_a^{+\infty}f(x)\D x = \funclim{A}{+\infty}{\int_a^Af(x) \D x} = \funclim{A}{+\infty}{(F(A) - F(a))} = F(+\infty) - F(a)
+    \end{equation*}
+\end{definition}
+
+\begin{example}[P-积分]
+    讨论反常积分
+    \begin{equation*}
+        \int_1^{+\infty} \frac{\D x}{x^p}\quad (p \in \mathbb{R})
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    讨论反常积分
+    \begin{equation*}
+        int_0^{+\infty} \e^{-ax} \D x \quad (a \int\mathbb{R})
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    讨论反常积分
+    \begin{equation*}
+        \int_{-\infty}^{+\infty}\frac{\D x}{1+x^2}
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+\begin{remark}
+    \begin{equation*}
+        \int_a^{+\infty} = \funclim{A}{+\infty}{(F(A) - F(a)) = F(+\infty) - F(a) = F(A)|_a^{+\infty}}
+    \end{equation*}
+\end{remark}
+
+\begin{definition}
+    若$f(x)$在$x = b$的任意去心邻域中无界, 则称$x = b$是$f(x)$的一个奇点, 不妨设$x = b$是$f(x)$在$[a, b)$中的唯一奇点。
+
+    若$f(x)$在任意的$[a, b-\eta]$可积, 且$\funclim{\eta}{0^+}{f(x) \D x}$存在(有限), 则称反常积分$\int_a^b f(x) \D x$收敛, 记
+    \begin{equation*}
+        \int_a^b f(x) \D x = \funclim{\eta}{0^+}{\int_a^{b-\eta} f(x) \D x}
+    \end{equation*}
+
+    设$F(x)$是$f(x)$的一个原函数, 则
+    \begin{equation*}
+        \int_a^b f(x) \D x = \funclim{\eta}{0^+}{(F(b-\eta) - F(a))} = F(b^-) - F(a) = F(x)|_a^{b^-}
+    \end{equation*}
+\end{definition}
+
+\begin{example}[P-积分]
+    讨论反常积分
+    \begin{equation*}
+        \int_0^1\frac{\D x}{x^p} \quad (p \in \mathbb{R})
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    讨论反常积分
+    \begin{equation*}
+        \int_{-1}^1 \frac{\e^{\frac{1}{x}}}{x^2} \D x
+    \end{equation*}
+\end{example}
+
+% 陈老视频95(2023.03.09)
+\section{反常积分计算}
+\begin{example}
+    计算
+    \begin{equation*}
+        I_n = \int_0^{+\infty} \e^{-x}x^n \D x \quad (n\text{是正整数})
+    \end{equation*}
+\end{example}
+\begin{solution}
+    
+\end{solution}
+
+\begin{example}
+    计算
+    \begin{equation*}
+        \int_0^1 \ln x \D x
+    \end{equation*}
+\end{example}
+\begin{solution}
+\framebox{分部积分法}
+
+\framebox{换元法}
+
+\end{solution}
+
+\begin{example}
+    计算
+    \begin{equation*}
+        I_n = \int_0^{+\infty} \frac{\D x}{(x^2+a^2)^n}
+    \end{equation*}
+\end{example}
